@@ -1,0 +1,5 @@
+hello word
+Traceback (most recent call last):
+  File "/home/ubuntu/stock_data_update/test_log.py", line 3, in <module>
+    pandas
+NameError: name 'pandas' is not defined
