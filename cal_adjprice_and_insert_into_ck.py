@@ -154,5 +154,4 @@ if __name__ == '__main__':
             ex_f = ex_factor_data[ex_factor_data.order_book_id==contract]['ex_factor']
         else:
             ex_f = 1
-        
         process_symbol_data(contract, ex_f)

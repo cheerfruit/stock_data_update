@@ -15,7 +15,6 @@ tick数据检查(未完成, 后续有库了再做, 也可以放在其他脚本�
 
 检查步骤：
 直接取出所有股票当天更新的数据进行检查！
-
 """
 import pandas as pd
 import logging
