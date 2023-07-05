@@ -26,6 +26,18 @@ interval_dict = {'1m':Interval.MINUTE,
 
 fields = ['open','high','low','close','volume','total_turnover']
 
+def get_contracts():
+    data = pd.read_csv('/home/ubuntu/stock_data_update/codes.csv')
+    rq_codes = []
+    for code in data.code.unique():
+        if 'SZSE' in code:
+            code = code[:-4]+'XSHE'
+        elif 'SSE' in code:
+            code = code[:-4]+'XSHG'
+        rq_codes.append(code)
+    # print(rq_codes)
+    return rq_codes
+
 def get_data(contract, sdate, edate, freq):
     data = rqdatac.get_price(order_book_ids=contract, start_date=sdate,end_date=edate,frequency=freq,fields=fields,adjust_type='pre', skip_suspended=False, market='cn')
     # print(data)
@@ -93,8 +105,7 @@ if __name__ == '__main__':
     freq = '1m'
     sdate = '2021-01-01'
     edate = time.strftime("%Y-%m-%d")
-    contracts = ['600073.XSHG','600125.XSHG','000030.XSHE','000507.XSHE']
-    contracts = ['600073.XSHG','000507.XSHE']
+    contracts = get_contracts()
 
     for contract in contracts:  # 按一个票一个票循环，其实也可以多个票，可以测试下怎么样速度更加快
         data = get_data(contract, sdate, edate, freq)

@@ -28,6 +28,17 @@ interval_dict = {'1m':Interval.MINUTE,
                  'w':Interval.WEEKLY
                  }
 
+def get_contracts():
+    data = pd.read_csv('/home/ubuntu/stock_data_update/codes.csv')
+    rq_codes = []
+    for code in data.code.unique():
+        if 'SZSE' in code:
+            code = code[:7]+'XSHE'
+        elif 'SSE' in code:
+            code = code[:7]+'XSHG'
+        rq_codes.append(code)
+    # print(rq_codes)
+    return rq_codes
 
 def get_excum_factor(contract):
     data = rqdatac.get_ex_factor(order_book_ids=contract, start_date=edate, end_date=edatex, market='cn')
@@ -143,7 +154,9 @@ if __name__ == '__main__':
     sdate = time.strftime("%Y-%m-%d")
     edate = time.strftime("%Y-%m-%d")
     edatex = str(int(edate[:4])+1)+edate[4:]
-    contracts = ['688171.XSHG','600125.XSHG','002595.XSHE','000729.XSHE']
+    # contracts = ['688171.XSHG','600125.XSHG','002595.XSHE','000729.XSHE']
+    contracts = get_contracts()
+    
 
     ex_factor_data = get_excum_factor(contracts)
     ex_factor_data['contract'] = ex_factor_data['order_book_id'].str.slice(0,6)

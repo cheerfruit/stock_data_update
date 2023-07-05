@@ -46,6 +46,17 @@ conn_info = create_engine(f"clickhouse+native://{user}:{urlquote(password)}@{hos
 
 bar_num_dict = {'9':30, '10':60, '11':30, '13':60, '14':60}
 
+def get_contracts():
+    data = pd.read_csv('/home/ubuntu/stock_data_update/codes.csv')
+    rq_codes = []
+    for code in data.code.unique():
+        if 'SZSE' in code:
+            code = code[:7]+'XSHE'
+        elif 'SSE' in code:
+            code = code[:7]+'XSHG'
+        rq_codes.append(code)
+    # print(rq_codes)
+    return rq_codes
 
 def get_dabardata(contract):
     sql = f"select * from dbbardata where symbol='{contract[:6]}'"
@@ -146,7 +157,8 @@ def check_by_contract(contract,trade_dt):
 
 
 if __name__ == '__main__':
-    contracts = ['688171.XSHG','600125.XSHG','002595.XSHE','000729.XSHE']
+    # contracts = ['688171.XSHG','600125.XSHG','002595.XSHE','000729.XSHE']
+    contracts = get_contracts()
     trade_dt = get_trading_day()
 
     for contract in contracts:

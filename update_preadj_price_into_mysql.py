@@ -4,6 +4,7 @@
 import pandas as pd
 import rqdatac
 import time
+import clickhouse_driver
 
 from vnpy.trader.constant import Exchange, Interval
 from vnpy.trader.database import get_database
@@ -16,6 +17,7 @@ rqdatac.init('license', 'hKzEyfcbN4O4B22wGXKfOZnOkVIyQ4fnW7VSUepZ5shkCx3Wpfkb63n
 
 # 获取数据库实例
 database = get_database()
+conn = clickhouse_driver.connect(host='localhost', port=9000, database='stock_bar',user='remote',password='zhP@55word')
 
 exchg_dict = {'SSE':Exchange.SSE, 'SZSE':Exchange.SZSE}
 interval_dict = {'1m':Interval.MINUTE,
@@ -25,6 +27,25 @@ interval_dict = {'1m':Interval.MINUTE,
                  }
 
 fields = ['open','high','low','close','volume','total_turnover']
+
+def get_last_trading_day(xdate):
+    sql = "select * from common_info.trading_day"
+    data = pd.read_sql(sql,conn)
+    zdate = int(''.join(xdate.split('-')))
+    last_trading_day = data[data['date']==zdate]['datetime'].dt.strftime('%Y-%m-%d').values[0]
+    return last_trading_day
+
+def get_contracts():
+    data = pd.read_csv('/home/ubuntu/stock_data_update/codes.csv')
+    rq_codes = []
+    for code in data.code.unique():
+        if 'SZSE' in code:
+            code = code[:7]+'XSHE'
+        elif 'SSE' in code:
+            code = code[:7]+'XSHG'
+        rq_codes.append(code)
+    # print(rq_codes)
+    return rq_codes
 
 def get_data(contract, sdate, edate, freq):
     data = rqdatac.get_price(order_book_ids=contract, start_date=sdate,end_date=edate,frequency=freq,fields=fields,adjust_type='pre', skip_suspended=False, market='cn')
@@ -55,7 +76,7 @@ def convert_exchange_code(contract):
         exchg = ''
     return exchg
 
-def get_excum_factor(contract):
+def get_excum_factor(contract, edate, edatex):
     data = rqdatac.get_ex_factor(order_book_ids=contract, start_date=edate, end_date=edatex, market='cn')
     return data
 
@@ -101,8 +122,9 @@ if __name__ == '__main__':
     sdate = '2021-01-01'
     edate = time.strftime("%Y-%m-%d")
     edatex = str(int(edate[:4])+1)+edate[4:]
+    last_date = get_last_trading_day(edate)
 
-    contracts = ['688171.XSHG','600125.XSHG','002595.XSHE','000729.XSHE']
+    contracts = get_contracts()
     ex_factor_data = get_excum_factor(contracts)
     # print(ex_factor_data)
     if ex_factor_data is None:
@@ -114,7 +136,7 @@ if __name__ == '__main__':
     for contract in contracts:  # 按一个票一个票循环，然后合并，其实也可以多个票，可以测试下怎么样速度更加快
         print(contract)
         if contract in ex_symbols:
-            data = get_data(contract, sdate, edate, freq)
+            data = get_data(contract, sdate, last_date, freq)
 
             # 先删除symbol的数据，再重新插入
             exchange = convert_exchange_code(contract)
@@ -126,7 +148,7 @@ if __name__ == '__main__':
                 )
             move_df_to_mysql(data)
         else:
-            data = get_data(contract, edate, edate, freq)
+            data = get_data(contract, last_date, last_date, freq)
             data_nochg = pd.concat([data_nochg, data])
         # print(data)
     if data_nochg.empty:

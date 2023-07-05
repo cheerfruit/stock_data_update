@@ -13,6 +13,18 @@ client = clickhouse_driver.Client(host='localhost', port=9000, database='stock_b
 
 fields = ['open','high','low','close','volume','total_turnover']
 
+def get_contracts():
+    data = pd.read_csv('/home/ubuntu/stock_data_update/codes.csv')
+    rq_codes = []
+    for code in data.code.unique():
+        if 'SZSE' in code:
+            code = code[:7]+'XSHE'
+        elif 'SSE' in code:
+            code = code[:7]+'XSHG'
+        rq_codes.append(code)
+    # print(rq_codes)
+    return rq_codes
+
 def get_data(contract, sdate, edate, freq):
     data = rqdatac.get_price(order_book_ids=contract, start_date=sdate,end_date=edate,frequency=freq,fields=fields,adjust_type='pre', skip_suspended=False, market='cn')
     # print(data)
@@ -99,33 +111,35 @@ if __name__ == '__main__':
 
     # freq = Interval.MINUTE
     freq = '1m'
-    sdate = '2023-06-01'
+    sdate = '2021-01-01'
     edate = '2023-10-20'
-    contracts = ['688171.XSHG','600125.XSHG','002595.XSHE','000729.XSHE']
+    contracts = ['601916.XSHG','600459.XSHG','300475.XSHE','300772.XSHE']
+    # contracts = get_contracts()
+    # print(contracts)
     ex_factor_data = get_excum_factor(contracts)
-    # print(ex_factor_data)
-    for contract in contracts:  # 按一个票一个票循环，其实也可以多个票，可以测试下怎么样速度更加快
-        data = get_data(contract, sdate, edate, freq)
-        data = data.set_index('datetime')
-        if ex_factor_data is None:
-            ex_data_need = pd.DataFrame()
-        else:
-            ex_data_need = ex_factor_data[ex_factor_data.order_book_id == contract]
-        if ex_data_need.empty:
-            data.loc[:,'ex_factor'] = 1
-        else:
-            # ex_data_need.index = pd.to_datetime(ex_data_need.index).tz_localize('Asia/Shanghai') + pd.Timedelta('09:30:00')
-            ex_data_need.index = pd.to_datetime(ex_data_need.index) + pd.Timedelta('09:30:00')
-            # print(ex_data_need)
-            data['ex_factor'] = ex_data_need['ex_factor']
-            data = data.sort_values('datetime')
-            data['ex_factor'] = data['ex_factor'].fillna(1)
-            # data['ex_cum_factor'] = data['ex_factor'].cumprod()
-            data = data.reset_index()
-            data['date'] = pd.to_datetime(data['datetime']).dt.strftime('%Y%m%d').astype(int)
-            df = data[['datetime','date', 'symbol', 'exchange', 'interval','open_price', 'high_price','low_price','close_price','turnover','volume','ex_factor']]
-            df['turnover'] = df['turnover'].astype(int)
-            df['volume'] = df['volume'].astype(int)
-            print(df)
-            insert_into_ck_database(df)
+    print(ex_factor_data)
+    # for contract in contracts:  # 按一个票一个票循环，其实也可以多个票，可以测试下怎么样速度更加快
+    #     data = get_data(contract, sdate, edate, freq)
+    #     data = data.set_index('datetime')
+    #     if ex_factor_data is None:
+    #         ex_data_need = pd.DataFrame()
+    #     else:
+    #         ex_data_need = ex_factor_data[ex_factor_data.order_book_id == contract]
+    #     if ex_data_need.empty:
+    #         data.loc[:,'ex_factor'] = 1
+    #     else:
+    #         # ex_data_need.index = pd.to_datetime(ex_data_need.index).tz_localize('Asia/Shanghai') + pd.Timedelta('09:30:00')
+    #         ex_data_need.index = pd.to_datetime(ex_data_need.index) + pd.Timedelta('09:30:00')
+    #         # print(ex_data_need)
+    #         data['ex_factor'] = ex_data_need['ex_factor']
+    #         data = data.sort_values('datetime')
+    #         data['ex_factor'] = data['ex_factor'].fillna(1)
+    #         # data['ex_cum_factor'] = data['ex_factor'].cumprod()
+    #         data = data.reset_index()
+    #         data['date'] = pd.to_datetime(data['datetime']).dt.strftime('%Y%m%d').astype(int)
+    #         df = data[['datetime','date', 'symbol', 'exchange', 'interval','open_price', 'high_price','low_price','close_price','turnover','volume','ex_factor']]
+    #         df['turnover'] = df['turnover'].astype(int)
+    #         df['volume'] = df['volume'].astype(int)
+    #         print(df)
+    #         insert_into_ck_database(df)
 
