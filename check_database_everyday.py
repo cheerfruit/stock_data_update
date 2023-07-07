@@ -41,8 +41,24 @@ conn_info = create_engine(f"clickhouse+native://{user}:{urlquote(password)}@{hos
 
 bar_num_dict = {'9':30, '10':60, '11':30, '13':60, '14':60}
 
+def get_last_trading_day(xdate):
+    sql = "select * from common_info.trading_day"
+    data = pd.read_sql(sql,conn_info)
+    zdate = int(''.join(xdate.split('-')))
+    last_trading_day = data[data['date'].shift(-1)==zdate]['datetime'].dt.strftime('%Y-%m-%d').values[0]
+    return last_trading_day
+
+def get_contracts():
+    data = pd.read_csv('/home/ubuntu/stock_data_update/codes.csv')
+    rq_codes = []
+    for code in data.code.unique():
+        codex = code[:6]
+        rq_codes.append(codex)
+    # print(rq_codes)
+    return rq_codes
+
 def get_dabardata(starttime, endtime):
-    sql = f"select * from dbbardata where datetime>='{starttime}' and datetime<='{endtime}'"
+    sql = f"select * from dbbardata where datetime>='{starttime} 09:00:00' and datetime<='{endtime} 23:59:00'"
     data = pd.read_sql(sql,conn_mysql)
     return data
 
@@ -60,6 +76,7 @@ def get_trading_day():
 def check_stock(data, contracts):
     print("Start checking stock code!")
     contracts_check = set(data['symbol'].unique())
+    # print(contracts_check)
     loss = set(contracts) - contracts_check
     if len(loss)>0:
         print('Missing Stock! ', str(loss))
@@ -115,9 +132,14 @@ def check_by_order_database(data, starttime, endtime):
     return
 
 def check_by_contract(contracts):
-    starttime = time.strftime("%Y-%m-%d")
-    endtime = time.strftime("%Y-%m-%d")
+    last_date = get_last_trading_day(time.strftime("%Y-%m-%d"))
+    starttime = last_date
+    endtime = last_date
     data = get_dabardata(starttime, endtime).set_index('datetime')
+    # print(data)
+    if data.empty:
+        print('Data is not updated! date: ', last_date)
+
     data['date'] = data.index.strftime("%Y%m%d").astype(int)
 
     # 检查股票缺失情况
@@ -139,6 +161,6 @@ if __name__ == '__main__':
     print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
     print(f"{print_date}: {__file__}")
 
-    contracts = ['688171.XSHG','600125.XSHG','002595.XSHE','000729.XSHE']
+    contracts = get_contracts()
     check_by_contract(contracts)
     

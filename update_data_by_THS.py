@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
+"""
+因为每天8:00 am后米筐更新前复权价, 所以此脚本在8:00 am时更新数据
+"""
 from iFinDPy import *
-from datetime import datetime
 import pandas as pd
 import time
 import json
-from threading import Thread,Lock,Semaphore
-from vnpy.trader.constant import Exchange, Interval
-from vnpy.trader.database import get_database
-from vnpy.trader.object import BarData
-
-pd.options.display.width = 320
-pd.options.display.max_columns = None
+import pymysql
 
 # 备用库设定
 setting_backup = {
@@ -31,54 +27,54 @@ setting_backup = {
     "datafeed.password": "",
     "database.timezone": "Asia/Shanghai",
     "database.name": "mysql",
-    "database.database": "vnpy_backup",
+    "database.database": "vnpy_THS",
     "database.host": "localhost",
     "database.port": 3306,
     "database.user": "remote",
     "database.password": "zhP@55word"
 }
 
-# 修改vt_setting.json并保存原有信息
-f = open('/home/ubuntu/anaconda3/lib/python3.10/site-packages/vnpy/trader/vt_setting.json')
-setting_now = json.load(f)
-with open('/home/ubuntu/anaconda3/lib/python3.10/site-packages/vnpy/trader/vt_setting_backup.json','w') as f0:
-    json.dump(setting_now, f0, indent=4, ensure_ascii=False)
-
+# 修改vt_setting.json
 with open('/home/ubuntu/anaconda3/lib/python3.10/site-packages/vnpy/trader/vt_setting.json','w') as f1:
     json.dump(setting_backup,f1, indent=4, ensure_ascii=False)
 
-# import sys
-# sys.exit()
+from vnpy.trader.constant import Exchange, Interval
+from vnpy.trader.database import get_database
+from vnpy.trader.object import BarData
+pd.options.display.width = 320
+pd.options.display.max_columns = None
 
 # 获取数据库实例
 database = get_database()
 exchg_dict = {'SH':Exchange.SSE, 'SZ':Exchange.SZSE}
 
+conn = pymysql.connect(host='localhost', port=3306, database='vnpy_THS',user='remote',password='zhP@55word')
+
+exchg_dict = {'SSE':Exchange.SSE, 'SZSE':Exchange.SZSE}
 
 # 登录函数
 def thslogindemo():
     # 输入用户的帐号和密码
-    thsLogin = THS_iFinDLogin("zh35508","0f2276")
-    print(thsLogin)
+    # thsLogin = THS_iFinDLogin("zh35508","0f2276")
+    thsLogin = THS_iFinDLogin("zh36070","3c2759")
+    # print(thsLogin)
     if thsLogin != 0:
         print('登录失败')
     else:
         print('登录成功')
 
-def get_stock_history_1m_data(codes):
-    # indicators = 'open;high;low;close;volume;amount;ths_af_stock'
+def get_stock_history_1m_data(codes, startdate):
     indicators = 'open;high;low;close;volume;amount'
     HFS_parameters = 'interval:1,CPS:backword'
-    startdate = '2023-07-01'
     enddate = time.strftime("%Y-%m-%d")
+    # enddate = '2023-07-05'
     dataformat = 'format:dataframe'
     data = THS_HF(codes, indicators, HFS_parameters,startdate,enddate,dataformat)
     df = data.data
-    # print(df)
+    print(data.errmsg)
     df['exchange'] = df['thscode'].str.slice(7)
     df['symbol'] = df['thscode'].str.slice(0,6)
     df['datetime'] = pd.to_datetime(df['time']).dt.tz_localize(tz='Asia/Shanghai')
-    # print(df)
     return  df
 
 def move_df_to_mysql(imported_data:pd.DataFrame):
@@ -121,28 +117,101 @@ def get_contracts():
         elif 'SSE' in code:
             code = code[:7]+'SH'
         ths_codes.append(code)
-    return ','.join(ths_codes[:2])
+    return ths_codes
+
+def process_data(df):
+    df['pre_open'] = df['open'].shift(1)
+    df['pre_volume'] = df['volume'].shift(1)
+    df['pre_amount'] = df['amount'].shift(1)
+    df['min'] = df['datetime'].dt.strftime('%H:%M')
+    # print(df.loc[df['min'].isin(["09:31","13:01"])])
+    df.loc[df['min']=="09:31",'open'] = df.loc[df['min']=="09:31",'pre_open']
+    df.loc[df['min']=="09:31",'low'] = df.loc[df['min']=="09:31",['pre_open','low']].min(1)
+    df.loc[df['min']=="09:31",'high'] = df.loc[df['min']=="09:31",['pre_open','high']].max(1)
+    df.loc[df['min']=="09:31",'volume'] = df.loc[df['min']=="09:31",'pre_volume']+df.loc[df['min']=="09:31",'volume']
+    df.loc[df['min']=="09:31",'amount'] = df.loc[df['min']=="09:31",'pre_amount']+df.loc[df['min']=="09:31",'amount']
+    df.loc[df['min']=="13:01",'open'] = df.loc[df['min']=="13:01",'pre_open']
+    df.loc[df['min']=="13:01",'low'] = df.loc[df['min']=="13:01",['pre_open','low']].min(1)
+    df.loc[df['min']=="13:01",'high'] = df.loc[df['min']=="13:01",['pre_open','high']].max(1)
+    # print(df.loc[df['min'].isin(["09:31","13:01"])])
+    df = df[~df['min'].isin(["09:30","13:00"])]
+    return df
+
+def get_max_date():
+    sql = "select max(datetime) from vnpy_THS.dbbardata"
+    data = pd.read_sql(sql,conn)
+    max_date = str(data.values[0][0])[:10]
+    return max_date
+
+def get_excum_factor():
+    sql = "select * from common_info.ex_factor"
+    data = pd.read_sql(sql, conn)
+    return data
+
+def get_last_trading_day(xdate):
+    sql = "select * from common_info.trading_day"
+    data = pd.read_sql(sql,conn)
+    zdate = int(''.join(xdate.split('-')))
+    data['datetime'] = pd.to_datetime(data['datetime'])
+    last_trading_day = data[data['date'].shift(-1)==zdate]['datetime'].dt.strftime('%Y-%m-%d').values[0]
+    return last_trading_day
+
+def get_ex_symbols(last_date):
+    # 检查是否有除权除息
+    ex_factor_data = get_excum_factor()
+    print(ex_factor_data)
+    if ex_factor_data is None:
+        ex_symbols = []
+    else:
+        ex_symbols = ex_factor_data[ex_factor_data.announcement_date==last_date]['order_book_id'].to_list()
+    ex_codes = []
+    for code in ex_symbols:
+        if 'SZSE' in code:
+            code = code[:7]+'SZ'
+        elif 'SSE' in code:
+            code = code[:7]+'SH'
+        ex_codes.append(code)
+    return ex_codes
 
 def main():
     # 登录函数
     thslogindemo()
     ths_codes = get_contracts()
-    print(ths_codes)
-    # 经测试，所有股票一起取会取到None, 取股票只数有上限，现在按10个取
-    data = get_stock_history_1m_data(ths_codes)   
-    # data = get_stock_history_1m_data(ths_codes)
-    print(data)
-    print(data[data.volume.isna()])
-    # move_df_to_mysql(data)
+    # ths_codes = ['601088.SH']
+    startdate = get_max_date()
+    edate = time.strftime("%Y-%m-%d")
+    last_date = get_last_trading_day(edate)
+    ex_codes = get_ex_symbols(last_date)
+    
+    data_all = pd.DataFrame()
+    for ths_code in ths_codes[:1]:
+        print(ths_code)
+        if ths_code not in ex_codes:
+            # 经测试，所有股票一起取会取到None, 取股票只数有上限（25个就不行），现在先单个的取，速度慢了后面改成10个,日期太长的也取不了
+            data = get_stock_history_1m_data(ths_code,startdate)
+            data = process_data(data)
+            data['datetime'] = data['datetime'] - pd.Timedelta('1min')
+            data_all = pd.concat([data_all, data])
+            if data_all.shape[0]>10000:
+                move_df_to_mysql(data_all)
+                data_all = pd.DataFrame()
+        else:
+            data = get_stock_history_1m_data(ths_code, '2021-01-01')
+            data = process_data(data)
+            data['datetime'] = data['datetime'] - pd.Timedelta('1min')
+
+            # 先删除对应symbol的数据
+            exchange = exchg_dict[ths_code.split('.')[1]]
+            interval = Interval.MINUTE
+            database.delete_bar_data(
+                symbol=ths_code.split('.')[0],
+                exchange=exchange,
+                interval=interval
+                )
+            # 然后插入数据
+            move_df_to_mysql(data)
 
 
 if __name__ == '__main__':
-    # try:
     main()
-    # except Exception as e:
-    #     print(e)
-
-    # 恢复vt_setting到原来的信息
-    with open('/home/ubuntu/anaconda3/lib/python3.10/site-packages/vnpy/trader/vt_setting.json','w') as f2:
-        json.dump(setting_now,f2, indent=4, ensure_ascii=False)
 

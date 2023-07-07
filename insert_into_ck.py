@@ -4,12 +4,13 @@
 import clickhouse_driver
 import pandas as pd
 import rqdatac
-# from vnpy.trader.constant import Exchange, Interval
+import time
 
 rqdatac.init('license', 'hKzEyfcbN4O4B22wGXKfOZnOkVIyQ4fnW7VSUepZ5shkCx3Wpfkb63nMWozKudSUfMCiSx6cuWYasEyqaIVQ7a91WnYFIhxSw39GKxvHmhnlIjaSjBNncRY0Y3ZH3wWYiYbjK25Gxl9FuVkH6sA5VmnbMBmJoQHeT_seHEFYVPw=LVXNtX-oQgO2T9QDKkPx1hhlyjgrkYETwszLKzPA3ItRHWcp4crJu9dlykAOaJv4AtQuPy-THTFzBP4DfcFtIWm-W5vGQNyMMu3lD8cc1u_kxXFfihqajhijKdIi8nJvVrOexx1XVI6Vv-FdzrL0IVNY9e9GCcZ9lavQanQ4BNw=' )
 print(rqdatac.user.get_quota())
 
 client = clickhouse_driver.Client(host='localhost', port=9000, database='stock_bar',user='remote',password='zhP@55word')
+conn = clickhouse_driver.connect(host='localhost', port=9000, database='stock_bar',user='remote',password='zhP@55word') 
 
 fields = ['open','high','low','close','volume','total_turnover']
 
@@ -105,41 +106,53 @@ def truncate_table():
     client.execute(sql)
     return
 
+def get_database_last_date():
+    sql = "select max(datetime) from stock_bar.stock_minute"
+    data = pd.read_sql(sql, conn)
+    # print(data)
+    max_date = str(data.values[0][0])[:10]
+    # print(max_date)
+    return max_date
+
 if __name__ == '__main__':
     # create_stock_min_table()
     # truncate_table()
 
-    # freq = Interval.MINUTE
     freq = '1m'
-    sdate = '2021-01-01'
-    edate = '2023-10-20'
-    contracts = ['601916.XSHG','600459.XSHG','300475.XSHE','300772.XSHE']
-    # contracts = get_contracts()
-    # print(contracts)
+    # sdate = '2021-01-04'
+    sdate = str(pd.to_datetime(get_database_last_date()) +pd.Timedelta('1d'))[:10]
+    print(sdate)
+    edate = time.strftime("%Y-%m-%d")
+    contracts = get_contracts()
+
     ex_factor_data = get_excum_factor(contracts)
     print(ex_factor_data)
-    # for contract in contracts:  # 按一个票一个票循环，其实也可以多个票，可以测试下怎么样速度更加快
-    #     data = get_data(contract, sdate, edate, freq)
-    #     data = data.set_index('datetime')
-    #     if ex_factor_data is None:
-    #         ex_data_need = pd.DataFrame()
-    #     else:
-    #         ex_data_need = ex_factor_data[ex_factor_data.order_book_id == contract]
-    #     if ex_data_need.empty:
-    #         data.loc[:,'ex_factor'] = 1
-    #     else:
-    #         # ex_data_need.index = pd.to_datetime(ex_data_need.index).tz_localize('Asia/Shanghai') + pd.Timedelta('09:30:00')
-    #         ex_data_need.index = pd.to_datetime(ex_data_need.index) + pd.Timedelta('09:30:00')
-    #         # print(ex_data_need)
-    #         data['ex_factor'] = ex_data_need['ex_factor']
-    #         data = data.sort_values('datetime')
-    #         data['ex_factor'] = data['ex_factor'].fillna(1)
-    #         # data['ex_cum_factor'] = data['ex_factor'].cumprod()
-    #         data = data.reset_index()
-    #         data['date'] = pd.to_datetime(data['datetime']).dt.strftime('%Y%m%d').astype(int)
-    #         df = data[['datetime','date', 'symbol', 'exchange', 'interval','open_price', 'high_price','low_price','close_price','turnover','volume','ex_factor']]
-    #         df['turnover'] = df['turnover'].astype(int)
-    #         df['volume'] = df['volume'].astype(int)
-    #         print(df)
-    #         insert_into_ck_database(df)
+    # print(ex_factor_data)
+
+    for contract in contracts:  # 按一个票一个票循环，其实也可以多个票，可以测试下怎么样速度更加快
+        data = get_data(contract, sdate, edate, freq)
+        data = data.set_index('datetime')
+        # print(data)
+        if ex_factor_data is None:
+            ex_data_need = pd.DataFrame()
+        else:
+            ex_data_need = ex_factor_data[ex_factor_data.order_book_id == contract]
+        
+        if ex_data_need.empty:
+            data.loc[:,'ex_factor'] = 1
+        else:
+            ex_data_need.index = pd.to_datetime(ex_data_need.index) + pd.Timedelta('09:30:00')
+            data['ex_factor'] = ex_data_need['ex_factor']
+            data = data.sort_values('datetime')
+            data['ex_factor'] = data['ex_factor'].fillna(1)
+
+        data = data.reset_index()
+        data['date'] = pd.to_datetime(data['datetime']).dt.strftime('%Y%m%d').astype(int)
+        df = data[['datetime','date', 'symbol', 'exchange', 'interval','open_price', 'high_price','low_price','close_price','turnover','volume','ex_factor']]
+        df['turnover'] = df['turnover'].astype(int)
+        df['volume'] = df['volume'].astype(int)
+        # print(df)
+        if not df[df.ex_factor!=1].empty:
+            print(df[df.ex_factor!=1])
+        insert_into_ck_database(df)
 

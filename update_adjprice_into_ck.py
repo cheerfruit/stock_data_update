@@ -3,11 +3,46 @@
 """
 import clickhouse_driver
 import pandas as pd
+import time
+import rqdatac
+import json
+
+print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
+# 备用库设定
+setting_backup = {
+    "font.family": "微软雅黑",
+    "font.size": 12,
+    "log.active": True,
+    "log.level": 50,
+    "log.console": True,
+    "log.file": True,
+    "email.server": "smtp.qq.com",
+    "email.port": 465,
+    "email.username": "",
+    "email.password": "",
+    "email.sender": "",
+    "email.receiver": "",
+    "datafeed.name": "",
+    "datafeed.username": "",
+    "datafeed.password": "",
+    "database.timezone": "Asia/Shanghai",
+    "database.name": "mysql",
+    "database.database": "vnpy_backup",
+    "database.host": "localhost",
+    "database.port": 3306,
+    "database.user": "remote",
+    "database.password": "zhP@55word"
+}
+
+# 修改vt_setting.json
+with open('/home/ubuntu/anaconda3/lib/python3.10/site-packages/vnpy/trader/vt_setting.json','w') as f1:
+    json.dump(setting_backup,f1, indent=4, ensure_ascii=False)
+
+
 from vnpy.trader.constant import Exchange, Interval
 from vnpy.trader.database import get_database
 from vnpy.trader.object import BarData
-import time
-import rqdatac
+
 
 # 米筐初始化
 rqdatac.init('license', 'hKzEyfcbN4O4B22wGXKfOZnOkVIyQ4fnW7VSUepZ5shkCx3Wpfkb63nMWozKudSUfMCiSx6cuWYasEyqaIVQ7a91WnYFIhxSw39GKxvHmhnlIjaSjBNncRY0Y3ZH3wWYiYbjK25Gxl9FuVkH6sA5VmnbMBmJoQHeT_seHEFYVPw=LVXNtX-oQgO2T9QDKkPx1hhlyjgrkYETwszLKzPA3ItRHWcp4crJu9dlykAOaJv4AtQuPy-THTFzBP4DfcFtIWm-W5vGQNyMMu3lD8cc1u_kxXFfihqajhijKdIi8nJvVrOexx1XVI6Vv-FdzrL0IVNY9e9GCcZ9lavQanQ4BNw=' )
@@ -15,7 +50,6 @@ rqdatac.init('license', 'hKzEyfcbN4O4B22wGXKfOZnOkVIyQ4fnW7VSUepZ5shkCx3Wpfkb63n
 
 # 获取数据库实例
 database = get_database()
-# database = get_database_backup('mysql')
 
 # 与clickhouse建立连接
 conn = clickhouse_driver.connect(host='localhost', port=9000, database='stock_bar',user='remote',password='zhP@55word')
@@ -49,7 +83,7 @@ def process_symbol_data(contract, ex_f):
     print(contractx)
     sql = "select * from stock_minute where date>"+str(sdate)+ " and symbol='" + contractx+"';"
     data = pd.read_sql(sql,conn)
-    print(data)
+    # print(data)
     data['ex_cum_factor'] = data['ex_factor'].cumprod()
     data['pre_adj_factor'] = data['ex_cum_factor']/data['ex_cum_factor'].iloc[-1]/ex_f
     data['datetime'] = data['datetime'].dt.tz_localize('Asia/Shanghai')
@@ -58,7 +92,7 @@ def process_symbol_data(contract, ex_f):
     data['high_adj'] = data['high_price']*data['pre_adj_factor']
     data['low_adj'] = data['low_price']*data['pre_adj_factor']
     data['close_adj'] = data['close_price']*data['pre_adj_factor']
-    print(data)
+    # print(data)
     move_df_to_mysql(data)
     insert_df = data[['symbol','exchange','datetime','interval','volume','open_adj','high_adj','low_adj','close_adj','turnover']]
     insert_into_ck_database(insert_df)
@@ -154,7 +188,6 @@ if __name__ == '__main__':
     sdate = time.strftime("%Y-%m-%d")
     edate = time.strftime("%Y-%m-%d")
     edatex = str(int(edate[:4])+1)+edate[4:]
-    # contracts = ['688171.XSHG','600125.XSHG','002595.XSHE','000729.XSHE']
     contracts = get_contracts()
     
 

@@ -19,7 +19,6 @@ def get_trade_dt(start_date, end_date):
     df = pd.DataFrame(trade_dt, index=np.arange(len(trade_dt)),columns=['datetime'])
     df['datetime'] = pd.to_datetime(df['datetime'])
     df['date'] = df['datetime'].dt.strftime("%Y%m%d").astype(int)
-    print(df)
     cols = 'date, datetime'
     tablename = 'trading_day'
     insert_into_ck_database(df[['date','datetime']], tablename, cols)
@@ -30,7 +29,6 @@ def update_trade_dt():
     dd = int(time.strftime("%Y%m%d"))
     sql = 'select max(date) from common_info.trading_day'
     max_date = pd.read_sql(sql, conn)
-    # print(max_date.values[0])
     if max_date.empty:
         start_date = '20050101'
         end_date = '29240101'
@@ -45,11 +43,9 @@ def update_trade_dt():
         return
     return 
 
-
 def insert_into_ck_database(df, tablename, cols):
     sql = f"insert into {tablename} ("+cols+") VALUES"
     all_array = df.to_numpy()
-    # print(all_array)
     all_tuple = []
     count = 0
     for i in all_array:
@@ -57,14 +53,11 @@ def insert_into_ck_database(df, tablename, cols):
         all_tuple.append(tmp)
         count += 1
         if count%5000 == 0:       # 每5000条存储一次
-            # print(count)
             client.execute(sql, all_tuple)
             all_tuple = []
         
     # 将没有存完的数据存储好
     if count%5000 !=0:
-        # print(count)
-        print(all_tuple)
         client.execute(sql, all_tuple)
     return
 
@@ -72,7 +65,6 @@ def insert_into_mysql_database(df, tablename, cols):
     _values = ','.join(['%s']*len(cols.split(',')))
     sql = f"insert into {tablename} ("+cols+") VALUES(%s)"%_values
     all_array = df.to_numpy()
-    # print(all_array)
     all_tuple = []
     count = 0
     for i in all_array:
@@ -80,15 +72,12 @@ def insert_into_mysql_database(df, tablename, cols):
         all_tuple.append(tmp)
         count += 1
         if count%5000 == 0:       # 每5000条存储一次
-            # print(count)
             cursor.executemany(sql, all_tuple)
             conn.commit()
             all_tuple = []
         
     # 将没有存完的数据存储好
     if count%5000 !=0:
-        # print(count)
-        print(all_tuple)
         cursor.executemany(sql, all_tuple)
         conn.commit()
     return
@@ -122,10 +111,12 @@ def get_contracts():
     rq_codes = []
     for code in data.code.unique():
         if 'SZSE' in code:
-            code = code[:7]+'XSHE'
+            codex = code[:7]+'XSHE'
         elif 'SSE' in code:
-            code = code[:7]+'XSHG'
-        rq_codes.append(code)
+            codex = code[:7]+'XSHG'
+        else:
+            codex = code
+        rq_codes.append([codex, code])
     # print(rq_codes)
     return rq_codes
 
@@ -133,28 +124,41 @@ def update_ex_factor_data():
     sdate = '20210101'
     edate = '20500101'
     contracts = get_contracts()
-    data = rqdatac.get_ex_factor(order_book_ids=contracts, start_date=sdate, end_date=edate,market='cn')
+    data = pd.DataFrame()
+    # print(contracts)
+    for contract in contracts:
+        data_tmp = rqdatac.get_ex_factor(order_book_ids=contract[0], start_date=sdate, end_date=edate,market='cn')
+        if data_tmp is None:
+            pass
+        else:
+            data_tmp['order_book_id'] = contract[1]
+            data = pd.concat([data, data_tmp])
+
     data.index = pd.to_datetime(data.index)
-    # data['announcement_date'] = pd.to_datetime(data['announcement_date'])
-    # data['ex_end_date'] = pd.to_datetime(data['ex_end_date'])
     data = data.reset_index()
     data= data.fillna(pd.to_datetime('2050-01-01', format="%Y-%m-%d"))
-    # print(data)
+    data['create_date'] = pd.to_datetime(time.strftime("%Y-%m-%d"))
+    data['remarks'] = None
 
-    # # 初始化表格
+
+    # 初始化表格
     sql = 'truncate table common_info.ex_factor'
-    cols = 'ex_date,order_book_id,announcement_date,ex_cum_factor,ex_end_date,ex_factor'
+    cols = 'ex_date,order_book_id,announcement_date,ex_cum_factor,ex_end_date,ex_factor,create_date,remarks'
     tablename = 'ex_factor'
     cursor.execute(sql)
     conn.commit()
     insert_into_mysql_database(data[cols.split(',')], tablename, cols)
 
     client.execute(sql)
+    data['remarks'] = 0
     insert_into_ck_database(data[cols.split(',')], tablename, cols)
 
     return
 
 if __name__ == '__main__':
+    print_date = time.strftime("%Y-%m-%d %H:%M:%S")
+    print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
+    print(f"{print_date}: {__file__}")
     # create_trading_day_table()
     # create_ex_factor_table()
     # get_trade_dt()

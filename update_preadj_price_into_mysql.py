@@ -5,6 +5,38 @@ import pandas as pd
 import rqdatac
 import time
 import clickhouse_driver
+import json
+
+print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
+# 备用库设定
+setting_backup = {
+    "font.family": "微软雅黑",
+    "font.size": 12,
+    "log.active": True,
+    "log.level": 50,
+    "log.console": True,
+    "log.file": True,
+    "email.server": "smtp.qq.com",
+    "email.port": 465,
+    "email.username": "",
+    "email.password": "",
+    "email.sender": "",
+    "email.receiver": "",
+    "datafeed.name": "",
+    "datafeed.username": "",
+    "datafeed.password": "",
+    "database.timezone": "Asia/Shanghai",
+    "database.name": "mysql",
+    "database.database": "vnpyzh",
+    "database.host": "localhost",
+    "database.port": 3306,
+    "database.user": "remote",
+    "database.password": "zhP@55word"
+}
+
+# 修改vt_setting.json
+with open('/home/ubuntu/anaconda3/lib/python3.10/site-packages/vnpy/trader/vt_setting.json','w') as f1:
+    json.dump(setting_backup,f1, indent=4, ensure_ascii=False)
 
 from vnpy.trader.constant import Exchange, Interval
 from vnpy.trader.database import get_database
@@ -17,7 +49,8 @@ rqdatac.init('license', 'hKzEyfcbN4O4B22wGXKfOZnOkVIyQ4fnW7VSUepZ5shkCx3Wpfkb63n
 
 # 获取数据库实例
 database = get_database()
-conn = clickhouse_driver.connect(host='localhost', port=9000, database='stock_bar',user='remote',password='zhP@55word')
+conn = clickhouse_driver.connect(host='localhost', port=9000, database='common_info',user='remote',password='zhP@55word')  # 用于取trading_day数据
+
 
 exchg_dict = {'SSE':Exchange.SSE, 'SZSE':Exchange.SZSE}
 interval_dict = {'1m':Interval.MINUTE,
@@ -32,7 +65,7 @@ def get_last_trading_day(xdate):
     sql = "select * from common_info.trading_day"
     data = pd.read_sql(sql,conn)
     zdate = int(''.join(xdate.split('-')))
-    last_trading_day = data[data['date']==zdate]['datetime'].dt.strftime('%Y-%m-%d').values[0]
+    last_trading_day = data[data['date'].shift(-1)==zdate]['datetime'].dt.strftime('%Y-%m-%d').values[0]
     return last_trading_day
 
 def get_contracts():
@@ -114,7 +147,6 @@ def move_df_to_mysql(imported_data:pd.DataFrame):
 
 if __name__ == '__main__':
     print_date = time.strftime("%Y-%m-%d %H:%M:%S")
-    print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
     print(f"{print_date}: {__file__}")
 
     # freq = Interval.MINUTE 
@@ -123,26 +155,26 @@ if __name__ == '__main__':
     edate = time.strftime("%Y-%m-%d")
     edatex = str(int(edate[:4])+1)+edate[4:]
     last_date = get_last_trading_day(edate)
-
+    # print(last_date)
     contracts = get_contracts()
-    ex_factor_data = get_excum_factor(contracts)
+    ex_factor_data = get_excum_factor(contracts, last_date, edatex)
     # print(ex_factor_data)
     if ex_factor_data is None:
         ex_symbols = []
     else:
-        ex_symbols = ex_factor_data[ex_factor_data.announcement_date==edate]['order_book_id'].to_list()
+        ex_symbols = ex_factor_data[ex_factor_data.announcement_date==last_date]['order_book_id'].to_list()
 
     data_nochg = pd.DataFrame()
     for contract in contracts:  # 按一个票一个票循环，然后合并，其实也可以多个票，可以测试下怎么样速度更加快
-        print(contract)
         if contract in ex_symbols:
+            print("ex contract: ", contract)
             data = get_data(contract, sdate, last_date, freq)
 
             # 先删除symbol的数据，再重新插入
             exchange = convert_exchange_code(contract)
             interval = Interval.MINUTE
             database.delete_bar_data(
-                symbol=contract,
+                symbol=contract.split('.')[0],
                 exchange=exchange,
                 interval=interval
                 )

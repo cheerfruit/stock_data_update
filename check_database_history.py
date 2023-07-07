@@ -24,8 +24,6 @@ from sqlalchemy import create_engine
 from urllib.parse import quote_plus as urlquote
 
 logfile_path = '/home/ubuntu/stock_data_update/logs/check_history.log'
-# FORMAT = '%(asctime)s - %(message)s'
-# logging.basicConfig(format=FORMAT)
 logger = logging.getLogger()
 handler = logging.FileHandler(logfile_path, encoding='utf-8')
 formatter = logging.Formatter(fmt="%(asctime)s - %(levelname)s :  %(message)s", datefmt='%Y-%m-%d %H:%M:%S')
