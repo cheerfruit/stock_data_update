@@ -6,3 +6,1128 @@
 ex contract:  600050.XSHG
 Insert Bar: 145680 from 2021-01-04 09:30:00 - 2023-07-06 14:59:00
 Insert Bar: 5760 from 2023-07-06 09:30:00 - 2023-07-06 14:59:00
+{'bytes_used': 16851326, 'bytes_limit': 5368709120.0, 'remaining_days': 55, 'license_type': 'TRIAL'}
+####################################################################################################
+2023-07-07 15:01:03: /home/ubuntu/stock_data_update/trading_info_data_to_ck.py
+{'bytes_used': 20629874, 'bytes_limit': 5368709120.0, 'remaining_days': 55, 'license_type': 'TRIAL'}
+2023-07-07
+           order_book_id  ex_cum_factor  ... ex_end_date ex_factor
+ex_date                                  ...                      
+2023-07-07   600050.XSHG        1.70429  ...        None  1.008808
+
+[1 rows x 5 columns]
+             datetime      date  symbol  ...  turnover   volume  ex_factor
+0 2023-07-07 09:30:00  20230707  600050  ...  11671730  2453600   1.008808
+
+[1 rows x 12 columns]
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_backup', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+####################################################################################################
+2023-07-07 16:01:02: /home/ubuntu/stock_data_update/update_adjprice_into_ck.py
+002049
+Insert Bar: 145920 from 2023-07-05 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600660
+Insert Bar: 145920 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600871
+Insert Bar: 145920 from 2023-02-28 14:20:00+08:00 - 2023-02-28 14:19:00+08:00
+600482
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+300073
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+002249
+Insert Bar: 145920 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+601985
+Insert Bar: 145920 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600406
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+002179
+Insert Bar: 145920 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+000563
+Insert Bar: 145920 from 2021-08-10 13:18:00+08:00 - 2023-07-04 14:59:00+08:00
+600048
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+002563
+Insert Bar: 145920 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600516
+Insert Bar: 145920 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+000708
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+000938
+Insert Bar: 145920 from 2021-08-10 13:18:00+08:00 - 2023-07-04 14:59:00+08:00
+600160
+Insert Bar: 145920 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600276
+Insert Bar: 145920 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+603568
+Insert Bar: 145920 from 2021-08-10 13:17:00+08:00 - 2023-07-04 14:59:00+08:00
+601088
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600809
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2022-11-15 10:33:00+08:00
+002299
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600585
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600050
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600057
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+000960
+Insert Bar: 145920 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpyzh', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-10 08:01:04: /home/ubuntu/stock_data_update/update_preadj_price_into_mysql.py
+Insert Bar: 6000 from 2023-07-07 09:30:00 - 2023-07-07 14:59:00
+####################################################################################################
+2023-07-10 08:10:03: /home/ubuntu/stock_data_update/check_database_everyday.py
+Start checking stock code!
+Stock code checked!
+
+Start checking bars: 
+Bars checked!
+
+Start checking abnormal price
+Abnormal price checked!
+
+Start checking with other database:
+Finished!
+
+/home/ubuntu/anaconda3/lib/python3.10/site-packages/iFinDPy.pth
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_THS', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+登录成功
+       ex_date order_book_id announcement_date  ex_cum_factor ex_end_date  ex_factor create_date remarks
+0   2021-01-20   002299.SZSE        2021-01-19        2.45881  2022-05-22    1.03788  2023-07-07    None
+1   2021-04-01   000708.SZSE        2021-03-31        3.67824  2022-04-12    1.02724  2023-07-07    None
+2   2021-05-21   002563.SZSE        2021-05-20        5.50015  2021-09-27    1.02195  2023-07-07    None
+3   2021-05-24   002049.SZSE        2021-05-23        4.41251  2022-08-23    1.00106  2023-07-07    None
+4   2021-05-28   300073.SZSE        2021-05-27        4.11012  2022-05-25    1.00338  2023-07-07    None
+..         ...           ...               ...            ...         ...        ...         ...     ...
+64  2023-06-29   300073.SZSE        2023-06-28        4.19398  2050-01-01    1.01391  2023-07-07    None
+65  2023-07-05    601088.SSE        2023-07-04        2.35617  2050-01-01    1.08929  2023-07-07    None
+66  2023-07-06    600057.SSE        2023-07-05       11.37370  2050-01-01    1.07731  2023-07-07    None
+67  2023-07-07    600050.SSE        2023-07-06        1.70429  2050-01-01    1.00881  2023-07-07    None
+68  2023-07-13    600160.SSE        2023-07-12       10.95820  2050-01-01    1.02100  2023-07-07    None
+
+[69 rows x 8 columns]
+002049.SZ
+Success!
+{'bytes_used': 3895186, 'bytes_limit': 5368709120.0, 'remaining_days': 52, 'license_type': 'TRIAL'}
+####################################################################################################
+2023-07-10 15:01:01: /home/ubuntu/stock_data_update/trading_info_data_to_ck.py
+{'bytes_used': 7673072, 'bytes_limit': 5368709120.0, 'remaining_days': 52, 'license_type': 'TRIAL'}
+2023-07-08
+None
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_backup', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-10 16:01:02: /home/ubuntu/stock_data_update/update_adjprice_into_ck.py
+002049
+Insert Bar: 146160 from 2023-07-05 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600660
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600871
+Insert Bar: 146160 from 2023-02-28 14:20:00+08:00 - 2023-02-28 14:19:00+08:00
+600482
+Insert Bar: 146160 from 2021-08-10 13:17:00+08:00 - 2023-07-04 14:59:00+08:00
+300073
+Insert Bar: 146160 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+002249
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+601985
+Insert Bar: 146160 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600406
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2023-03-27 14:55:00+08:00
+002179
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+000563
+Insert Bar: 146160 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600048
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+002563
+Insert Bar: 146160 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600516
+Insert Bar: 146160 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+000708
+Insert Bar: 146160 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+000938
+Insert Bar: 146160 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600160
+Insert Bar: 146160 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600276
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+603568
+Insert Bar: 146160 from 2021-08-10 13:17:00+08:00 - 2022-11-15 10:33:00+08:00
+601088
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2022-01-07 11:21:00+08:00
+600809
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+002299
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2022-11-15 10:33:00+08:00
+600585
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600050
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600057
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+000960
+Insert Bar: 146160 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpyzh', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-11 08:01:03: /home/ubuntu/stock_data_update/update_preadj_price_into_mysql.py
+Insert Bar: 6000 from 2023-07-10 09:30:00 - 2023-07-10 14:59:00
+####################################################################################################
+2023-07-11 08:10:02: /home/ubuntu/stock_data_update/check_database_everyday.py
+Start checking stock code!
+Stock code checked!
+
+Start checking bars: 
+Bars checked!
+
+Start checking abnormal price
+Abnormal price checked!
+
+Start checking with other database:
+Finished!
+
+/home/ubuntu/anaconda3/lib/python3.10/site-packages/iFinDPy.pth
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_THS', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-11 08:20:02: /home/ubuntu/stock_data_update/update_data_by_THS.py
+登录成功
+2023-07-10
+Ex_codes:  []
+002049.SZ
+Success!
+600660.SH
+Success!
+600871.SH
+Success!
+600482.SH
+Success!
+300073.SZ
+Success!
+002249.SZ
+Success!
+601985.SH
+Success!
+600406.SH
+Success!
+002179.SZ
+Success!
+000563.SZ
+Success!
+600048.SH
+Success!
+002563.SZ
+Success!
+600516.SH
+Success!
+000708.SZ
+Success!
+000938.SZ
+Success!
+600160.SH
+Success!
+600276.SH
+Success!
+603568.SH
+Success!
+601088.SH
+Success!
+600809.SH
+Success!
+002299.SZ
+Success!
+600585.SH
+Success!
+600050.SH
+Success!
+600057.SH
+Success!
+000960.SZ
+Success!
+Insert Bar: 6000 from 2023-07-10 09:30:00+08:00 - 2023-07-10 14:59:00+08:00
+{'bytes_used': 3898255, 'bytes_limit': 5368709120.0, 'remaining_days': 51, 'license_type': 'TRIAL'}
+####################################################################################################
+2023-07-11 15:01:02: /home/ubuntu/stock_data_update/trading_info_data_to_ck.py
+{'bytes_used': 7677931, 'bytes_limit': 5368709120.0, 'remaining_days': 51, 'license_type': 'TRIAL'}
+2023-07-11
+None
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_backup', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-11 16:01:02: /home/ubuntu/stock_data_update/update_adjprice_into_ck.py
+002049
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600660
+Insert Bar: 146400 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600871
+Insert Bar: 146400 from 2023-02-28 14:20:00+08:00 - 2023-02-28 14:19:00+08:00
+600482
+Insert Bar: 146400 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+300073
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2022-08-08 11:01:00+08:00
+002249
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+601985
+Insert Bar: 146400 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600406
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+002179
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+000563
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2022-06-17 09:57:00+08:00
+600048
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+002563
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2022-01-10 13:51:00+08:00
+600516
+Insert Bar: 146400 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+000708
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+000938
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600160
+Insert Bar: 146400 from 2021-08-10 13:17:00+08:00 - 2023-07-04 14:59:00+08:00
+600276
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+603568
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+601088
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600809
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-11 14:59:00+08:00
+002299
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2022-11-15 10:33:00+08:00
+600585
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600050
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600057
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+000960
+Insert Bar: 146400 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpyzh', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-12 08:01:04: /home/ubuntu/stock_data_update/update_preadj_price_into_mysql.py
+Insert Bar: 6000 from 2023-07-11 09:30:00 - 2023-07-11 14:59:00
+####################################################################################################
+2023-07-12 08:10:03: /home/ubuntu/stock_data_update/check_database_everyday.py
+Start checking stock code!
+Stock code checked!
+
+Start checking bars: 
+Bars checked!
+
+Start checking abnormal price
+Abnormal price checked!
+
+Start checking with other database:
+Finished!
+
+/home/ubuntu/anaconda3/lib/python3.10/site-packages/iFinDPy.pth
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_THS', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-12 08:20:02: /home/ubuntu/stock_data_update/update_data_by_THS.py
+登录成功
+2023-07-11
+Ex_codes:  []
+002049.SZ
+Success!
+600660.SH
+Success!
+600871.SH
+Success!
+600482.SH
+Success!
+300073.SZ
+Success!
+002249.SZ
+Success!
+601985.SH
+Success!
+600406.SH
+Success!
+002179.SZ
+Success!
+000563.SZ
+Success!
+600048.SH
+Success!
+002563.SZ
+Success!
+600516.SH
+Success!
+000708.SZ
+Success!
+000938.SZ
+Success!
+600160.SH
+Success!
+600276.SH
+Success!
+603568.SH
+Success!
+601088.SH
+Success!
+600809.SH
+Success!
+002299.SZ
+Success!
+600585.SH
+Success!
+600050.SH
+Success!
+600057.SH
+Success!
+000960.SZ
+Success!
+Insert Bar: 6000 from 2023-07-11 09:30:00+08:00 - 2023-07-11 14:59:00+08:00
+{'bytes_used': 3899068, 'bytes_limit': 5368709120.0, 'remaining_days': 50, 'license_type': 'TRIAL'}
+####################################################################################################
+2023-07-12 15:01:02: /home/ubuntu/stock_data_update/trading_info_data_to_ck.py
+{'bytes_used': 7681645, 'bytes_limit': 5368709120.0, 'remaining_days': 50, 'license_type': 'TRIAL'}
+2023-07-12
+None
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_backup', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-12 16:01:02: /home/ubuntu/stock_data_update/update_adjprice_into_ck.py
+002049
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600660
+Insert Bar: 146640 from 2022-08-08 11:02:00+08:00 - 2022-06-17 09:57:00+08:00
+600871
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-02-28 14:19:00+08:00
+600482
+Insert Bar: 146640 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+300073
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+002249
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+601985
+Insert Bar: 146640 from 2021-08-10 13:17:00+08:00 - 2023-07-04 14:59:00+08:00
+600406
+Insert Bar: 146640 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+002179
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+000563
+Insert Bar: 146640 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600048
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+002563
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600516
+Insert Bar: 146640 from 2021-08-10 13:17:00+08:00 - 2023-07-04 14:59:00+08:00
+000708
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+000938
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2022-06-17 09:57:00+08:00
+600160
+Insert Bar: 146640 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+600276
+Insert Bar: 146640 from 2022-08-08 11:02:00+08:00 - 2023-07-04 14:59:00+08:00
+603568
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2022-11-15 10:33:00+08:00
+601088
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2022-11-15 10:33:00+08:00
+600809
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2022-01-07 11:21:00+08:00
+002299
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600585
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600050
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600057
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+000960
+Insert Bar: 146640 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpyzh', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-13 08:01:02: /home/ubuntu/stock_data_update/update_preadj_price_into_mysql.py
+ex contract:  600160.XSHG
+Insert Bar: 146640 from 2021-01-04 09:30:00 - 2023-07-12 14:59:00
+Insert Bar: 5760 from 2023-07-12 09:30:00 - 2023-07-12 14:59:00
+####################################################################################################
+2023-07-13 08:10:02: /home/ubuntu/stock_data_update/check_database_everyday.py
+Start checking stock code!
+Stock code checked!
+
+Start checking bars: 
+Bars checked!
+
+Start checking abnormal price
+Abnormal price checked!
+
+Start checking with other database:
+Finished!
+
+/home/ubuntu/anaconda3/lib/python3.10/site-packages/iFinDPy.pth
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_THS', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-13 08:20:02: /home/ubuntu/stock_data_update/update_data_by_THS.py
+登录成功
+2023-07-12
+Ex_codes:  []
+002049.SZ
+Success!
+600660.SH
+Success!
+600871.SH
+Success!
+600482.SH
+Success!
+300073.SZ
+Success!
+002249.SZ
+Success!
+601985.SH
+Success!
+600406.SH
+Success!
+002179.SZ
+Success!
+000563.SZ
+Success!
+600048.SH
+Success!
+002563.SZ
+Success!
+600516.SH
+Success!
+000708.SZ
+Success!
+000938.SZ
+Success!
+600160.SH
+Success!
+600276.SH
+Success!
+603568.SH
+Success!
+601088.SH
+Success!
+600809.SH
+Success!
+002299.SZ
+Success!
+600585.SH
+Success!
+600050.SH
+Success!
+600057.SH
+Success!
+000960.SZ
+Success!
+Insert Bar: 6000 from 2023-07-12 09:30:00+08:00 - 2023-07-12 14:59:00+08:00
+{'bytes_used': 5957699, 'bytes_limit': 5368709120.0, 'remaining_days': 49, 'license_type': 'TRIAL'}
+####################################################################################################
+2023-07-13 15:01:02: /home/ubuntu/stock_data_update/trading_info_data_to_ck.py
+{'bytes_used': 9742192, 'bytes_limit': 5368709120.0, 'remaining_days': 49, 'license_type': 'TRIAL'}
+2023-07-13
+           order_book_id  ex_cum_factor  ... ex_end_date ex_factor
+ex_date                                  ...                      
+2023-07-13   600160.XSHG        10.9372  ...        None  1.019044
+
+[1 rows x 5 columns]
+             datetime      date  symbol  ...  turnover   volume  ex_factor
+0 2023-07-13 09:30:00  20230713  600160  ...  16652311  1177100   1.019044
+
+[1 rows x 12 columns]
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_backup', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-13 16:01:02: /home/ubuntu/stock_data_update/update_adjprice_into_ck.py
+002049
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+600660
+Insert Bar: 146880 from 2021-07-15 13:00:00+08:00 - 2023-05-16 14:55:00+08:00
+600871
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-07-13 14:59:00+08:00
+600482
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+300073
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+002249
+Insert Bar: 146880 from 2022-07-12 10:14:00+08:00 - 2023-07-04 14:59:00+08:00
+601985
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600406
+Insert Bar: 146880 from 2021-07-15 13:00:00+08:00 - 2023-05-16 14:55:00+08:00
+002179
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+000563
+Insert Bar: 146880 from 2021-07-15 13:01:00+08:00 - 2023-05-16 14:55:00+08:00
+600048
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+002563
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+600516
+Insert Bar: 146880 from 2021-07-15 13:00:00+08:00 - 2023-05-16 14:55:00+08:00
+000708
+Insert Bar: 146880 from 2021-07-15 13:01:00+08:00 - 2023-05-16 14:55:00+08:00
+000938
+Insert Bar: 146880 from 2022-07-12 10:14:00+08:00 - 2023-05-16 14:55:00+08:00
+600160
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+600276
+Insert Bar: 146880 from 2021-07-15 13:00:00+08:00 - 2023-07-04 14:59:00+08:00
+603568
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+601088
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2022-09-14 14:46:00+08:00
+600809
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+002299
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600585
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2022-09-14 14:47:00+08:00
+600050
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2022-09-14 14:47:00+08:00
+600057
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2022-09-14 14:47:00+08:00
+000960
+Insert Bar: 146880 from 2021-01-04 09:30:00+08:00 - 2022-09-14 14:47:00+08:00
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpyzh', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-14 08:01:06: /home/ubuntu/stock_data_update/update_preadj_price_into_mysql.py
+ex contract:  601985.XSHG
+Insert Bar: 146880 from 2021-01-04 09:30:00 - 2023-07-13 14:59:00
+ex contract:  603568.XSHG
+Insert Bar: 146880 from 2021-01-04 09:30:00 - 2023-07-13 14:59:00
+Insert Bar: 5520 from 2023-07-13 09:30:00 - 2023-07-13 14:59:00
+####################################################################################################
+2023-07-14 08:10:02: /home/ubuntu/stock_data_update/check_database_everyday.py
+Start checking stock code!
+Stock code checked!
+
+Start checking bars: 
+Bars checked!
+
+Start checking abnormal price
+Abnormal price checked!
+
+Start checking with other database:
+Finished!
+
+not allow to access from your ip, hint: [1689293405248532081219733], from ip: 118.89.200.89, more info at https://open.work.weixin.qq.com/devtool/query?e=60020
+/home/ubuntu/anaconda3/lib/python3.10/site-packages/iFinDPy.pth
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_THS', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-14 08:20:01: /home/ubuntu/stock_data_update/update_data_by_THS.py
+登录成功
+2023-07-13
+Ex_codes:  []
+002049.SZ
+Success!
+600660.SH
+Success!
+600871.SH
+Success!
+600482.SH
+Success!
+300073.SZ
+Success!
+002249.SZ
+Success!
+601985.SH
+Success!
+600406.SH
+Success!
+002179.SZ
+Success!
+000563.SZ
+Success!
+600048.SH
+Success!
+002563.SZ
+Success!
+600516.SH
+Success!
+000708.SZ
+Success!
+000938.SZ
+Success!
+600160.SH
+Success!
+600276.SH
+Success!
+603568.SH
+Success!
+601088.SH
+Success!
+600809.SH
+Success!
+002299.SZ
+Success!
+600585.SH
+Success!
+600050.SH
+Success!
+600057.SH
+Success!
+000960.SZ
+Success!
+Insert Bar: 6000 from 2023-07-13 09:30:00+08:00 - 2023-07-13 14:59:00+08:00
+{'bytes_used': 7791905, 'bytes_limit': 5368709120.0, 'remaining_days': 48, 'license_type': 'TRIAL'}
+####################################################################################################
+2023-07-14 15:01:03: /home/ubuntu/stock_data_update/trading_info_data_to_ck.py
+{'bytes_used': 11579067, 'bytes_limit': 5368709120.0, 'remaining_days': 48, 'license_type': 'TRIAL'}
+2023-07-14
+           order_book_id  ex_cum_factor  ... ex_end_date ex_factor
+ex_date                                  ...                      
+2023-07-14   601985.XSHG        1.18445  ...        None  1.023805
+2023-07-14   603568.XSHG        3.68817  ...        None  1.008661
+
+[2 rows x 5 columns]
+             datetime      date  symbol  ...  turnover   volume  ex_factor
+0 2023-07-14 09:30:00  20230714  601985  ...  17104033  2380300   1.023805
+
+[1 rows x 12 columns]
+             datetime      date  symbol  ... turnover volume  ex_factor
+0 2023-07-14 09:30:00  20230714  603568  ...   775501  44700   1.008661
+
+[1 rows x 12 columns]
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_backup', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-14 16:01:02: /home/ubuntu/stock_data_update/update_adjprice_into_ck.py
+002049
+Insert Bar: 147120 from 2023-07-05 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600660
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+600871
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-07-14 14:59:00+08:00
+600482
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+300073
+Insert Bar: 147120 from 2021-07-15 13:01:00+08:00 - 2023-07-04 14:59:00+08:00
+002249
+Insert Bar: 147120 from 2022-07-12 10:14:00+08:00 - 2023-07-04 14:59:00+08:00
+601985
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+600406
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2022-05-19 14:39:00+08:00
+002179
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+000563
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+600048
+Insert Bar: 147120 from 2021-07-15 13:00:00+08:00 - 2023-07-04 14:59:00+08:00
+002563
+Insert Bar: 147120 from 2021-07-15 13:01:00+08:00 - 2023-05-16 14:55:00+08:00
+600516
+Insert Bar: 147120 from 2021-07-15 13:00:00+08:00 - 2023-05-16 14:55:00+08:00
+000708
+Insert Bar: 147120 from 2021-07-15 13:01:00+08:00 - 2023-05-16 14:55:00+08:00
+000938
+Insert Bar: 147120 from 2021-07-15 13:01:00+08:00 - 2023-05-16 14:55:00+08:00
+600160
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-05-16 14:55:00+08:00
+600276
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2022-05-19 14:39:00+08:00
+603568
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+601088
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2022-09-14 14:46:00+08:00
+600809
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+002299
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-07-14 14:59:00+08:00
+600585
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+600050
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2022-09-14 14:47:00+08:00
+600057
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2023-07-04 14:59:00+08:00
+000960
+Insert Bar: 147120 from 2021-01-04 09:30:00+08:00 - 2022-09-14 14:47:00+08:00
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpyzh', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-17 08:01:09: /home/ubuntu/stock_data_update/update_preadj_price_into_mysql.py
+Insert Bar: 6000 from 2023-07-14 09:30:00 - 2023-07-14 14:59:00
+####################################################################################################
+2023-07-17 08:10:03: /home/ubuntu/stock_data_update/check_database_everyday.py
+Start checking stock code!
+Stock code checked!
+
+Start checking bars: 
+Bars checked!
+
+Start checking abnormal price
+Abnormal price checked!
+
+Start checking with other database:
+Finished!
+
+not allow to access from your ip, hint: [1689552607303761204901180], from ip: 118.89.200.89, more info at https://open.work.weixin.qq.com/devtool/query?e=60020
+/home/ubuntu/anaconda3/lib/python3.10/site-packages/iFinDPy.pth
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_THS', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-17 08:20:03: /home/ubuntu/stock_data_update/update_data_by_THS.py
+登录成功
+2023-07-14
+Ex_codes:  []
+002049.SZ
+Success!
+600660.SH
+Success!
+600871.SH
+Success!
+600482.SH
+Success!
+300073.SZ
+Success!
+002249.SZ
+Success!
+601985.SH
+Success!
+600406.SH
+Success!
+002179.SZ
+Success!
+000563.SZ
+Success!
+600048.SH
+Success!
+002563.SZ
+Success!
+600516.SH
+Success!
+000708.SZ
+Success!
+000938.SZ
+Success!
+600160.SH
+Success!
+600276.SH
+Success!
+603568.SH
+Success!
+601088.SH
+Success!
+600809.SH
+Success!
+002299.SZ
+Success!
+600585.SH
+Success!
+600050.SH
+Success!
+600057.SH
+Success!
+000960.SZ
+Success!
+Insert Bar: 6000 from 2023-07-14 09:30:00+08:00 - 2023-07-14 14:59:00+08:00
+{'bytes_used': 3904518, 'bytes_limit': 5368709120.0, 'remaining_days': 45, 'license_type': 'TRIAL'}
+####################################################################################################
+2023-07-17 15:01:02: /home/ubuntu/stock_data_update/trading_info_data_to_ck.py
+{'bytes_used': 7707754, 'bytes_limit': 5368709120.0, 'remaining_days': 45, 'license_type': 'TRIAL'}
+1970-01-02
+           order_book_id announcement_date  ...  ex_end_date ex_factor
+ex_date                                     ...                       
+1994-04-27   000553.XSHE        1994-04-26  ...   1995-07-03  1.200000
+1995-07-04   000553.XSHE        1995-07-03  ...   1996-07-24  1.065375
+1996-07-25   000553.XSHE        1996-07-24  ...   1996-11-10  1.031483
+1996-11-11   000553.XSHE        1996-11-10  ...   1997-07-20  1.186540
+1997-07-21   000553.XSHE        1997-07-20  ...   1998-08-11  1.034384
+...                  ...               ...  ...          ...       ...
+2022-05-26   688188.XSHG        2022-05-25  ...   2023-06-28  1.409149
+2023-06-29   688188.XSHG        2023-06-28  ...          NaT  1.005960
+2021-05-31   688390.XSHG        2021-05-30  ...   2022-06-20  1.004882
+2022-06-21   688390.XSHG        2022-06-20  ...   2023-06-05  1.404808
+2023-06-06   688390.XSHG        2023-06-05  ...          NaT  1.409901
+
+[981 rows x 5 columns]
+                   datetime      date  symbol  ...  turnover  volume  ex_factor
+36480   2005-08-22 09:30:00  20050822  600315  ...     12673    2300   1.029356
+74880   2006-04-21 09:30:00  20060421  600315  ...     76794    6900   1.004300
+89520   2006-07-24 09:30:00  20060724  600315  ...   3612847  261850   1.275991
+136320  2007-05-17 09:30:00  20070517  600315  ...    829489   24130   1.004457
+197040  2008-05-27 09:30:00  20080527  600315  ...      6796     200   1.204748
+254880  2009-05-21 09:30:00  20090521  600315  ...     15175     725   1.509563
+307440  2010-04-14 09:30:00  20100414  600315  ...    829532   24812   1.310552
+367920  2011-04-29 09:30:00  20110429  600315  ...         0       0   1.006779
+438720  2012-07-16 09:30:00  20120716  600315  ...    891381   19500   1.008831
+488400  2013-05-27 09:30:00  20130527  600315  ...   5124885  113692   1.515606
+541440  2014-04-24 09:30:00  20140424  600315  ...    548588   15688   1.014623
+603600  2015-05-18 09:30:00  20150518  600315  ...   7719459  177200   1.014012
+670800  2016-07-07 09:30:00  20160707  600315  ...  10566385  362400   1.034149
+726720  2017-06-23 09:30:00  20170623  600315  ...   3928379  127700   1.003263
+791040  2018-07-26 09:30:00  20180726  600315  ...    819356   20300   1.004476
+850320  2019-08-01 09:30:00  20190801  600315  ...   1856482   59800   1.008059
+910560  2020-08-13 09:30:00  20200813  600315  ...   9722526  241800   1.006274
+967680  2021-08-05 09:30:00  20210805  600315  ...   2263678   44313   1.003893
+1029120 2022-08-25 09:30:00  20220825  600315  ...   1855025   55300   1.008630
+
+[19 rows x 12 columns]
+                  datetime      date  symbol  ...  turnover   volume  ex_factor
+64080  2016-07-13 09:30:00  20160713  601985  ...  17153204  2448900   1.012910
+124800 2017-07-27 09:30:00  20170727  601985  ...   7141900   905000   1.013960
+182160 2018-07-19 09:30:00  20180719  601985  ...   8832835  1576600   1.020009
+240480 2019-07-19 09:30:00  20190719  601985  ...   4060072   747600   1.022184
+298320 2020-07-17 09:30:00  20200717  601985  ...   9072393  2085119   1.028183
+356640 2021-07-16 09:30:00  20210716  601985  ...   8355771  1739500   1.027202
+414480 2022-07-15 09:30:00  20220715  601985  ...  34041467  5198600   1.022936
+472560 2023-07-14 09:30:00  20230714  601985  ...  17104033  2380300   1.023805
+
+[8 rows x 12 columns]
+                   datetime      date  symbol  ...  turnover  volume  ex_factor
+30480   2005-07-18 09:30:00  20050718  600809  ...     27889    4200   1.022691
+76560   2006-05-09 09:30:00  20060509  600809  ...  14562190  940752   1.329997
+87360   2006-07-11 09:30:00  20060711  600809  ...     65321    4100   1.012669
+139920  2007-06-07 09:30:00  20070607  600809  ...    716010   19900   1.012580
+210000  2008-08-12 09:30:00  20080812  600809  ...    105665    9600   1.014627
+267600  2009-08-06 09:30:00  20090806  600809  ...   1092244   31400   1.011396
+318960  2010-06-25 09:30:00  20100625  600809  ...     26790     600   1.011190
+376560  2011-06-22 09:30:00  20110622  600809  ...    134704    2065   1.007687
+433200  2012-06-12 09:30:00  20120612  600809  ...    920733   24703   2.013500
+493200  2013-06-27 09:30:00  20130627  600809  ...   3258399  117600   1.029445
+549600  2014-06-16 09:30:00  20140616  600809  ...   1539909  115000   1.026257
+671040  2016-07-08 09:30:00  20160708  600809  ...   3394825  142700   1.013245
+730320  2017-07-14 09:30:00  20170714  600809  ...   3173958   97500   1.016937
+794880  2018-08-17 09:30:00  20180817  600809  ...   5907564  122517   1.012702
+853680  2019-08-21 09:30:00  20190821  600809  ...   2842382   40500   1.010676
+901680  2020-06-19 09:30:00  20200619  600809  ...  13621209  102716   1.006793
+962160  2021-07-05 09:30:00  20210705  600809  ...  74159439  238932   1.400648
+1019040 2022-06-28 09:30:00  20220628  600809  ...  21347896   67501   1.005666
+1076880 2023-06-26 09:30:00  20230626  600809  ...  46718055  236400   1.016577
+
+[19 rows x 12 columns]
+                   datetime      date  symbol  ... turnover   volume  ex_factor
+28320   2005-07-05 09:30:00  20050705  600350  ...    12818     2900   1.022675
+75120   2006-04-24 09:30:00  20060424  600350  ...  2079128   624520   1.320007
+81360   2006-06-06 09:30:00  20060606  600350  ...   715608   186100   1.034483
+144960  2007-07-06 09:30:00  20070706  600350  ...   939652   136940   1.018338
+204720  2008-07-11 09:30:00  20080711  600350  ...   345768    58500   1.026518
+265440  2009-07-24 09:30:00  20090724  600350  ...  3241548   534750   1.027464
+319440  2010-06-29 09:30:00  20100629  600350  ...        0        0   1.017519
+369600  2011-05-11 09:30:00  20110511  600350  ...  3458806   694800   1.020947
+441120  2012-07-30 09:30:00  20120730  600350  ...   173792    53400   1.047913
+497520  2013-07-23 09:30:00  20130723  600350  ...   190452    67900   1.045094
+552960  2014-07-04 09:30:00  20140704  600350  ...  1484176   515800   1.052448
+613200  2015-07-14 09:30:00  20150714  600350  ...  9026697  1120100   1.023558
+672000  2016-07-14 09:30:00  20160714  600350  ...  2040216   372100   1.032655
+730320  2017-07-14 09:30:00  20170714  600350  ...  2968797   468500   1.031092
+784320  2018-06-15 09:30:00  20180615  600350  ...  1881557   424700   1.040255
+852720  2019-08-15 09:30:00  20190815  600350  ...  3326216   772100   1.050352
+904800  2020-07-10 09:30:00  20200710  600350  ...  4423594   700300   1.059564
+968400  2021-08-10 09:30:00  20210810  600350  ...  4744231   811200   1.064513
+1016880 2022-06-15 09:30:00  20220615  600350  ...  6199344  1139100   1.073531
+1075680 2023-06-15 09:30:00  20230615  600350  ...  4344710   663187   1.061163
+
+[20 rows x 12 columns]
+                  datetime      date  symbol  ...  turnover  volume  ex_factor
+30240  2008-05-09 09:30:00  20080509  002179  ...    389116   18450   1.504790
+88800  2009-05-08 09:30:00  20090508  002179  ...   1048767   55700   1.502635
+153120 2010-06-10 09:30:00  20100610  002179  ...    935841   73965   1.503978
+207120 2011-05-19 09:30:00  20110519  002179  ...    279536   11800   1.002943
+270720 2012-06-20 09:30:00  20120620  002179  ...     43450    3000   1.006955
+344640 2013-09-27 09:30:00  20130927  002179  ...    315408   23000   1.007352
+379440 2014-05-08 09:30:00  20140508  002179  ...     68841    4714   1.006850
+442560 2015-06-03 09:30:00  20150603  002179  ...  13737662  274741   1.302073
+500880 2016-05-31 09:30:00  20160531  002179  ...   1318585   34600   1.002641
+556080 2017-05-12 09:30:00  20170512  002179  ...   1474829   52200   1.303548
+619200 2018-06-08 09:30:00  20180608  002179  ...    907419   22300   1.002952
+673680 2019-05-17 09:30:00  20190517  002179  ...  11758944  349188   1.303791
+734160 2020-05-29 09:30:00  20200529  002179  ...   6101123  176300   1.004324
+795360 2021-06-17 09:30:00  20210617  002179  ...  12084082  166600   1.005548
+852480 2022-06-13 09:30:00  20220613  002179  ...  38194520  596816   1.408682
+906480 2023-05-16 09:30:00  20230516  002179  ...  13178192  307630   1.312773
+
+[16 rows x 12 columns]
+                  datetime      date  symbol  ... turnover volume  ex_factor
+47040  2020-06-02 09:30:00  20200602  688188  ...  1564866  10353   1.004926
+100560 2021-04-30 09:30:00  20210430  688188  ...  4021497  11417   1.003723
+162240 2022-05-26 09:30:00  20220526  688188  ...  1665086   8080   1.409149
+226080 2023-06-29 09:30:00  20230629  688188  ...  4115440  21718   1.005960
+
+[4 rows x 12 columns]
+                   datetime      date  symbol  ...  turnover   volume  ex_factor
+66480   2006-03-03 09:30:00  20060303  600057  ...    621288   245026   1.350001
+730080  2017-07-13 09:30:00  20170713  600057  ...    311084    31000   1.010030
+757680  2017-12-28 09:30:00  20171228  600057  ...   9296229  1162500   1.054660
+782880  2018-06-07 09:30:00  20180607  600057  ...    530460    89100   1.496857
+840480  2019-06-04 09:30:00  20190604  600057  ...   1328873   298600   1.026846
+860400  2019-10-08 09:30:00  20191008  600057  ...   1624870   385400   1.028708
+898800  2020-06-03 09:30:00  20200603  600057  ...   5401700   873400   1.040445
+959520  2021-06-18 09:30:00  20210618  600057  ...   4176689   696000   1.050097
+1016400 2022-06-13 09:30:00  20220613  600057  ...  21300851  2444285   1.058170
+1078800 2023-07-06 09:30:00  20230706  600057  ...   8296869  1045300   1.077310
+
+[10 rows x 12 columns]
+                  datetime      date  symbol  ...  turnover   volume  ex_factor
+30720  2005-07-19 09:30:00  20050719  600871  ...      9140     5000   1.013623
+377760 2011-06-29 09:30:00  20110629  600871  ...     26406     2800   1.003200
+438480 2012-07-13 09:30:00  20120713  600871  ...     33981     4700   1.004147
+502320 2013-08-20 09:30:00  20130820  600871  ...  23777475  4266407   1.500000
+516720 2013-11-21 09:30:00  20131121  600871  ...    706559   228600   1.500003
+
+[5 rows x 12 columns]
+                   datetime      date  symbol  ...  turnover   volume  ex_factor
+31680   2005-07-25 09:30:00  20050725  600170  ...    132318    33600   1.044703
+48720   2005-11-08 09:30:00  20051108  600170  ...   1127087   309920   1.340002
+92640   2006-08-10 09:30:00  20060810  600170  ...     71493    17400   1.042945
+152880  2007-08-22 09:30:00  20070822  600170  ...   2798549   196704   1.010355
+207840  2008-07-30 09:30:00  20080730  600170  ...    649375    66900   1.015709
+258960  2009-06-17 09:30:00  20090617  600170  ...   1376156    97800   1.008873
+328800  2010-08-23 09:30:00  20100823  600170  ...    389719    31978   1.007124
+377760  2011-06-29 09:30:00  20110629  600170  ...         0        0   1.009622
+427680  2012-05-10 09:30:00  20120510  600170  ...  20108218  2262900   2.011420
+496560  2013-07-17 09:30:00  20130717  600170  ...   1020939   174960   1.235644
+549840  2014-06-17 09:30:00  20140617  600170  ...   1027426   230600   1.345062
+602640  2015-05-12 09:30:00  20150512  600170  ...  11245195  1149018   1.320883
+662160  2016-05-16 09:30:00  20160516  600170  ...   2330297   577000   1.237119
+720960  2017-05-18 09:30:00  20170518  600170  ...   3571112   952000   1.224530
+783840  2018-06-13 09:30:00  20180613  600170  ...   7745035  2369782   1.040971
+847680  2019-07-17 09:30:00  20190717  600170  ...   5784306  1531685   1.035855
+905760  2020-07-16 09:30:00  20200716  600170  ...   5806527  1809700   1.043786
+960720  2021-06-25 09:30:00  20210625  600170  ...   6589885  2348943   1.051952
+1024800 2022-08-01 09:30:00  20220801  600170  ...   9607138  3438900   1.051954
+
+[19 rows x 12 columns]
+                  datetime      date  symbol  ...  turnover   volume  ex_factor
+30480  2010-04-27 09:30:00  20100427  002299  ...    174011     5100   1.005290
+78240  2011-02-24 09:30:00  20110224  002299  ...   9076963   487355   2.013220
+145440 2012-04-19 09:30:00  20120419  002299  ...    776993    52400   1.022388
+443040 2017-05-25 09:30:00  20170525  002299  ...   2911713   229900   1.039431
+555600 2019-04-26 09:30:00  20190426  002299  ...  33645547  1238700   1.036038
+598800 2020-01-20 09:30:00  20200120  002299  ...  29162460  1253700   1.063183
+657120 2021-01-20 09:30:00  20210120  002299  ...  11268418   425600   1.037880
+733920 2022-05-23 09:30:00  20220523  002299  ...   4464201   257204   1.017427
+789840 2023-05-08 09:30:00  20230508  002299  ...   3377593   162003   1.009578
+
+[9 rows x 12 columns]
+                  datetime      date  symbol  ...  turnover    volume  ex_factor
+59760  2011-06-08 09:30:00  20110608  300088  ...    158960      8401   2.015720
+112320 2012-05-04 09:30:00  20120504  300088  ...    799837     67800   1.312732
+172320 2013-05-16 09:30:00  20130516  300088  ...         0         0   1.508484
+231120 2014-05-21 09:30:00  20140521  300088  ...         0         0   1.004888
+297840 2015-07-08 09:30:00  20150708  300088  ...         0         0   1.004365
+310080 2015-09-21 09:30:00  20150921  300088  ...   6002904    749000   2.000000
+356160 2016-07-06 09:30:00  20160706  300088  ...   8978503    597600   1.006743
+408000 2017-05-26 09:30:00  20170526  300088  ...         0         0   1.003174
+428880 2017-09-28 09:30:00  20170928  300088  ...   6618279    746100   1.999995
+469920 2018-06-15 09:30:00  20180615  300088  ...   1949255    312600   1.016129
+524640 2019-05-27 09:30:00  20190527  300088  ...   3801257    776400   1.026752
+586560 2020-06-16 09:30:00  20200616  300088  ...  32181860   3317680   1.010536
+644880 2021-06-17 09:30:00  20210617  300088  ...   8547261   1078600   1.012769
+700320 2022-06-01 09:30:00  20220601  300088  ...  81140283  11791270   1.007291
+759120 2023-06-02 09:30:00  20230602  300088  ...  16736949   2612400   1.015893
+
+[15 rows x 12 columns]
+                   datetime      date  symbol  ...  turnover   volume  ex_factor
+16560   2005-04-20 09:30:00  20050420  600161  ...     40726     6000   1.017699
+75600   2006-04-26 09:30:00  20060426  600161  ...   3551730   390300   1.024183
+78960   2006-05-23 09:30:00  20060523  600161  ...  20330970  1994170   1.300003
+101040  2006-09-28 09:30:00  20060928  600161  ...    204900    13800   1.010935
+142080  2007-06-20 09:30:00  20070620  600161  ...    106620     2800   1.004712
+194160  2008-05-09 09:30:00  20080509  600161  ...         0        0   1.512866
+221040  2008-10-23 09:30:00  20081023  600161  ...    289429    27900   1.008427
+366720  2011-04-22 09:30:00  20110422  600161  ...    378255    18500   1.004889
+439440  2012-07-19 09:30:00  20120719  600161  ...     14290     1000   1.006969
+725760  2017-06-19 09:30:00  20170619  600161  ...   3289894    88300   1.308124
+785280  2018-06-22 09:30:00  20180622  600161  ...    946574    48800   1.310112
+842160  2019-06-14 09:30:00  20190614  600161  ...   1742524    78300   1.202248
+905520  2020-07-15 09:30:00  20200715  600161  ...  14474741   359420   1.201520
+961440  2021-06-30 09:30:00  20210630  600161  ...   2726749    79700   1.002915
+1022160 2022-07-15 09:30:00  20220715  600161  ...  12864194   600520   1.204841
+1080240 2023-07-14 09:30:00  20230714  600161  ...  12115841   471925   1.001971
+
+[16 rows x 12 columns]
+                  datetime      date  symbol  ...  turnover  volume  ex_factor
+61680  2011-05-20 09:30:00  20110520  300073  ...    371810   23700   2.012160
+185520 2013-07-09 09:30:00  20130709  300073  ...   1052853  105300   1.004925
+241920 2014-06-26 09:30:00  20140626  300073  ...    147553    8700   1.000885
+407760 2017-04-26 09:30:00  20170426  300073  ...   2708987  127000   2.005198
+471600 2018-05-29 09:30:00  20180529  300073  ...  18002012  577400   1.003588
+533760 2019-06-21 09:30:00  20190621  300073  ...   6333306  255997   1.005768
+646560 2021-05-28 09:30:00  20210528  300073  ...  29030218  573890   1.003376
+704160 2022-05-26 09:30:00  20220526  300073  ...   5761207   86700   1.006409
+768000 2023-06-29 09:30:00  20230629  300073  ...   4298336   89538   1.013906
+
+[9 rows x 12 columns]
+                   datetime      date  symbol  ...  turnover   volume  ex_factor
+68400   2006-03-15 09:30:00  20060315  600660  ...  19629740  3752710   1.099998
+140880  2007-06-13 09:30:00  20070613  600660  ...   1074471    36400   1.010532
+194640  2008-05-13 09:30:00  20080513  600660  ...   1717144   132400   2.036360
+308640  2010-04-21 09:30:00  20100421  600660  ...   1874442   158900   1.014592
+363360  2011-03-31 09:30:00  20110331  600660  ...   4388105   357132   1.046042
+435840  2012-06-28 09:30:00  20120628  600660  ...   1721055   216347   1.049998
+489840  2013-06-04 09:30:00  20130604  600660  ...   2419193   285500   1.058825
+544320  2014-05-14 09:30:00  20140514  600660  ...   4883401   604200   1.061804
+598320  2015-04-15 09:30:00  20150415  600660  ...  27997708  1638700   1.043104
+666240  2016-06-08 09:30:00  20160608  600660  ...  19216270  1393035   1.053456
+720240  2017-05-15 09:30:00  20170515  600660  ...  14888785   671600   1.033587
+781200  2018-05-29 09:30:00  20180529  600660  ...  11967520   489500   1.030451
+804960  2018-10-24 09:30:00  20181024  600660  ...   3472615   146400   1.016793
+839520  2019-05-29 09:30:00  20190529  600660  ...   9202766   418000   1.033906
+906960  2020-07-23 09:30:00  20200723  600660  ...  20096197   811072   1.029703
+961680  2021-07-01 09:30:00  20210701  600660  ...  13730835   248700   1.013612
+1012560 2022-05-19 09:30:00  20220519  600660  ...  13305364   362800   1.027026
+1070880 2023-05-18 09:30:00  20230518  600660  ...  12528728   375100   1.037504
+
+[18 rows x 12 columns]
+                  datetime      date  symbol  ...  turnover   volume  ex_factor
+67680  2012-05-10 09:30:00  20120510  002563  ...   2508281    78500   1.031350
+127920 2013-05-23 09:30:00  20130523  002563  ...   1604867    69500   1.042730
+180480 2014-04-18 09:30:00  20140418  002563  ...   1008489    33320   1.032731
+240960 2015-04-30 09:30:00  20150430  002563  ...   8086581   291000   2.034944
+265440 2015-09-25 09:30:00  20150925  002563  ...    777370    72500   2.000000
+300960 2016-05-09 09:30:00  20160509  002563  ...    715121    64200   1.022340
+357600 2017-04-27 09:30:00  20170427  002563  ...   1354881   149900   1.041142
+420720 2018-05-25 09:30:00  20180525  002563  ...    553582    43600   1.019856
+479280 2019-05-28 09:30:00  20190528  002563  ...   1275931   118300   1.032260
+537600 2020-05-27 09:30:00  20200527  002563  ...   6338643   892700   1.062586
+594960 2021-05-21 09:30:00  20210521  002563  ...   7724149   668817   1.021949
+616320 2021-09-28 09:30:00  20210928  002563  ...   3821332   501700   1.032552
+651120 2022-05-11 09:30:00  20220511  002563  ...  11373268  1970700   1.087107
+710880 2023-05-18 09:30:00  20230518  002563  ...   4437003   690800   1.031646
+
+[14 rows x 12 columns]
+                  datetime      date  symbol  ...  turnover  volume  ex_factor
+42000  2021-05-31 09:30:00  20210531  688390  ...   8296970   34351   1.004882
+103440 2022-06-21 09:30:00  20220621  688390  ...   9328385   37030   1.404808
+159600 2023-06-06 09:30:00  20230606  688390  ...  21418076  134629   1.409901
+
+[3 rows x 12 columns]
+                  datetime      date  symbol  ...  turnover  volume  ex_factor
+20160  2020-11-02 09:30:00  20201102  600956  ...    710107   84000   1.014770
+55440  2021-06-09 09:30:00  20210609  600956  ...   4937026  377300   1.010190
+120480 2022-07-21 09:30:00  20220721  600956  ...  14146664  991600   1.011491
+173520 2023-06-19 09:30:00  20230619  600956  ...   1504763  173700   1.022297
+
+[4 rows x 12 columns]
+                   datetime      date  symbol  ... turnover   volume  ex_factor
+78720   2006-05-22 09:30:00  20060522  000683  ...  4179123   883123   1.300001
+312000  2010-05-12 09:30:00  20100512  000683  ...   369391    41900   1.499996
+432000  2012-06-05 09:30:00  20120605  000683  ...   531229    82030   1.015601
+490080  2013-06-05 09:30:00  20130605  000683  ...        0        0   1.004166
+610320  2015-06-26 09:30:00  20150626  000683  ...        0        0   1.001736
+661680  2016-05-12 09:30:00  20160512  000683  ...  2941442  1094200   1.800001
+772800  2018-04-04 09:30:00  20180404  000683  ...  1406859   532000   1.007605
+1010640 2022-05-09 09:30:00  20220509  000683  ...  5196206   600000   1.011370
+1071120 2023-05-19 09:30:00  20230519  000683  ...  8376503  1266500   1.022422
+
+[9 rows x 12 columns]
+                  datetime      date  symbol  ... turnover   volume  ex_factor
+15600  2010-07-05 09:30:00  20100705  601158  ...  1516815   230500   1.012730
+69120  2011-06-07 09:30:00  20110607  601158  ...   660360    78300   1.022405
+129120 2012-06-15 09:30:00  20120615  601158  ...   759531   128694   1.039443
+182400 2013-05-20 09:30:00  20130520  601158  ...   758784   115200   1.040139
+241200 2014-05-23 09:30:00  20140523  601158  ...   674295   134300   1.053785
+300720 2015-05-28 09:30:00  20150528  601158  ...        0        0   1.019743
+360720 2016-06-03 09:30:00  20160603  601158  ...  2953030   447800   1.039220
+418560 2017-06-05 09:30:00  20170605  601158  ...  1365625   185100   1.037988
+478320 2018-06-08 09:30:00  20180608  601158  ...  1737874   285288   1.048943
+536160 2019-06-06 09:30:00  20190606  601158  ...  2158300   388200   1.050267
+595200 2020-06-10 09:30:00  20200610  601158  ...  3676192   725100   1.050463
+653520 2021-06-10 09:30:00  20210610  601158  ...  5932377  1122713   1.047886
+711360 2022-06-10 09:30:00  20220610  601158  ...  2236639   413900   1.047394
+769920 2023-06-09 09:30:00  20230609  601158  ...  3101382   581600   1.051038
+
+[14 rows x 12 columns]
+####################################################################################################
+{'font.family': '微软雅黑', 'font.size': 12, 'log.active': True, 'log.level': 50, 'log.console': True, 'log.file': True, 'email.server': 'smtp.qq.com', 'email.port': 465, 'email.username': '', 'email.password': '', 'email.sender': '', 'email.receiver': '', 'datafeed.name': '', 'datafeed.username': '', 'datafeed.password': '', 'database.timezone': 'Asia/Shanghai', 'database.name': 'mysql', 'database.database': 'vnpy_backup', 'database.host': 'localhost', 'database.port': 3306, 'database.user': 'remote', 'database.password': 'zhP@55word'}
+2023-07-17 16:01:03: /home/ubuntu/stock_data_update/update_adjprice_into_ck.py
+688390
+Insert Bar: 166320 from 2020-09-04 09:30:00+08:00 - 2022-05-24 10:33:00+08:00
+688188
+Insert Bar: 229200 from 2019-08-08 09:30:00+08:00 - 2023-07-17 14:59:00+08:00
+603568

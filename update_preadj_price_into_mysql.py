@@ -1,11 +1,13 @@
 """
 因为每天8:00 am后米筐更新前复权价, 所以此脚本在8:00 am时更新数据
+当前修改后, 该脚本已经可以具有初次导入的功能, insert_preadj_price_into_mysql.py已经可以放弃
 """
 import pandas as pd
 import rqdatac
 import time
 import clickhouse_driver
 import json
+import pymysql
 
 print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
 # 备用库设定
@@ -50,6 +52,7 @@ rqdatac.init('license', 'hKzEyfcbN4O4B22wGXKfOZnOkVIyQ4fnW7VSUepZ5shkCx3Wpfkb63n
 # 获取数据库实例
 database = get_database()
 conn = clickhouse_driver.connect(host='localhost', port=9000, database='common_info',user='remote',password='zhP@55word')  # 用于取trading_day数据
+conn_mysql = pymysql.connect(host='localhost', port=3306, database='vnpyzh',user='remote',password='zhP@55word')
 
 
 exchg_dict = {'SSE':Exchange.SSE, 'SZSE':Exchange.SZSE}
@@ -144,6 +147,19 @@ def move_df_to_mysql(imported_data:pd.DataFrame):
     database.save_bar_data(bars)
     print(f"Insert Bar: {count} from {start} - {end}")
 
+def get_database_latest_symbols():
+    sql = "select distinct(symbol),exchange from dbbardata"
+    data = pd.read_sql(sql, conn_mysql)
+    codes = (data['symbol']+ '.' + data['exchange']).to_list()
+    rq_codes = []
+    for code in codes:
+        if 'SZSE' in code:
+            code = code[:7]+'XSHE'
+        elif 'SSE' in code:
+            code = code[:7]+'XSHG'
+        rq_codes.append(code)
+    return rq_codes
+
 
 if __name__ == '__main__':
     print_date = time.strftime("%Y-%m-%d %H:%M:%S")
@@ -156,7 +172,12 @@ if __name__ == '__main__':
     edatex = str(int(edate[:4])+1)+edate[4:]
     last_date = get_last_trading_day(edate)
     # print(last_date)
-    contracts = get_contracts()
+    contracts = get_contracts()                       # 最新股票池code
+    latest_symbols = get_database_latest_symbols()    # 数据库里的code
+    contracts0 = list(set(latest_symbols)&(set(contracts)))       # 不发生变动的股票
+    contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
+    contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
+
     ex_factor_data = get_excum_factor(contracts, last_date, edatex)
     # print(ex_factor_data)
     if ex_factor_data is None:
@@ -165,12 +186,25 @@ if __name__ == '__main__':
         ex_symbols = ex_factor_data[ex_factor_data.announcement_date==last_date]['order_book_id'].to_list()
 
     data_nochg = pd.DataFrame()
-    for contract in contracts:  # 按一个票一个票循环，然后合并，其实也可以多个票，可以测试下怎么样速度更加快
-        if contract in ex_symbols:
-            print("ex contract: ", contract)
-            data = get_data(contract, sdate, last_date, freq)
+    for contract in (contracts0+contracts1+contracts2):  # 按一个票一个票循环，然后合并，其实也可以多个票，可以测试下怎么样速度更加快
+        if contract in contracts0:
+            if contract in ex_symbols:
+                print("ex contract: ", contract)
+                data = get_data(contract, sdate, last_date, freq)
 
-            # 先删除symbol的数据，再重新插入
+                # 先删除symbol的数据，再重新插入
+                exchange = convert_exchange_code(contract)
+                interval = Interval.MINUTE
+                database.delete_bar_data(
+                    symbol=contract.split('.')[0],
+                    exchange=exchange,
+                    interval=interval
+                    )
+                move_df_to_mysql(data)
+            else:
+                data = get_data(contract, last_date, last_date, freq)
+                data_nochg = pd.concat([data_nochg, data])
+        elif contract in contracts1:    # 删除对应symbol数据
             exchange = convert_exchange_code(contract)
             interval = Interval.MINUTE
             database.delete_bar_data(
@@ -178,11 +212,10 @@ if __name__ == '__main__':
                 exchange=exchange,
                 interval=interval
                 )
+        else:                           # 新加的票直接插入从2021年开始的数据
+            data = get_data(contract, sdate, last_date, freq)
             move_df_to_mysql(data)
-        else:
-            data = get_data(contract, last_date, last_date, freq)
-            data_nochg = pd.concat([data_nochg, data])
-        # print(data)
+            
     if data_nochg.empty:
         pass
     else:

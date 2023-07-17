@@ -78,21 +78,31 @@ def get_excum_factor(contract):
     data = rqdatac.get_ex_factor(order_book_ids=contract, start_date=edate, end_date=edatex, market='cn')
     return data
 
-def process_symbol_data(contract, ex_f):
+def convert_exchange_code(contract):
+    ex_rq = contract.split('.')[1]
+    if ex_rq == 'XSHE':
+        exchg = Exchange.SSE
+    elif ex_rq == 'XSHG':
+        exchg = Exchange.SZSE
+    else:
+        print('wrong stock contract: '+contract)
+        exchg = ''
+    return exchg
+
+def process_symbol_data(contract, sdate, ex_f):
     contractx = contract.split('.')[0]
     print(contractx)
     sql = "select * from stock_minute where date>"+str(sdate)+ " and symbol='" + contractx+"';"
     data = pd.read_sql(sql,conn)
-    # print(data)
+    data = data.sort_values(by='datetime')
     data['ex_cum_factor'] = data['ex_factor'].cumprod()
     data['pre_adj_factor'] = data['ex_cum_factor']/data['ex_cum_factor'].iloc[-1]/ex_f
     data['datetime'] = data['datetime'].dt.tz_localize('Asia/Shanghai')
-    # print(data)
     data['open_adj'] = data['open_price']*data['pre_adj_factor']
     data['high_adj'] = data['high_price']*data['pre_adj_factor']
     data['low_adj'] = data['low_price']*data['pre_adj_factor']
     data['close_adj'] = data['close_price']*data['pre_adj_factor']
-    # print(data)
+
     move_df_to_mysql(data)
     insert_df = data[['symbol','exchange','datetime','interval','volume','open_adj','high_adj','low_adj','close_adj','turnover']]
     insert_into_ck_database(insert_df)
@@ -154,12 +164,12 @@ def create_dbbardata_table():
     exchange String,\
     datetime DateTime,\
     interval String,\
-    volume UInt32,\
+    volume Float32,\
     open_price Float32,\
     high_price Float32,\
     low_price Float32,\
     close_price Float32,\
-    turnover UInt32,\
+    turnover Float32,\
     )\
     ENGINE = MergeTree()\
     PRIMARY KEY (symbol, exchange, datetime, interval)"
@@ -176,21 +186,34 @@ def drop_symbol(contract):
     client.execute(sql)
     return
 
+def get_database_latest_symbols():
+    sql = "select distinct(symbol),exchange from stock_bar.stock_minute"
+    data = pd.read_sql(sql, conn)
+    codes = (data['symbol']+ '.' + data['exchange']).to_list()
+    rq_codes = []
+    for code in codes:
+        if 'SZSE' in code:
+            code = code[:7]+'XSHE'
+        elif 'SSE' in code:
+            code = code[:7]+'XSHG'
+        rq_codes.append(code)
+    return rq_codes
+
 
 if __name__ == '__main__':
     print_date = time.strftime("%Y-%m-%d %H:%M:%S")
-    print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
     print(f"{print_date}: {__file__}")
 
     # create_dbbardata_table()
-    # truncate_table()
-
-    sdate = time.strftime("%Y-%m-%d")
     edate = time.strftime("%Y-%m-%d")
     edatex = str(int(edate[:4])+1)+edate[4:]
-    contracts = get_contracts()
     
-
+    contracts = get_contracts()                       # 最新股票池code
+    latest_symbols = get_database_latest_symbols()    # 数据库里的code
+    contracts0 = list(set(latest_symbols)&(set(contracts)))  # 不发生变动的股票
+    contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
+    contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
+    
     ex_factor_data = get_excum_factor(contracts)
     ex_factor_data['contract'] = ex_factor_data['order_book_id'].str.slice(0,6)
     # print(ex_factor_data)
@@ -199,10 +222,43 @@ if __name__ == '__main__':
     else:
         ex_symbols = ex_factor_data[ex_factor_data.announcement_date==edate]['order_book_id']
     # print(ex_symbols)
+    
     for contract in contracts:
-        if contract in ex_symbols:
-            ex_f = ex_factor_data[ex_factor_data.order_book_id==contract]['ex_factor']
+        if contract in contracts0:
+            if contract in ex_symbols:
+                ex_f = ex_factor_data[ex_factor_data.order_book_id==contract]['ex_factor']
+                sdate = 20210101
+                # 删除mysql的对应symbol的数据
+                exchange = convert_exchange_code(contract)
+                interval = Interval.MINUTE
+                database.delete_bar_data(
+                    symbol=contract.split('.')[0],
+                    exchange=exchange,
+                    interval=interval
+                    )
+                # 删除ck的对应的symbol数据
+                drop_symbol(contract)
+            else:
+                ex_f = 1
+                sdate = int(time.strftime("%Y%m%d"))
+            
+            process_symbol_data(contract, sdate, ex_f)
+        elif contract in contracts1:
+            # 删除ck的对应的symbol数据
+            drop_symbol(contract)
+            # 删除mysql的对应symbol的数据
+            exchange = convert_exchange_code(contract)
+            interval = Interval.MINUTE
+            database.delete_bar_data(
+                symbol=contract.split('.')[0],
+                exchange=exchange,
+                interval=interval
+                )
         else:
-            ex_f = 1
-        
-        process_symbol_data(contract, ex_f)
+            if contract in ex_symbols:
+                ex_f = ex_factor_data[ex_factor_data.order_book_id==contract]['ex_factor']
+            else:
+                ex_f = 1
+            sdate = 20210101
+            process_symbol_data(contract, sdate, ex_f)
+

@@ -184,7 +184,7 @@ if __name__ == '__main__':
     edate = time.strftime("%Y-%m-%d")
     edatex = str(int(edate[:4])+1)+edate[4:]
     contracts = get_contracts()
-    contracts = ['601088.XSHG']
+    # contracts = ['601088.XSHG']
 
     ex_factor_data = get_excum_factor(contracts)
     ex_factor_data['contract'] = ex_factor_data['order_book_id'].str.slice(0,6)

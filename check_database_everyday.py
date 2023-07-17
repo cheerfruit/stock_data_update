@@ -21,6 +21,10 @@ import logging
 from sqlalchemy import create_engine
 from urllib.parse import quote_plus as urlquote
 import time
+from send_to_wechat import WeChat
+
+wechat = WeChat()
+receiver = 'hujinglei'
 
 # log配置
 logfile_path = '/home/ubuntu/stock_data_update/logs/check_history.log'
@@ -72,7 +76,6 @@ def get_trading_day():
     dt_data = pd.read_sql(sql, conn_info)
     return dt_data
 
-
 def check_stock(data, contracts):
     print("Start checking stock code!")
     contracts_check = set(data['symbol'].unique())
@@ -81,6 +84,7 @@ def check_stock(data, contracts):
     if len(loss)>0:
         print('Missing Stock! ', str(loss))
         logger.info(f'Missing Stock! {str(loss)}')
+        wechat.send_data(f'Missing Stock! {str(loss)}', touser=receiver)
     print("Stock code checked!\n")
     return
 
@@ -95,6 +99,7 @@ def check_hourly_bar_num(data, bars_per_day):
         print(abnormal)
         logger.info(f'Wrong bar numbers!')
         logger.info(abnormal)
+        wechat.send_data(f'Wrong bar numbers!', touser=receiver)
     print('Bars checked!\n')
     return
 
@@ -111,6 +116,7 @@ def check_abnormal_data(data):
         print(price_zero)
         logger.info(f'Price equals zero!')
         logger.info(price_zero)
+        wechat.send_data('Price equals zero!', touser=receiver)
     print("Abnormal price checked!\n")
     return
 
@@ -128,6 +134,7 @@ def check_by_order_database(data, starttime, endtime):
         print(price_gap_abnormal)
         logger.info('Price abnormal!')
         logger.info(price_gap_abnormal)
+        wechat.send_data('Price abnormal!', touser=receiver)
     print("Finished!\n")
     return
 
@@ -139,7 +146,6 @@ def check_by_contract(contracts):
     # print(data)
     if data.empty:
         print('Data is not updated! date: ', last_date)
-
     data['date'] = data.index.strftime("%Y%m%d").astype(int)
 
     # 检查股票缺失情况
@@ -153,14 +159,16 @@ def check_by_contract(contracts):
 
     # 和其他数据源对比
     check_by_order_database(data, starttime, endtime)
+    wechat.send_data('Database Checked!', touser=receiver)
     return
-
 
 if __name__ == '__main__':
     print_date = time.strftime("%Y-%m-%d %H:%M:%S")
     print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
     print(f"{print_date}: {__file__}")
+    logger.info('#'*100)
+    logger.info(f"{print_date}: {__file__}")
 
     contracts = get_contracts()
     check_by_contract(contracts)
-    
+

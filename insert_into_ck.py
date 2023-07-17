@@ -27,7 +27,7 @@ def get_contracts():
     return rq_codes
 
 def get_data(contract, sdate, edate, freq):
-    data = rqdatac.get_price(order_book_ids=contract, start_date=sdate,end_date=edate,frequency=freq,fields=fields,adjust_type='pre', skip_suspended=False, market='cn')
+    data = rqdatac.get_price(order_book_ids=contract, start_date=sdate,end_date=edate,frequency=freq,fields=fields,adjust_type='none', skip_suspended=False, market='cn')
     # print(data)
     data = data.reset_index()
     data['symbol'] = contract.split('.')[0]
@@ -92,8 +92,8 @@ def create_stock_min_table():
     high_price Float32,\
     low_price Float32,\
     close_price Float32,\
-    turnover UInt32,\
-    volume UInt32,\
+    turnover Float32,\
+    volume Float32,\
     ex_factor Float32,\
     )\
     ENGINE = MergeTree()\
@@ -114,23 +114,50 @@ def get_database_last_date():
     # print(max_date)
     return max_date
 
-if __name__ == '__main__':
-    # create_stock_min_table()
-    # truncate_table()
+def get_database_latest_symbols():
+    sql = "select distinct(symbol),exchange from stock_bar.stock_minute"
+    data = pd.read_sql(sql, conn)
+    codes = (data['symbol']+ '.' + data['exchange']).to_list()
+    rq_codes = []
+    for code in codes:
+        if 'SZSE' in code:
+            code = code[:7]+'XSHE'
+        elif 'SSE' in code:
+            code = code[:7]+'XSHG'
+        rq_codes.append(code)
+    return rq_codes
 
+def drop_data_by_symbol(symbol):
+    sql = "delete from stock_bar.stock_minute where symbol='{symbol}'"
+    client.execute(sql)
+    return
+
+if __name__ == '__main__':
     freq = '1m'
-    # sdate = '2021-01-04'
     sdate = str(pd.to_datetime(get_database_last_date()) +pd.Timedelta('1d'))[:10]
     print(sdate)
     edate = time.strftime("%Y-%m-%d")
-    contracts = get_contracts()
+
+    contracts = get_contracts()                       # 最新股票池code
+    latest_symbols = get_database_latest_symbols()    # 数据库里的code
+    contracts0 = list(set(latest_symbols)&(set(contracts)))  # 不发生变动的股票
+    contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
+    contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
 
     ex_factor_data = get_excum_factor(contracts)
-    print(ex_factor_data)
     # print(ex_factor_data)
 
-    for contract in contracts:  # 按一个票一个票循环，其实也可以多个票，可以测试下怎么样速度更加快
-        data = get_data(contract, sdate, edate, freq)
+    for contract in (contracts0+contracts1+contracts2):  # 按一个票一个票循环，其实也可以多个票，可以测试下怎么样速度更加快
+        print(contract)
+        if contract in contracts0:
+            data = get_data(contract, sdate, edate, freq)
+        elif contract in contracts2:
+            data = get_data(contract, '2005-01-01', edate, freq)
+        else:
+            # 删除对应symbol的数据
+            drop_data_by_symbol(contract)
+            continue
+
         data = data.set_index('datetime')
         # print(data)
         if ex_factor_data is None:
@@ -149,10 +176,6 @@ if __name__ == '__main__':
         data = data.reset_index()
         data['date'] = pd.to_datetime(data['datetime']).dt.strftime('%Y%m%d').astype(int)
         df = data[['datetime','date', 'symbol', 'exchange', 'interval','open_price', 'high_price','low_price','close_price','turnover','volume','ex_factor']]
-        df['turnover'] = df['turnover'].astype(int)
-        df['volume'] = df['volume'].astype(int)
-        # print(df)
-        if not df[df.ex_factor!=1].empty:
-            print(df[df.ex_factor!=1])
         insert_into_ck_database(df)
+        del df,data    # 必须删除, 否则容易因为内存溢出被系统killed
 

@@ -37,7 +37,6 @@ setting_backup = {
 with open('/home/ubuntu/anaconda3/lib/python3.10/site-packages/vnpy/trader/vt_setting.json','w') as f1:
     json.dump(setting_backup,f1, indent=4, ensure_ascii=False)
 
-
 from vnpy.trader.constant import Exchange, Interval
 from vnpy.trader.database import get_database
 from vnpy.trader.object import BarData
@@ -144,7 +143,6 @@ def move_df_to_mysql(imported_data:pd.DataFrame):
 
 if __name__ == '__main__':
 
-    # freq = Interval.MINUTE 
     freq = '1m'
     sdate = '2021-01-01'
     edate = time.strftime("%Y-%m-%d")
