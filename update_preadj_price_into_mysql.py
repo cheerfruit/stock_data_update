@@ -165,13 +165,12 @@ if __name__ == '__main__':
     print_date = time.strftime("%Y-%m-%d %H:%M:%S")
     print(f"{print_date}: {__file__}")
 
-    # freq = Interval.MINUTE 
     freq = '1m'
     sdate = '2021-01-01'
     edate = time.strftime("%Y-%m-%d")
     edatex = str(int(edate[:4])+1)+edate[4:]
     last_date = get_last_trading_day(edate)
-    # print(last_date)
+    print(last_date)
     contracts = get_contracts()                       # 最新股票池code
     latest_symbols = get_database_latest_symbols()    # 数据库里的code
     contracts0 = list(set(latest_symbols)&(set(contracts)))       # 不发生变动的股票
@@ -201,6 +200,7 @@ if __name__ == '__main__':
                     interval=interval
                     )
                 move_df_to_mysql(data)
+                del data
             else:
                 data = get_data(contract, last_date, last_date, freq)
                 data_nochg = pd.concat([data_nochg, data])
@@ -215,6 +215,7 @@ if __name__ == '__main__':
         else:                           # 新加的票直接插入从2021年开始的数据
             data = get_data(contract, sdate, last_date, freq)
             move_df_to_mysql(data)
+            del data
             
     if data_nochg.empty:
         pass

@@ -106,6 +106,7 @@ def process_symbol_data(contract, sdate, ex_f):
     move_df_to_mysql(data)
     insert_df = data[['symbol','exchange','datetime','interval','volume','open_adj','high_adj','low_adj','close_adj','turnover']]
     insert_into_ck_database(insert_df)
+    del data, insert_df
     return
 
 def insert_into_ck_database(df):

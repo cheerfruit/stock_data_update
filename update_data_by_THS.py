@@ -205,24 +205,37 @@ def main():
     print("Ex_codes: ", ex_codes)
     
     data_all = pd.DataFrame()
-    for ths_code in ths_codes:
+    for ths_code in (contracts0+contracts1+contracts2):
         print(ths_code)
-        if ths_code not in ex_codes:
-            
-            # 经测试，所有股票一起取会取到None, 取股票只数有上限（25个就不行），现在先单个的取，速度慢了后面改成10个,日期太长的也取不了
-            data = get_stock_history_1m_data(ths_code,startdate)
-            data = process_data(data)
-            data['datetime'] = data['datetime'] - pd.Timedelta('1min')
-            data_all = pd.concat([data_all, data])
-            if data_all.shape[0]>10000:
-                move_df_to_mysql(data_all)
-                data_all = pd.DataFrame()
-        else:
-            data = get_stock_history_1m_data(ths_code, '2021-01-01')
-            data = process_data(data)
-            data['datetime'] = data['datetime'] - pd.Timedelta('1min')
+        if ths_code in contracts0:
+            if ths_code not in ex_codes:
+                
+                # 经测试，所有股票一起取会取到None, 取股票只数有上限（25个就不行），现在先单个的取，速度慢了后面改成10个,日期太长的也取不了
+                data = get_stock_history_1m_data(ths_code,startdate)
+                data = process_data(data)
+                data['datetime'] = data['datetime'] - pd.Timedelta('1min')
+                data_all = pd.concat([data_all, data])
+                if data_all.shape[0]>10000:
+                    move_df_to_mysql(data_all)
+                    del data_all
+                    data_all = pd.DataFrame()
+            else:
+                data = get_stock_history_1m_data(ths_code, '2021-01-01')
+                data = process_data(data)
+                data['datetime'] = data['datetime'] - pd.Timedelta('1min')
 
-            # 先删除对应symbol的数据
+                # 先删除对应symbol的数据
+                exchange = exchg_dict[ths_code.split('.')[1]]
+                interval = Interval.MINUTE
+                database.delete_bar_data(
+                    symbol=ths_code.split('.')[0],
+                    exchange=exchange,
+                    interval=interval
+                    )
+                # 然后插入数据
+                move_df_to_mysql(data)
+                del data
+        elif ths_code in contracts1:
             exchange = exchg_dict[ths_code.split('.')[1]]
             interval = Interval.MINUTE
             database.delete_bar_data(
@@ -230,8 +243,13 @@ def main():
                 exchange=exchange,
                 interval=interval
                 )
-            # 然后插入数据
+        else:
+            data = get_stock_history_1m_data(ths_code, '2021-01-01')
+            data = process_data(data)
+            data['datetime'] = data['datetime'] - pd.Timedelta('1min')
             move_df_to_mysql(data)
+            del data
+
     if not data_all.empty:
         move_df_to_mysql(data_all)
 
