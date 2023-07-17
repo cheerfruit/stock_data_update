@@ -8,6 +8,7 @@ import time
 import json
 import pymysql
 
+print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
 # 备用库设定
 setting_backup = {
     "font.family": "微软雅黑",
@@ -50,7 +51,7 @@ exchg_dict = {'SH':Exchange.SSE, 'SZ':Exchange.SZSE}
 
 conn = pymysql.connect(host='localhost', port=3306, database='vnpy_THS',user='remote',password='zhP@55word')
 
-exchg_dict = {'SSE':Exchange.SSE, 'SZSE':Exchange.SZSE}
+# exchg_dict = {'SSE':Exchange.SSE, 'SZSE':Exchange.SZSE}
 
 # 登录函数
 def thslogindemo():
@@ -140,7 +141,8 @@ def process_data(df):
 def get_max_date():
     sql = "select max(datetime) from vnpy_THS.dbbardata"
     data = pd.read_sql(sql,conn)
-    max_date = str(data.values[0][0])[:10]
+    max_date = str(data.values[0][0]+pd.Timedelta('1d'))[:10]
+    # print(max_date)
     return max_date
 
 def get_excum_factor():
@@ -159,7 +161,7 @@ def get_last_trading_day(xdate):
 def get_ex_symbols(last_date):
     # 检查是否有除权除息
     ex_factor_data = get_excum_factor()
-    print(ex_factor_data)
+    # print(ex_factor_data)
     if ex_factor_data is None:
         ex_symbols = []
     else:
@@ -173,20 +175,40 @@ def get_ex_symbols(last_date):
         ex_codes.append(code)
     return ex_codes
 
+def get_database_latest_symbols():
+    sql = "select distinct(symbol),exchange from stock_bar.stock_minute"
+    data = pd.read_sql(sql, conn)
+    codes = (data['symbol']+ '.' + data['exchange']).to_list()
+    ths_codes = []
+    for code in codes:
+        if 'SZSE' in code:
+            code = code[:7]+'SZ'
+        elif 'SSE' in code:
+            code = code[:7]+'SH'
+        ths_codes.append(code)
+    return ths_codes
+
 def main():
     # 登录函数
     thslogindemo()
-    ths_codes = get_contracts()
-    # ths_codes = ['601088.SH']
+    # ths_codes = get_contracts()
+    contracts = get_contracts()
+    latest_symbols = get_database_latest_symbols()    # 数据库里的code
+    contracts0 = list(set(latest_symbols)&(set(contracts)))  # 不发生变动的股票
+    contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
+    contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
     startdate = get_max_date()
     edate = time.strftime("%Y-%m-%d")
     last_date = get_last_trading_day(edate)
     ex_codes = get_ex_symbols(last_date)
+    print(last_date)
+    print("Ex_codes: ", ex_codes)
     
     data_all = pd.DataFrame()
-    for ths_code in ths_codes[:1]:
+    for ths_code in ths_codes:
         print(ths_code)
         if ths_code not in ex_codes:
+            
             # 经测试，所有股票一起取会取到None, 取股票只数有上限（25个就不行），现在先单个的取，速度慢了后面改成10个,日期太长的也取不了
             data = get_stock_history_1m_data(ths_code,startdate)
             data = process_data(data)
@@ -210,8 +232,12 @@ def main():
                 )
             # 然后插入数据
             move_df_to_mysql(data)
+    if not data_all.empty:
+        move_df_to_mysql(data_all)
 
 
 if __name__ == '__main__':
+    print_date = time.strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{print_date}: {__file__}")
     main()
 
