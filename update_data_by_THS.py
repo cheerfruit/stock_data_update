@@ -136,6 +136,7 @@ def process_data(df):
     df.loc[df['min']=="13:01",'high'] = df.loc[df['min']=="13:01",['pre_open','high']].max(1)
     # print(df.loc[df['min'].isin(["09:31","13:01"])])
     df = df[~df['min'].isin(["09:30","13:00"])]
+    df = df.fillna(method='ffill')
     return df
 
 def get_max_date():
@@ -176,7 +177,7 @@ def get_ex_symbols(last_date):
     return ex_codes
 
 def get_database_latest_symbols():
-    sql = "select distinct(symbol),exchange from stock_bar.stock_minute"
+    sql = "select distinct(symbol),exchange from dbbardata"
     data = pd.read_sql(sql, conn)
     codes = (data['symbol']+ '.' + data['exchange']).to_list()
     ths_codes = []
