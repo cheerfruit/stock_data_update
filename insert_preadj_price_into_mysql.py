@@ -101,9 +101,9 @@ def get_data(contract, sdate, edate, freq):
 def convert_exchange_code(contract):
     ex_rq = contract.split('.')[1]
     if ex_rq == 'XSHE':
-        exchg = Exchange.SSE
-    elif ex_rq == 'XSHG':
         exchg = Exchange.SZSE
+    elif ex_rq == 'XSHG':
+        exchg = Exchange.SSE
     else:
         print('wrong stock contract: '+contract)
         exchg = ''

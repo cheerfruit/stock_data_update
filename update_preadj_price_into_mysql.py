@@ -5,7 +5,7 @@
 import pandas as pd
 import rqdatac
 import time
-import clickhouse_driver
+# import clickhouse_driver
 import json
 import pymysql
 
@@ -51,7 +51,7 @@ rqdatac.init('license', 'hKzEyfcbN4O4B22wGXKfOZnOkVIyQ4fnW7VSUepZ5shkCx3Wpfkb63n
 
 # 获取数据库实例
 database = get_database()
-conn = clickhouse_driver.connect(host='localhost', port=9000, database='common_info',user='remote',password='zhP@55word')  # 用于取trading_day数据
+# conn = clickhouse_driver.connect(host='localhost', port=33, database='common_info',user='remote',password='zhP@55word')  # 用于取trading_day数据
 conn_mysql = pymysql.connect(host='localhost', port=3306, database='vnpyzh',user='remote',password='zhP@55word')
 
 
@@ -66,7 +66,9 @@ fields = ['open','high','low','close','volume','total_turnover']
 
 def get_last_trading_day(xdate):
     sql = "select * from common_info.trading_day"
-    data = pd.read_sql(sql,conn)
+    data = pd.read_sql(sql,conn_mysql)
+    data['datetime'] = pd.to_datetime(data['datetime'])
+    # print(data)
     zdate = int(''.join(xdate.split('-')))
     last_trading_day = data[data['date'].shift(-1)==zdate]['datetime'].dt.strftime('%Y-%m-%d').values[0]
     return last_trading_day
@@ -104,9 +106,9 @@ def get_data(contract, sdate, edate, freq):
 def convert_exchange_code(contract):
     ex_rq = contract.split('.')[1]
     if ex_rq == 'XSHE':
-        exchg = Exchange.SSE
-    elif ex_rq == 'XSHG':
         exchg = Exchange.SZSE
+    elif ex_rq == 'XSHG':
+        exchg = Exchange.SSE
     else:
         print('wrong stock contract: '+contract)
         exchg = ''
@@ -170,12 +172,16 @@ if __name__ == '__main__':
     edate = time.strftime("%Y-%m-%d")
     edatex = str(int(edate[:4])+1)+edate[4:]
     last_date = get_last_trading_day(edate)
-    print(last_date)
+    # print(last_date)
     contracts = get_contracts()                       # 最新股票池code
     latest_symbols = get_database_latest_symbols()    # 数据库里的code
     contracts0 = list(set(latest_symbols)&(set(contracts)))       # 不发生变动的股票
     contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
     contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
+    contracts0.sort()
+    contracts1.sort()
+    contracts2.sort()
+    print("all symbol nums: ",len(contracts0+contracts1+contracts2))
 
     ex_factor_data = get_excum_factor(contracts, last_date, edatex)
     # print(ex_factor_data)
@@ -221,3 +227,5 @@ if __name__ == '__main__':
         pass
     else:
         move_df_to_mysql(data_nochg)
+    
+    print(f"{__file__}: Finished all work!")

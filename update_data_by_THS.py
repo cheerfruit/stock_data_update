@@ -56,8 +56,8 @@ conn = pymysql.connect(host='localhost', port=3306, database='vnpy_THS',user='re
 # 登录函数
 def thslogindemo():
     # 输入用户的帐号和密码
-    # thsLogin = THS_iFinDLogin("zh35508","0f2276")
-    thsLogin = THS_iFinDLogin("zh36070","3c2759")
+    thsLogin = THS_iFinDLogin("zh35508","0f2276")
+    # thsLogin = THS_iFinDLogin("zh36070","3c2759")
     # print(thsLogin)
     if thsLogin != 0:
         print('登录失败')
@@ -194,8 +194,8 @@ def main():
     thslogindemo()
     # ths_codes = get_contracts()
     contracts = get_contracts()
-    latest_symbols = get_database_latest_symbols()    # 数据库里的code
-    contracts0 = list(set(latest_symbols)&(set(contracts)))  # 不发生变动的股票
+    latest_symbols = get_database_latest_symbols()                # 数据库里的code
+    contracts0 = list(set(latest_symbols)&(set(contracts)))       # 不发生变动的股票
     contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
     contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
     startdate = get_max_date()
@@ -210,8 +210,6 @@ def main():
         print(ths_code)
         if ths_code in contracts0:
             if ths_code not in ex_codes:
-                
-                # 经测试，所有股票一起取会取到None, 取股票只数有上限（25个就不行），现在先单个的取，速度慢了后面改成10个,日期太长的也取不了
                 data = get_stock_history_1m_data(ths_code,startdate)
                 data = process_data(data)
                 data['datetime'] = data['datetime'] - pd.Timedelta('1min')
@@ -259,4 +257,4 @@ if __name__ == '__main__':
     print_date = time.strftime("%Y-%m-%d %H:%M:%S")
     print(f"{print_date}: {__file__}")
     main()
-
+    print(f"{__file__}: Finished all work!")

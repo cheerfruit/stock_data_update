@@ -200,4 +200,5 @@ if __name__ == '__main__':
         else:
             ex_f = 1
         process_symbol_data(contract, ex_f)
+    print(f"{__file__}: Finished all work!")
     

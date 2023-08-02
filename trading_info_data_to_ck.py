@@ -29,6 +29,7 @@ def update_trade_dt():
     dd = int(time.strftime("%Y%m%d"))
     sql = 'select max(date) from common_info.trading_day'
     max_date = pd.read_sql(sql, conn)
+    # max_date = pd.DataFrame()
     if max_date.empty:
         start_date = '20050101'
         end_date = '29240101'
@@ -87,7 +88,7 @@ def create_trading_day_table():
     date UInt32,\
     datetime DateTime,\
     )\
-    ENGINE = MergeTree()\
+    ENGINE = ReplacingMergeTree()\
     PRIMARY KEY (date)"
     client.execute(sql)
     return
@@ -100,8 +101,10 @@ def create_ex_factor_table():
     ex_cum_factor Float32,\
     ex_end_date  DateTime,\
     ex_factor Float32,\
+    create_date DateTime,\
+    remarks UInt32,\
     )\
-    ENGINE = MergeTree()\
+    ENGINE = ReplacingMergeTree()\
     PRIMARY KEY (announcement_date, order_book_id)"
     client.execute(sql)
     return
@@ -118,6 +121,7 @@ def get_contracts():
             codex = code
         rq_codes.append([codex, code])
     # print(rq_codes)
+    # print(len(rq_codes))
     return rq_codes
 
 def update_ex_factor_data():
@@ -139,8 +143,6 @@ def update_ex_factor_data():
     data= data.fillna(pd.to_datetime('2050-01-01', format="%Y-%m-%d"))
     data['create_date'] = pd.to_datetime(time.strftime("%Y-%m-%d"))
     data['remarks'] = None
-
-
     # 初始化表格
     sql = 'truncate table common_info.ex_factor'
     cols = 'ex_date,order_book_id,announcement_date,ex_cum_factor,ex_end_date,ex_factor,create_date,remarks'
@@ -148,19 +150,21 @@ def update_ex_factor_data():
     cursor.execute(sql)
     conn.commit()
     insert_into_mysql_database(data[cols.split(',')], tablename, cols)
+    print("Finish inserting into mysql!")
 
     client.execute(sql)
     data['remarks'] = 0
+    print(data[cols.split(',')])
     insert_into_ck_database(data[cols.split(',')], tablename, cols)
-
+    print("Finish inserting into clickhouse!")
     return
 
 if __name__ == '__main__':
     print_date = time.strftime("%Y-%m-%d %H:%M:%S")
     print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
     print(f"{print_date}: {__file__}")
-    # create_trading_day_table()
-    # create_ex_factor_table()
+
     # get_trade_dt()
     update_trade_dt()
     update_ex_factor_data()
+    print(f"{__file__}: Finished all work!")

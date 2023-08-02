@@ -81,9 +81,9 @@ def get_excum_factor(contract):
 def convert_exchange_code(contract):
     ex_rq = contract.split('.')[1]
     if ex_rq == 'XSHE':
-        exchg = Exchange.SSE
-    elif ex_rq == 'XSHG':
         exchg = Exchange.SZSE
+    elif ex_rq == 'XSHG':
+        exchg = Exchange.SSE
     else:
         print('wrong stock contract: '+contract)
         exchg = ''
@@ -92,7 +92,7 @@ def convert_exchange_code(contract):
 def process_symbol_data(contract, sdate, ex_f):
     contractx = contract.split('.')[0]
     print(contractx)
-    sql = "select * from stock_minute where date>"+str(sdate)+ " and symbol='" + contractx+"';"
+    sql = "select * from stock_minute where date>="+str(sdate)+ " and symbol='" + contractx+"';"
     data = pd.read_sql(sql,conn)
     data = data.sort_values(by='datetime')
     data['ex_cum_factor'] = data['ex_factor'].cumprod()
@@ -188,7 +188,7 @@ def drop_symbol(contract):
     return
 
 def get_database_latest_symbols():
-    sql = "select distinct(symbol),exchange from stock_bar.stock_minute"
+    sql = "select distinct(symbol),exchange from vnpy_backup.dbbardata"
     data = pd.read_sql(sql, conn)
     codes = (data['symbol']+ '.' + data['exchange']).to_list()
     rq_codes = []
@@ -214,17 +214,22 @@ if __name__ == '__main__':
     contracts0 = list(set(latest_symbols)&(set(contracts)))  # 不发生变动的股票
     contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
     contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
+
+    contracts0.sort()
+    contracts1.sort()
+    contracts2.sort()
+    print("all symbol nums: ",len(contracts0+contracts1+contracts2))
     
     ex_factor_data = get_excum_factor(contracts)
-    ex_factor_data['contract'] = ex_factor_data['order_book_id'].str.slice(0,6)
-    # print(ex_factor_data)
+    print(ex_factor_data)
     if ex_factor_data is None:
         ex_symbols = []
     else:
+        ex_factor_data['contract'] = ex_factor_data['order_book_id'].str.slice(0,6)
         ex_symbols = ex_factor_data[ex_factor_data.announcement_date==edate]['order_book_id']
     # print(ex_symbols)
     
-    for contract in contracts:
+    for contract in (contracts0+contracts1+contracts2):
         if contract in contracts0:
             if contract in ex_symbols:
                 ex_f = ex_factor_data[ex_factor_data.order_book_id==contract]['ex_factor']
@@ -242,7 +247,7 @@ if __name__ == '__main__':
             else:
                 ex_f = 1
                 sdate = int(time.strftime("%Y%m%d"))
-            
+            # 删除后重新写入完整数据
             process_symbol_data(contract, sdate, ex_f)
         elif contract in contracts1:
             # 删除ck的对应的symbol数据
@@ -256,10 +261,11 @@ if __name__ == '__main__':
                 interval=interval
                 )
         else:
+            print('Insert new stock: ')
             if contract in ex_symbols:
                 ex_f = ex_factor_data[ex_factor_data.order_book_id==contract]['ex_factor']
             else:
                 ex_f = 1
             sdate = 20210101
             process_symbol_data(contract, sdate, ex_f)
-
+    print(f"{__file__}: Finished all work!")

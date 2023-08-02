@@ -163,4 +163,5 @@ if __name__ == '__main__':
         print('#'*150)
         print(f'symbol: {contract}')
         check_by_contract(contract,trade_dt)
+    print(f"{__file__}: Finished all work!")
         

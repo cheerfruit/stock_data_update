@@ -21,9 +21,9 @@ import logging
 from sqlalchemy import create_engine
 from urllib.parse import quote_plus as urlquote
 import time
-from send_to_wechat import WeChat
+# from send_to_wechat import WeChat
 
-wechat = WeChat()
+# wechat = WeChat()
 receiver = 'hujinglei'
 
 # log配置
@@ -84,7 +84,7 @@ def check_stock(data, contracts):
     if len(loss)>0:
         print('Missing Stock! ', str(loss))
         logger.info(f'Missing Stock! {str(loss)}')
-        wechat.send_data(f'Missing Stock! {str(loss)}', touser=receiver)
+        # wechat.send_data(f'Missing Stock! {str(loss)}', touser=receiver)
     print("Stock code checked!\n")
     return
 
@@ -99,7 +99,7 @@ def check_hourly_bar_num(data, bars_per_day):
         print(abnormal)
         logger.info(f'Wrong bar numbers!')
         logger.info(abnormal)
-        wechat.send_data(f'Wrong bar numbers!', touser=receiver)
+        # wechat.send_data(f'Wrong bar numbers!', touser=receiver)
     print('Bars checked!\n')
     return
 
@@ -116,7 +116,7 @@ def check_abnormal_data(data):
         print(price_zero)
         logger.info(f'Price equals zero!')
         logger.info(price_zero)
-        wechat.send_data('Price equals zero!', touser=receiver)
+        # wechat.send_data('Price equals zero!', touser=receiver)
     print("Abnormal price checked!\n")
     return
 
@@ -134,7 +134,7 @@ def check_by_order_database(data, starttime, endtime):
         print(price_gap_abnormal)
         logger.info('Price abnormal!')
         logger.info(price_gap_abnormal)
-        wechat.send_data('Price abnormal!', touser=receiver)
+        # wechat.send_data('Price abnormal!', touser=receiver)
     print("Finished!\n")
     return
 
@@ -159,7 +159,7 @@ def check_by_contract(contracts):
 
     # 和其他数据源对比
     check_by_order_database(data, starttime, endtime)
-    wechat.send_data('Database Checked!', touser=receiver)
+    # wechat.send_data('Database Checked!', touser=receiver)
     return
 
 if __name__ == '__main__':
@@ -171,4 +171,5 @@ if __name__ == '__main__':
 
     contracts = get_contracts()
     check_by_contract(contracts)
+    print(f"{__file__}: Finished all work!")
 

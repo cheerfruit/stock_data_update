@@ -5,6 +5,9 @@ import clickhouse_driver
 import pandas as pd
 import rqdatac
 import time
+print_date = time.strftime("%Y-%m-%d %H:%M:%S")
+print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
+print(f"{print_date}: {__file__}")
 
 rqdatac.init('license', 'hKzEyfcbN4O4B22wGXKfOZnOkVIyQ4fnW7VSUepZ5shkCx3Wpfkb63nMWozKudSUfMCiSx6cuWYasEyqaIVQ7a91WnYFIhxSw39GKxvHmhnlIjaSjBNncRY0Y3ZH3wWYiYbjK25Gxl9FuVkH6sA5VmnbMBmJoQHeT_seHEFYVPw=LVXNtX-oQgO2T9QDKkPx1hhlyjgrkYETwszLKzPA3ItRHWcp4crJu9dlykAOaJv4AtQuPy-THTFzBP4DfcFtIWm-W5vGQNyMMu3lD8cc1u_kxXFfihqajhijKdIi8nJvVrOexx1XVI6Vv-FdzrL0IVNY9e9GCcZ9lavQanQ4BNw=' )
 print(rqdatac.user.get_quota())
@@ -28,7 +31,6 @@ def get_contracts():
 
 def get_data(contract, sdate, edate, freq):
     data = rqdatac.get_price(order_book_ids=contract, start_date=sdate,end_date=edate,frequency=freq,fields=fields,adjust_type='none', skip_suspended=False, market='cn')
-    # print(data)
     data = data.reset_index()
     data['symbol'] = contract.split('.')[0]
     exchg = convert_exchange_code(contract)
@@ -41,17 +43,14 @@ def get_data(contract, sdate, edate, freq):
     data['close_price'] = data['close']
     data['turnover'] = data['total_turnover']
     data['datetime'] = (pd.to_datetime(data['datetime']) - pd.Timedelta('1 minute'))#.dt.tz_localize(tz='Asia/Shanghai')
-    # print(data)
     return data
 
 def convert_exchange_code(contract):
     ex_rq = contract.split('.')[1]
     if ex_rq == 'XSHE':
-        # exchg = Exchange.SSE
-        exchg = 'SSE'
-    elif ex_rq == 'XSHG':
-        # exchg = Exchange.SZSE
         exchg = 'SZSE'
+    elif ex_rq == 'XSHG':
+        exchg = 'SSE'
     else:
         print('wrong stock contract: '+contract)
         exchg = ''
@@ -77,7 +76,6 @@ def insert_into_ck_database(df):
         
     # 将没有存完的数据存储好
     if count%5000 !=0:
-        # print(all_tuple)
         client.execute(sql, all_tuple)
     return
 
@@ -96,7 +94,7 @@ def create_stock_min_table():
     volume Float32,\
     ex_factor Float32,\
     )\
-    ENGINE = MergeTree()\
+    ENGINE = ReplacingMergeTree()\
     PRIMARY KEY (datetime, symbol, date)"
     client.execute(sql)
     return
@@ -109,9 +107,7 @@ def truncate_table():
 def get_database_last_date():
     sql = "select max(datetime) from stock_bar.stock_minute"
     data = pd.read_sql(sql, conn)
-    # print(data)
     max_date = str(data.values[0][0])[:10]
-    # print(max_date)
     return max_date
 
 def get_database_latest_symbols():
@@ -125,6 +121,8 @@ def get_database_latest_symbols():
         elif 'SSE' in code:
             code = code[:7]+'XSHG'
         rq_codes.append(code)
+    # print(rq_codes)
+    # print(len(rq_codes))
     return rq_codes
 
 def drop_data_by_symbol(symbol):
@@ -133,6 +131,7 @@ def drop_data_by_symbol(symbol):
     return
 
 if __name__ == '__main__':
+    # create_stock_min_table()
     freq = '1m'
     sdate = str(pd.to_datetime(get_database_last_date()) +pd.Timedelta('1d'))[:10]
     print(sdate)
@@ -143,12 +142,17 @@ if __name__ == '__main__':
     contracts0 = list(set(latest_symbols)&(set(contracts)))  # 不发生变动的股票
     contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
     contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
+    contracts0.sort()
+    contracts1.sort()
+    contracts2.sort()
 
     ex_factor_data = get_excum_factor(contracts)
-    # print(ex_factor_data)
-
+    # print(contracts0)
+    # print(contracts1)
+    # print(contracts2)
+    # print(len(contracts0+contracts1+contracts2))
     for contract in (contracts0+contracts1+contracts2):  # 按一个票一个票循环，其实也可以多个票，可以测试下怎么样速度更加快
-        print(contract)
+        # print(contract)
         if contract in contracts0:
             data = get_data(contract, sdate, edate, freq)
         elif contract in contracts2:
@@ -178,4 +182,5 @@ if __name__ == '__main__':
         df = data[['datetime','date', 'symbol', 'exchange', 'interval','open_price', 'high_price','low_price','close_price','turnover','volume','ex_factor']]
         insert_into_ck_database(df)
         del df,data    # 必须删除, 否则容易因为内存溢出被系统killed
-
+    
+    print(f"{__file__}: Finished all work!")
