@@ -142,12 +142,11 @@ def move_df_to_mysql(imported_data:pd.DataFrame):
 
 
 if __name__ == '__main__':
-
     freq = '1m'
     sdate = '2021-01-01'
     edate = time.strftime("%Y-%m-%d")
     last_date = get_last_trading_day(edate)
-    print(last_date)
+    # print(last_date)
     contracts = get_contracts()
 
     for contract in contracts:  # 按一个票一个票循环，其实也可以多个票，可以测试下怎么样速度更加快

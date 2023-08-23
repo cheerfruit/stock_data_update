@@ -8,7 +8,7 @@ import time
 # import clickhouse_driver
 import json
 import pymysql
-
+from configs import *
 
 print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
 # 备用库设定
@@ -30,7 +30,7 @@ setting_backup = {
     "datafeed.password": "",
     "database.timezone": "Asia/Shanghai",
     "database.name": "mysql",
-    "database.database": "vnpyzh",
+    "database.database": "vnpy_futures",
     "database.host": "localhost",
     "database.port": 3306,
     "database.user": "remote",
@@ -52,17 +52,10 @@ rqdatac.init('license', 'hKzEyfcbN4O4B22wGXKfOZnOkVIyQ4fnW7VSUepZ5shkCx3Wpfkb63n
 # 获取数据库实例
 database = get_database()
 # conn = clickhouse_driver.connect(host='localhost', port=33, database='common_info',user='remote',password='zhP@55word')  # 用于取trading_day数据
-conn_mysql = pymysql.connect(host='localhost', port=3306, database='vnpyzh',user='remote',password='zhP@55word')
+conn_mysql = pymysql.connect(host='localhost', port=3306, database='vnpy_futures',user='remote',password='zhP@55word')
 
 
-exchg_dict = {'SSE':Exchange.SSE, 'SZSE':Exchange.SZSE}
-interval_dict = {'1m':Interval.MINUTE,
-                 '1h':Interval.HOUR,
-                 'd':Interval.DAILY,
-                 'w':Interval.WEEKLY
-                 }
-
-fields = ['open','high','low','close','volume','total_turnover']
+# fields = ['open','high','low','close','volume','total_turnover']
 
 def get_last_trading_day(xdate):
     sql = "select * from common_info.trading_day"
@@ -74,22 +67,16 @@ def get_last_trading_day(xdate):
     return last_trading_day
 
 def get_contracts():
-    data = pd.read_csv('/home/ubuntu/stock_data_update/codes.csv')
     rq_codes = []
-    for code in data.code.unique():
-        if 'SZSE' in code:
-            code = code[:7]+'XSHE'
-        elif 'SSE' in code:
-            code = code[:7]+'XSHG'
-        rq_codes.append(code)
-    # print(rq_codes)
+    for symbol in rq_symbols:
+        rq_codes.append(symbol.upper())
     return rq_codes
 
 def get_data(contract, sdate, edate, freq):
-    data = rqdatac.get_price(order_book_ids=contract, start_date=sdate,end_date=edate,frequency=freq,fields=fields,adjust_type='pre', skip_suspended=False, market='cn')
+    data = rqdatac.get_price(order_book_ids=contract, start_date=sdate,end_date=edate,frequency=freq,fields=None,adjust_type='pre', skip_suspended=False, market='cn')
     # print(data)
     data = data.reset_index()
-    data['symbol'] = contract.split('.')[0]
+    data['symbol'] = symbol_cap2symbol[contract]
     exchg = convert_exchange_code(contract)
     
     data['exchange'] = exchg
@@ -100,22 +87,24 @@ def get_data(contract, sdate, edate, freq):
     data['close_price'] = data['close']
     data['turnover'] = data['total_turnover']
     data['datetime'] = (pd.to_datetime(data['datetime']) - pd.Timedelta('1 minute'))#.dt.tz_localize(tz='Asia/Shanghai')
-    # print(data)
+    print(data)
     return data
 
 def convert_exchange_code(contract):
-    ex_rq = contract.split('.')[1]
-    if ex_rq == 'XSHE':
-        exchg = Exchange.SZSE
-    elif ex_rq == 'XSHG':
-        exchg = Exchange.SSE
+    ex_rq = contract
+    exchg_str = symbol_cap2exchange[contract[:-3]]
+    if exchg_str in exchg_dict.keys():
+        exchg = exchg_dict[exchg_str]
     else:
         print('wrong stock contract: '+contract)
         exchg = ''
     return exchg
 
-def get_excum_factor(contract, edate, edatex):
-    data = rqdatac.get_ex_factor(order_book_ids=contract, start_date=edate, end_date=edatex, market='cn')
+def get_excum_factor(contracts, edate, edatex):
+    undelaying_symbols = []
+    for symbol in contracts:
+        undelaying_symbols.append(symbol[:-3])
+    data = rqdatac.futures.get_ex_factor(undelaying_symbols, start_date=edate, end_date=edatex, market='cn')
     return data
 
 def move_df_to_mysql(imported_data:pd.DataFrame):
@@ -133,7 +122,7 @@ def move_df_to_mysql(imported_data:pd.DataFrame):
               high_price=row.high_price,
               low_price=row.low_price,
               close_price=row.close_price,
-              open_interest=0,
+              open_interest=row.open_interest,
               turnover=row.turnover,
               gateway_name="DB",
         )
@@ -152,14 +141,8 @@ def move_df_to_mysql(imported_data:pd.DataFrame):
 def get_database_latest_symbols():
     sql = "select distinct(symbol),exchange from dbbardata"
     data = pd.read_sql(sql, conn_mysql)
-    codes = (data['symbol']+ '.' + data['exchange']).to_list()
-    rq_codes = []
-    for code in codes:
-        if 'SZSE' in code:
-            code = code[:7]+'XSHE'
-        elif 'SSE' in code:
-            code = code[:7]+'XSHG'
-        rq_codes.append(code)
+    # codes = (data['symbol']+ '.' + data['exchange']).to_list()
+    rq_codes = data['symbol'].to_list()
     return rq_codes
 
 
@@ -168,11 +151,12 @@ if __name__ == '__main__':
     print(f"{print_date}: {__file__}")
 
     freq = '1m'
-    sdate = '2021-01-01'
+    sdate = '2019-01-01'
     edate = time.strftime("%Y-%m-%d")
     edatex = str(int(edate[:4])+1)+edate[4:]
     last_date = get_last_trading_day(edate)
-    # print(last_date)
+    # last_date = edate
+    print(last_date)
     contracts = get_contracts()                       # 最新股票池code
     latest_symbols = get_database_latest_symbols()    # 数据库里的code
     contracts0 = list(set(latest_symbols)&(set(contracts)))       # 不发生变动的股票
@@ -188,7 +172,8 @@ if __name__ == '__main__':
     if ex_factor_data is None:
         ex_symbols = []
     else:
-        ex_symbols = ex_factor_data[ex_factor_data.announcement_date==last_date]['order_book_id'].to_list()
+        ex_symbols = ex_factor_data[ex_factor_data.index==last_date]['underlying_symbol'].to_list()
+    # print(ex_symbols)
 
     data_nochg = pd.DataFrame()
     for contract in (contracts0+contracts1+contracts2):  # 按一个票一个票循环，然后合并，其实也可以多个票，可以测试下怎么样速度更加快
@@ -222,7 +207,7 @@ if __name__ == '__main__':
             data = get_data(contract, sdate, last_date, freq)
             move_df_to_mysql(data)
             del data
-            
+
     if data_nochg.empty:
         pass
     else:

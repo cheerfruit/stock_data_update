@@ -21,10 +21,10 @@ import logging
 from sqlalchemy import create_engine
 from urllib.parse import quote_plus as urlquote
 import time
-# from send_to_wechat import WeChat
+import clickhouse_driver
+import pymysql
 
-# wechat = WeChat()
-receiver = 'hujinglei'
+# receiver = 'hujinglei'
 
 # log配置
 logfile_path = '/home/ubuntu/stock_data_update/logs/check_history.log'
@@ -39,9 +39,9 @@ logger.setLevel(logging.INFO)
 host='localhost'
 user='remote'
 password='zhP@55word'
-conn_mysql = create_engine(f"mysql+pymysql://{user}:{urlquote(password)}@{host}:3306/vnpyzh")
-conn_ck = create_engine(f"clickhouse+native://{user}:{urlquote(password)}@{host}:9000/vnpy_backup")
-conn_info = create_engine(f"clickhouse+native://{user}:{urlquote(password)}@{host}:9000/common_info")
+conn_mysql = pymysql.connect(host='localhost', port=3306, database='vnpyzh',user='remote',password='zhP@55word')
+conn_ck = clickhouse_driver.connect(host='localhost', user='remote', password='zhP@55word', port=9000, database='vnpy_backup')
+conn_info = clickhouse_driver.connect(host='localhost', user='remote', password='zhP@55word', port=9000, database='common_info')
 
 bar_num_dict = {'9':30, '10':60, '11':30, '13':60, '14':60}
 
@@ -172,4 +172,5 @@ if __name__ == '__main__':
     contracts = get_contracts()
     check_by_contract(contracts)
     print(f"{__file__}: Finished all work!")
+    logger.info(f"{__file__}: Finished all work!")
 
