@@ -38,7 +38,7 @@ setting_backup = {
 }
 
 # 修改vt_setting.json
-with open('/home/ubuntu/anaconda3/lib/python3.10/site-packages/vnpy/trader/vt_setting.json','w') as f1:
+with open('/home/ubuntu/.vntrader/vt_setting.json','w') as f1:
     json.dump(setting_backup,f1, indent=4, ensure_ascii=False)
 
 from vnpy.trader.constant import Exchange, Interval
@@ -75,6 +75,8 @@ def get_contracts():
 def get_data(contract, sdate, edate, freq):
     data = rqdatac.get_price(order_book_ids=contract, start_date=sdate,end_date=edate,frequency=freq,fields=None,adjust_type='pre', skip_suspended=False, market='cn')
     # print(data)
+    if data is None:
+        return pd.DataFrame()
     data = data.reset_index()
     data['symbol'] = symbol_cap2symbol[contract]
     exchg = convert_exchange_code(contract)
@@ -87,12 +89,12 @@ def get_data(contract, sdate, edate, freq):
     data['close_price'] = data['close']
     data['turnover'] = data['total_turnover']
     data['datetime'] = (pd.to_datetime(data['datetime']) - pd.Timedelta('1 minute'))#.dt.tz_localize(tz='Asia/Shanghai')
-    print(data)
+    # print(data)
     return data
 
 def convert_exchange_code(contract):
     ex_rq = contract
-    exchg_str = symbol_cap2exchange[contract[:-3]]
+    exchg_str = symbol_cap2exchange[contract[:-3].upper()]
     if exchg_str in exchg_dict.keys():
         exchg = exchg_dict[exchg_str]
     else:
@@ -141,8 +143,7 @@ def move_df_to_mysql(imported_data:pd.DataFrame):
 def get_database_latest_symbols():
     sql = "select distinct(symbol),exchange from dbbardata"
     data = pd.read_sql(sql, conn_mysql)
-    # codes = (data['symbol']+ '.' + data['exchange']).to_list()
-    rq_codes = data['symbol'].to_list()
+    rq_codes = data['symbol'].str.upper().to_list()
     return rq_codes
 
 
@@ -154,18 +155,21 @@ if __name__ == '__main__':
     sdate = '2019-01-01'
     edate = time.strftime("%Y-%m-%d")
     edatex = str(int(edate[:4])+1)+edate[4:]
-    last_date = get_last_trading_day(edate)
-    # last_date = edate
+    if int(time.strftime("%H%M"))>1502:
+        last_date = edate
+    else:
+        last_date = get_last_trading_day(edate)
+    # last_date = '2023-08-24'
     print(last_date)
     contracts = get_contracts()                       # 最新股票池code
     latest_symbols = get_database_latest_symbols()    # 数据库里的code
-    contracts0 = list(set(latest_symbols)&(set(contracts)))       # 不发生变动的股票
-    contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
-    contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
+    contracts0 = list(set(latest_symbols)&(set(contracts)))       # 不发生变动的品种
+    contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的品种
+    contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的品种
     contracts0.sort()
     contracts1.sort()
     contracts2.sort()
-    print("all symbol nums: ",len(contracts0+contracts1+contracts2))
+    print("all symbol nums: ", len(contracts0+contracts1+contracts2))
 
     ex_factor_data = get_excum_factor(contracts, last_date, edatex)
     # print(ex_factor_data)
@@ -173,12 +177,15 @@ if __name__ == '__main__':
         ex_symbols = []
     else:
         ex_symbols = ex_factor_data[ex_factor_data.index==last_date]['underlying_symbol'].to_list()
-    # print(ex_symbols)
+    print(ex_symbols)
+    # print(contracts0)
+    # print(contracts1)
+    # print(contracts2)
 
     data_nochg = pd.DataFrame()
     for contract in (contracts0+contracts1+contracts2):  # 按一个票一个票循环，然后合并，其实也可以多个票，可以测试下怎么样速度更加快
         if contract in contracts0:
-            if contract in ex_symbols:
+            if contract[:-3] in ex_symbols:
                 print("ex contract: ", contract)
                 data = get_data(contract, sdate, last_date, freq)
 
@@ -209,6 +216,7 @@ if __name__ == '__main__':
             del data
 
     if data_nochg.empty:
+        print('data_nochg is empty!')
         pass
     else:
         move_df_to_mysql(data_nochg)

@@ -36,7 +36,7 @@ setting_backup = {
 }
 
 # 修改vt_setting.json
-with open('/home/ubuntu/anaconda3/lib/python3.10/site-packages/vnpy/trader/vt_setting.json','w') as f1:
+with open('/home/ubuntu/.vntrader/vt_setting.json','w') as f1:
     json.dump(setting_backup,f1, indent=4, ensure_ascii=False)
 
 from vnpy.trader.constant import Exchange, Interval
@@ -258,3 +258,4 @@ if __name__ == '__main__':
     print(f"{print_date}: {__file__}")
     main()
     print(f"{__file__}: Finished all work!")
+
