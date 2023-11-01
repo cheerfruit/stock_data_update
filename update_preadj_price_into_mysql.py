@@ -188,7 +188,7 @@ if __name__ == '__main__':
     if ex_factor_data is None:
         ex_symbols = []
     else:
-        ex_symbols = ex_factor_data[ex_factor_data.announcement_date==last_date]['order_book_id'].to_list()
+        ex_symbols = ex_factor_data[ex_factor_data.book_closure_date==last_date]['order_book_id'].to_list()
 
     data_nochg = pd.DataFrame()
     for contract in (contracts0+contracts1+contracts2):  # 按一个票一个票循环，然后合并，其实也可以多个票，可以测试下怎么样速度更加快
@@ -229,3 +229,4 @@ if __name__ == '__main__':
         move_df_to_mysql(data_nochg)
     
     print(f"{__file__}: Finished all work!")
+

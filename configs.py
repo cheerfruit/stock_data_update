@@ -24,6 +24,8 @@ all_symbol_pres = {
     'CFFEX': ['IC', 'IF', 'IH', 'IM', 'T', 'TF', 'TS'],
     'GFEX': ['LC','SI']}
 
+continues_symbol = ['al', 'cu', 'ni', 'pb', 'sn', 'ss','zn','IC', 'IF', 'IM', 'IH', 'eb']
+
 symbols = all_sizes.keys()
 
 # 将symbols转换为vt_symbols，如rb转换为rb888.SHFE，其中SHFE从all_symbol_pres中获取

@@ -141,26 +141,12 @@ def move_df_to_mysql(imported_data:pd.DataFrame):
     print(f"Insert Bar: {count} from {start} - {end}")
 
 def get_database_latest_symbols():
-    sql = "select distinct(symbol),exchange from dbbardata"
+    sql = "select distinct(symbol),exchange from dbbardata where `interval`='1m'"
     data = pd.read_sql(sql, conn_mysql)
     rq_codes = data['symbol'].str.upper().to_list()
     return rq_codes
 
-
-if __name__ == '__main__':
-    print_date = time.strftime("%Y-%m-%d %H:%M:%S")
-    print(f"{print_date}: {__file__}")
-
-    freq = '1m'
-    sdate = '2019-01-01'
-    edate = time.strftime("%Y-%m-%d")
-    edatex = str(int(edate[:4])+1)+edate[4:]
-    if int(time.strftime("%H%M"))>1502:
-        last_date = edate
-    else:
-        last_date = get_last_trading_day(edate)
-    # last_date = '2023-08-24'
-    print(last_date)
+def check_contracts():
     contracts = get_contracts()                       # 最新股票池code
     latest_symbols = get_database_latest_symbols()    # 数据库里的code
     contracts0 = list(set(latest_symbols)&(set(contracts)))       # 不发生变动的品种
@@ -178,10 +164,10 @@ if __name__ == '__main__':
     else:
         ex_symbols = ex_factor_data[ex_factor_data.index==last_date]['underlying_symbol'].to_list()
     print(ex_symbols)
-    # print(contracts0)
-    # print(contracts1)
-    # print(contracts2)
+    return contracts0, contracts1, contracts2, ex_symbols
 
+def run():
+    contracts0, contracts1, contracts2, ex_symbols = check_contracts()
     data_nochg = pd.DataFrame()
     for contract in (contracts0+contracts1+contracts2):  # 按一个票一个票循环，然后合并，其实也可以多个票，可以测试下怎么样速度更加快
         if contract in contracts0:
@@ -220,5 +206,23 @@ if __name__ == '__main__':
         pass
     else:
         move_df_to_mysql(data_nochg)
-    
+
+if __name__ == '__main__':
+    print_date = time.strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{print_date}: {__file__}")
+
+    # 处理日期
+    freq = '1m'
+    sdate = '2019-01-01'
+    edate = time.strftime("%Y-%m-%d")
+    edatex = str(int(edate[:4])+1)+edate[4:]
+    if int(time.strftime("%H%M"))>1502:
+        last_date = edate
+    else:
+        last_date = get_last_trading_day(edate)
+    last_date = '2023-10-30'
+    print(last_date)
+
+    # 更新数据
+    run()
     print(f"{__file__}: Finished all work!")

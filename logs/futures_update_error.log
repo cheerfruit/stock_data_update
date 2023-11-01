@@ -1345,3 +1345,189 @@ all symbol nums:  73
 []
 Insert Bar: 22323 from 2023-10-10 21:00:00 - 2023-10-11 14:59:00
 /home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-10-12 15:35:03: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-12
+all symbol nums:  73
+[]
+Insert Bar: 22332 from 2023-10-11 21:00:00 - 2023-10-12 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-10-13 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-13
+all symbol nums:  73
+['PK', 'SI']
+ex contract:  PK888
+Insert Bar: 146700 from 2021-02-01 09:00:00 - 2023-10-13 14:59:00
+ex contract:  SI888
+Insert Bar: 43650 from 2022-12-22 09:00:00 - 2023-10-13 14:59:00
+Insert Bar: 21882 from 2023-10-12 21:00:00 - 2023-10-13 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-10-16 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-16
+all symbol nums:  73
+[]
+Insert Bar: 22334 from 2023-10-13 21:00:00 - 2023-10-16 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-10-17 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-17
+all symbol nums:  73
+['SC', 'WR']
+ex contract:  SC888
+Insert Bar: 613335 from 2019-01-02 09:00:00 - 2023-10-17 14:59:00
+ex contract:  WR888
+Insert Bar: 261225 from 2019-01-02 09:00:00 - 2023-10-17 14:59:00
+Insert Bar: 21554 from 2023-10-16 21:00:00 - 2023-10-17 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-10-18 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-18
+all symbol nums:  73
+['A', 'SS']
+ex contract:  A888
+Insert Bar: 391290 from 2019-01-02 09:00:00 - 2023-10-18 14:59:00
+ex contract:  SS888
+Insert Bar: 435735 from 2019-09-25 09:00:00 - 2023-10-18 14:59:00
+Insert Bar: 21524 from 2023-10-17 21:00:00 - 2023-10-18 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-10-19 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-19
+all symbol nums:  73
+['CS', 'PG', 'IC']
+ex contract:  CS888
+Insert Bar: 383235 from 2019-01-02 09:00:00 - 2023-10-19 14:59:00
+ex contract:  IC888
+Insert Bar: 279120 from 2019-01-02 09:30:00 - 2023-10-19 14:59:00
+ex contract:  PG888
+Insert Bar: 292215 from 2020-03-30 09:00:00 - 2023-10-19 14:59:00
+Insert Bar: 21404 from 2023-10-18 21:00:00 - 2023-10-19 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-10-20 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-20
+all symbol nums:  73
+['EB', 'IF', 'IH', 'IM']
+ex contract:  EB888
+Insert Bar: 328800 from 2019-09-26 09:00:00 - 2023-10-20 14:59:00
+ex contract:  IF888
+Insert Bar: 279360 from 2019-01-02 09:30:00 - 2023-10-20 14:59:00
+ex contract:  IH888
+Insert Bar: 279360 from 2019-01-02 09:30:00 - 2023-10-20 14:59:00
+ex contract:  IM888
+Insert Bar: 72480 from 2022-07-22 09:30:00 - 2023-10-20 14:59:00
+Insert Bar: 21269 from 2023-10-19 21:00:00 - 2023-10-20 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-10-23 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-23
+all symbol nums:  73
+['CU']
+ex contract:  CU888
+Insert Bar: 519165 from 2019-01-02 09:00:00 - 2023-10-23 14:59:00
+Insert Bar: 21869 from 2023-10-20 21:00:00 - 2023-10-23 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-10-24 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-24
+all symbol nums:  73
+['AL']
+ex contract:  AL888
+Insert Bar: 519630 from 2019-01-02 09:00:00 - 2023-10-24 14:59:00
+Insert Bar: 21869 from 2023-10-23 21:00:00 - 2023-10-24 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-10-25 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-25
+all symbol nums:  2768
+['SN', 'ZN']
+ex contract:  SN888
+Insert Bar: 520095 from 2019-01-02 09:00:00 - 2023-10-25 14:59:00
+ex contract:  ZN888
+Insert Bar: 520095 from 2019-01-02 09:00:00 - 2023-10-25 14:59:00
+####################################################################################################
+/home/ubuntu
+2023-10-26 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-26
+all symbol nums:  2768
+['B', 'BC', 'NI', 'NR']
+ex contract:  B888
+Insert Bar: 393360 from 2019-01-02 09:00:00 - 2023-10-26 14:59:00
+ex contract:  BC888
+Insert Bar: 326040 from 2020-11-19 09:00:00 - 2023-10-26 14:59:00
+ex contract:  NI888
+Insert Bar: 520560 from 2019-01-02 09:00:00 - 2023-10-26 14:59:00
+ex contract:  NR888
+Insert Bar: 341100 from 2019-08-12 09:00:00 - 2023-10-26 14:59:00
+####################################################################################################
+/home/ubuntu
+2023-10-26 16:10:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+    order_book_id       date  prev_close  ...  low_price  close_price      turnover
+0           A2311 2023-10-26      4880.0  ...     4866.0       4934.0  6.286790e+08
+1           A2407 2023-10-26      4827.0  ...     4808.0       4862.0  2.827984e+07
+2           A2401 2023-10-26      4848.0  ...     4823.0       4914.0  6.871191e+09
+3           A2403 2023-10-26      4801.0  ...     4780.0       4851.0  1.270366e+09
+4           A2409 2023-10-26      4803.0  ...     4798.0       4832.0  1.833479e+07
+..            ...        ...         ...  ...        ...          ...           ...
+702        SI2406 2023-10-26     14700.0  ...    14285.0      14405.0  7.891250e+05
+703        SI2404 2023-10-26     14695.0  ...    14245.0      14365.0  2.802050e+06
+704        SI2403 2023-10-26     14655.0  ...    14180.0      14315.0  3.277928e+07
+705        SI2312 2023-10-26     14440.0  ...    13990.0      14150.0  5.149411e+09
+706        SI2401 2023-10-26     14510.0  ...    14055.0      14210.0  4.615124e+09
+
+[707 rows x 24 columns]
+Insert Bar: 707 from 2023-10-26 00:00:00 - 2023-10-26 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-10-27 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+2023-10-27
+all symbol nums:  2768
+['AU', 'LU', 'PB']
+ex contract:  AU888
+Insert Bar: 617775 from 2019-01-02 09:00:00 - 2023-10-27 14:59:00
+ex contract:  LU888
+Insert Bar: 277725 from 2020-06-22 09:00:00 - 2023-10-27 14:59:00
+ex contract:  PB888
+Insert Bar: 521025 from 2019-01-02 09:00:00 - 2023-10-27 14:59:00
+####################################################################################################
+/home/ubuntu
+2023-10-27 16:10:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+    order_book_id       date    close  ...  low_price  close_price      turnover
+0           A2403 2023-10-27   4850.0  ...     4825.0       4850.0  1.128468e+09
+1           A2407 2023-10-27   4862.0  ...     4846.0       4862.0  1.171262e+07
+2           A2409 2023-10-27   4840.0  ...     4823.0       4840.0  6.527680e+06
+3           A2405 2023-10-27   4892.0  ...     4870.0       4892.0  1.008927e+08
+4           A2401 2023-10-27   4927.0  ...     4893.0       4927.0  4.888235e+09
+..            ...        ...      ...  ...        ...          ...           ...
+702        SI2405 2023-10-27  14275.0  ...    14185.0      14275.0  2.279875e+06
+703        SI2406 2023-10-27  14190.0  ...    14190.0      14190.0  2.130500e+05
+704        SI2404 2023-10-27  14225.0  ...    14145.0      14225.0  2.627700e+06
+705        SI2311 2023-10-27  13070.0  ...    13060.0      13070.0  2.487900e+08
+706        SI2401 2023-10-27  14060.0  ...    13985.0      14060.0  2.707980e+09
+
+[707 rows x 24 columns]
+Insert Bar: 707 from 2023-10-27 00:00:00 - 2023-10-27 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+/home/ubuntu

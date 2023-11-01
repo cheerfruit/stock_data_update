@@ -166,7 +166,7 @@ def get_ex_symbols(last_date):
     if ex_factor_data is None:
         ex_symbols = []
     else:
-        ex_symbols = ex_factor_data[ex_factor_data.announcement_date==last_date]['order_book_id'].to_list()
+        ex_symbols = ex_factor_data[ex_factor_data.book_closure_date==last_date]['order_book_id'].to_list()
     ex_codes = []
     for code in ex_symbols:
         if 'SZSE' in code:

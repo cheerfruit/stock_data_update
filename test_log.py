@@ -228,7 +228,7 @@ if __name__ == '__main__':
         ex_symbols = []
     else:
         ex_factor_data['contract'] = ex_factor_data['order_book_id'].str.slice(0,6)
-        ex_symbols = ex_factor_data[ex_factor_data.announcement_date==edate]['order_book_id']
+        ex_symbols = ex_factor_data[ex_factor_data.book_closure_date==edate]['order_book_id']
     # print(ex_symbols)
     
     for contract in (contracts0+contracts1+contracts2)[:2]:
