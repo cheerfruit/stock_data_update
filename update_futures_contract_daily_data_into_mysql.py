@@ -99,10 +99,12 @@ def get_trade_date(sdate, edate):
 
 def get_tradedt_data(trade_dt):
     tradedt_kline = pd.DataFrame()
+    # symbols = ['PF']
     for symbol in symbols:
-        symbol_rq = symbol.upper()
-        data_tmp = get_trading_contracts_data(symbol_rq, trade_dt)
-        tradedt_kline = pd.concat([tradedt_kline, data_tmp])
+        if symbol not in ['sctas']:
+            symbol_rq = symbol.upper()
+            data_tmp = get_trading_contracts_data(symbol_rq, trade_dt)
+            tradedt_kline = pd.concat([tradedt_kline, data_tmp])
     return tradedt_kline
 
 def process_data(df):
@@ -130,7 +132,7 @@ def update_history_daily_kline(sdate, edate):
 
 def update_daily():
     trade_dt = time.strftime("%Y%m%d")
-    trade_dt = '20231031'
+    # trade_dt = '20231207'
     update_singleday_data(trade_dt)
 
 
@@ -139,7 +141,7 @@ if __name__ == '__main__':
     print(f"{print_date}: {__file__}")
 
     # 更新历史数据
-    # update_history_daily_kline(20210101, 20231023)
+    # update_history_daily_kline(20231113, 20231121)
 
     # 每日更新
     update_daily()

@@ -117,7 +117,7 @@ def create_ex_factor_table():
 def create_ex_factor_table_mysql():
     sql = "create table if not exists common_info.ex_factor ( \
     id INT AUTO_INCREMENT PRIMARY KEY,\
-    ex_date datetime,\
+    ex_date date,\
     order_book_id char(20),\
     book_closure_date date,\
     ex_cum_factor float,\
@@ -161,9 +161,21 @@ def get_close_data(contract, datelist):
     # print(close_data)
     return close_data
 
+def get_last_updated_date():
+    sql = "select max(ex_date) from common_info.ex_factor;"
+    dt = pd.read_sql(sql, conn).values[0][0]
+    return dt
+
 def update_ex_factor_data():
     sdate = '20210101'
-    edate = '20500101'
+    edate = '20500901'
+    update_sdate = get_last_updated_date()
+    if update_sdate is None:
+        update_sdate = '2021-01-01'
+    else:
+        update_sdate = update_sdate.strftime("%Y-%m-%d")
+        # update_sdate = '2021-01-01'
+    update_edate = time.strftime("%Y-%m-%d")
     contracts = get_contracts()
     data = pd.DataFrame()
     # print(contracts)
@@ -209,15 +221,19 @@ def update_ex_factor_data():
             data_tmp = data_tmp.reset_index()
             data_tmp['order_book_id'] = contract[1]
             data = pd.concat([data, data_tmp])
-
+    # sql = 'truncate table common_info.ex_factor'
+    # cursor.execute(sql)
     data['ex_date']= pd.to_datetime(data.ex_date)
     data['ex_end_date']= data['ex_end_date'].fillna(pd.to_datetime('2050-01-01', format="%Y-%m-%d"))
     data = data.replace({np.nan:None})
     data['create_date'] = pd.to_datetime(time.strftime("%Y-%m-%d"))
     data['remarks'] = None
+    data_mysql = data[(data.book_closure_date>=update_sdate)&(data.book_closure_date<=update_edate)]
+    if data_mysql.empty:  # 如果没有股票更新则不更新
+        return
     cols_new = 'ex_date,order_book_id,book_closure_date,ex_cum_factor,ex_end_date,ex_factor,ex_factor_theory,create_date,cash,round_lot,split_coefficient_from,split_coefficient_to,spread,close,remarks'
     tablename = 'ex_factor'
-    insert_into_mysql_database(data[cols_new.split(',')], tablename, cols_new)
+    insert_into_mysql_database(data_mysql[cols_new.split(',')], tablename, cols_new)
     print("Finish inserting into mysql!")
 
     # 初始化表格
@@ -233,7 +249,7 @@ def update_ex_factor_data():
 
 if __name__ == '__main__':
     # create_ex_factor_table()
-    create_ex_factor_table_mysql()
+    # create_ex_factor_table_mysql()
     print_date = time.strftime("%Y-%m-%d %H:%M:%S")
     print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
     print(f"{print_date}: {__file__}")
@@ -242,4 +258,3 @@ if __name__ == '__main__':
     update_trade_dt()
     update_ex_factor_data()
     print(f"{__file__}: Finished all work!")
-

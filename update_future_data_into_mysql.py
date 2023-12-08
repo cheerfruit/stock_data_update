@@ -54,17 +54,18 @@ database = get_database()
 # conn = clickhouse_driver.connect(host='localhost', port=33, database='common_info',user='remote',password='zhP@55word')  # 用于取trading_day数据
 conn_mysql = pymysql.connect(host='localhost', port=3306, database='vnpy_futures',user='remote',password='zhP@55word')
 
-
 # fields = ['open','high','low','close','volume','total_turnover']
 
-def get_last_trading_day(xdate):
-    sql = "select * from common_info.trading_day"
+def get_last_trading_day(sdate, xdate):
+    print(sdate, xdate)
+    sql = f"select * from common_info.trading_day where date>={sdate} and date<={xdate}"
     data = pd.read_sql(sql,conn_mysql)
+    data = data.sort_values('datetime')
     data['datetime'] = pd.to_datetime(data['datetime'])
-    # print(data)
-    zdate = int(''.join(xdate.split('-')))
-    last_trading_day = data[data['date'].shift(-1)==zdate]['datetime'].dt.strftime('%Y-%m-%d').values[0]
-    return last_trading_day
+    last_trading_day = data[data['date']<int(xdate)]['datetime'].max().strftime('%Y-%m-%d')
+    # print(last_trading_day)
+    last_sdate = data[data['date']!=int(sdate)]['datetime'].min().strftime('%Y-%m-%d')
+    return last_sdate, last_trading_day
 
 def get_contracts():
     rq_codes = []
@@ -73,6 +74,8 @@ def get_contracts():
     return rq_codes
 
 def get_data(contract, sdate, edate, freq):
+    if not contract:
+        return pd.DataFrame()
     data = rqdatac.get_price(order_book_ids=contract, start_date=sdate,end_date=edate,frequency=freq,fields=None,adjust_type='pre', skip_suspended=False, market='cn')
     # print(data)
     if data is None:
@@ -105,7 +108,11 @@ def convert_exchange_code(contract):
 def get_excum_factor(contracts, edate, edatex):
     undelaying_symbols = []
     for symbol in contracts:
-        undelaying_symbols.append(symbol[:-3])
+        if symbol in ['SCTAS888']:
+            pass
+        else:
+            undelaying_symbols.append(symbol[:-3])
+    # print(undelaying_symbols)
     data = rqdatac.futures.get_ex_factor(undelaying_symbols, start_date=edate, end_date=edatex, market='cn')
     return data
 
@@ -157,14 +164,20 @@ def check_contracts():
     contracts2.sort()
     print("all symbol nums: ", len(contracts0+contracts1+contracts2))
 
-    ex_factor_data = get_excum_factor(contracts, last_date, edatex)
+    ex_factor_data = get_excum_factor(contracts, last_update_date, edatex)
     # print(ex_factor_data)
     if ex_factor_data is None:
         ex_symbols = []
     else:
-        ex_symbols = ex_factor_data[ex_factor_data.index==last_date]['underlying_symbol'].to_list()
+        ex_symbols = ex_factor_data[ex_factor_data.index<=last_date]['underlying_symbol'].to_list()
     print(ex_symbols)
     return contracts0, contracts1, contracts2, ex_symbols
+
+def get_last_update_date():
+    sql = "select max(datetime) as maxdate from vnpy_futures.dbbardata where symbol='PF888'"
+    data = pd.read_sql(sql, conn_mysql)['maxdate'].to_list()[0]
+    date = int(data.strftime("%Y%m%d"))
+    return date
 
 def run():
     contracts0, contracts1, contracts2, ex_symbols = check_contracts()
@@ -183,10 +196,11 @@ def run():
                     exchange=exchange,
                     interval=interval
                     )
+                # print(data)
                 move_df_to_mysql(data)
                 del data
             else:
-                data = get_data(contract, last_date, last_date, freq)
+                data = get_data(contract, last_update_date, last_date, freq)
                 data_nochg = pd.concat([data_nochg, data])
         elif contract in contracts1:    # 删除对应symbol数据
             exchange = convert_exchange_code(contract)
@@ -197,6 +211,7 @@ def run():
                 interval=interval
                 )
         else:                           # 新加的票直接插入从2021年开始的数据
+            print(contract)
             data = get_data(contract, sdate, last_date, freq)
             move_df_to_mysql(data)
             del data
@@ -207,6 +222,7 @@ def run():
     else:
         move_df_to_mysql(data_nochg)
 
+
 if __name__ == '__main__':
     print_date = time.strftime("%Y-%m-%d %H:%M:%S")
     print(f"{print_date}: {__file__}")
@@ -216,13 +232,19 @@ if __name__ == '__main__':
     sdate = '2019-01-01'
     edate = time.strftime("%Y-%m-%d")
     edatex = str(int(edate[:4])+1)+edate[4:]
-    if int(time.strftime("%H%M"))>1502:
-        last_date = edate
+    last_update_date = get_last_update_date()
+    if last_update_date == int(time.strftime("%Y%m%d")):
+        print("Future Database is updated today!")
     else:
-        last_date = get_last_trading_day(edate)
-    last_date = '2023-10-30'
-    print(last_date)
+        if int(time.strftime("%H%M"))>1502:
+            last_update_date, last_date = get_last_trading_day(last_update_date, time.strftime("%Y%m%d"))
+            last_date = edate
+        else:
+            last_update_date, last_date = get_last_trading_day(last_update_date, time.strftime("%Y%m%d"))
+        print(f"sdate: {last_update_date}, edate: {last_date}")
+        
+        # 更新数据
+        run()
 
-    # 更新数据
-    run()
     print(f"{__file__}: Finished all work!")
+

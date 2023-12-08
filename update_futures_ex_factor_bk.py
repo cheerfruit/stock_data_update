@@ -1,6 +1,3 @@
-"""
-依赖更新: update futures_contract_daily_data_into_mysql: 期货全合约日线数据更新入库
-"""
 import pymysql
 import pandas as pd
 import time
@@ -25,7 +22,7 @@ def get_daily_data(today):
 def get_last_ex_date(symbol, datex):
     # 换月后20个自然日内不换月（换月标记）
     date = str(datex)[:4]+'-'+str(datex)[4:6]+'-'+str(datex)[6:]
-    sql = f"select book_closure_date, remarks from common_info.ex_factor where order_book_id='{symbol}' and ex_date<='{date}'"
+    sql = f"select book_closure_date, remarks from common_info.ex_factor_futures where order_book_id='{symbol}' and ex_date<='{date}'"
     last_ex_date = pd.read_sql(sql, conn)
     if last_ex_date.empty:    # 表明合约在以往没有历史数据，是新品种
         return True, None
@@ -181,7 +178,7 @@ def update_initial_data(sdate):
     data['create_date'] = pd.to_datetime(time.strftime("%Y-%m-%d"))
     # print(data)
     cols_new = 'ex_date,order_book_id,book_closure_date,ex_cum_factor,ex_end_date,ex_factor,ex_factor_theory,create_date,cash,round_lot,split_coefficient_from,split_coefficient_to,spread,close,remarks'
-    tablename = 'common_info.ex_factor'
+    tablename = 'common_info.ex_factor_futures'
     insert_into_mysql_database(data[cols_new.split(',')], tablename, cols_new)
     print("Finish inserting into mysql!")
     return
@@ -205,7 +202,7 @@ def update_singleday_data(date):
     if ex_data:
         cols = ['ex_date','order_book_id','book_closure_date','ex_cum_factor','ex_end_date','ex_factor','create_date','cash','round_lot','split_coefficient_from','split_coefficient_to','spread','close','remarks']
         ex_df = pd.DataFrame(ex_data, columns = cols)
-        tablename = 'common_info.ex_factor'
+        tablename = 'common_info.ex_factor_futures'
         print(ex_df)
         insert_into_mysql_database_by_list(ex_data, tablename, ','.join(cols))
 
@@ -214,6 +211,30 @@ def get_trade_date(sdate, edate):
     data = pd.read_sql(sql,conn)
     trade_dts = data['date'].to_list()
     return trade_dts
+
+def create_ex_factor_table_mysql():
+    sql = "create table if not exists common_info.ex_factor_futures ( \
+    id INT AUTO_INCREMENT PRIMARY KEY,\
+    ex_date datetime,\
+    order_book_id char(20),\
+    book_closure_date date,\
+    ex_cum_factor float,\
+    ex_end_date  date,\
+    ex_factor float,\
+    ex_factor_theory float,\
+    create_date date,\
+    cash float,\
+    round_lot Int,\
+    split_coefficient_from float,\
+    split_coefficient_to float,\
+    spread float,\
+    close float,\
+    remarks char(50)\
+    )\
+    ENGINE = InnoDB\
+    "
+    cursor.execute(sql)
+    return
 
 def update_history_data(sdate, edate):
     # update_initial_data(sdate)
@@ -224,15 +245,16 @@ def update_history_data(sdate, edate):
 def update_everyday():
     # 指定日期
     date = int(time.strftime("%Y%m%d"))
-    # date = 20231109
+    # date = 20231107
     update_singleday_data(date)
 
 
 if __name__ == '__main__':
+    create_ex_factor_table_mysql()
     print_date = time.strftime("%Y-%m-%d %H:%M:%S")
     print(f"{print_date}: {__file__}")
 
-    # update_history_data(20231123, 20231207)
+    # update_history_data(20231113, 20231121)
     update_everyday()
     print(f"{__file__}: Finished all work!")
     

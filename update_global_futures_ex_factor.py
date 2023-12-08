@@ -143,10 +143,21 @@ def get_vt_symbol(df):
     # print(vt_symbol)
     return vt_symbol
 
+def get_initial_data(sdate, edate):
+    sql = f"select * from firstrate.dbbardata where datetime>'{sdate}' and datetime<'{edate}' and `interval`='d'"
+    data = pd.read_sql(sql, conn)
+    return data
+
 def update_initial_data(sdate):
-    # 初始化主力，使用米筐的主力，而不是用我们自己的逻辑
-    data = rqdatac.futures.get_ex_factor(list(symbol_cap2exchange.keys()), '20200501',sdate,adjust_method='prev_close_ratio')
-    data1 = rqdatac.futures.get_ex_factor(list(symbol_cap2exchange.keys()), '20200501',sdate,adjust_method='prev_close_spread')
+    # 初始化主力，这里使用前一年的数据用于产生主力合约，主力合约的逻辑为volume和open_interest都是最大的
+    data = get_initial_data('2021-01-01', sdate)
+    data['comdty'] = data['symbol'].str.replace(r'[0-9]', '')
+    print(data)
+    for symbol in symbols:
+        data_symbol = data[data['comdty']==symbol]
+        # for date in
+    
+
     data['spread'] = data1['ex_factor']
     data['order_book_id'] = data['underlying_symbol'].apply(get_vt_symbol)
     data['split_coefficient_from'] = None
@@ -221,7 +232,7 @@ def create_ex_factor_table_mysql():
     return
 
 def update_history_data(sdate, edate):
-    # update_initial_data(sdate)
+    update_initial_data(sdate)
     dates = get_trade_date(sdate, edate)
     for date in dates:
         update_singleday_data(date)
@@ -234,11 +245,11 @@ def update_everyday():
 
 
 if __name__ == '__main__':
-    create_ex_factor_table_mysql()
+    # create_ex_factor_table_mysql()
     print_date = time.strftime("%Y-%m-%d %H:%M:%S")
     print(f"{print_date}: {__file__}")
 
-    # update_history_data(20230101, 20231026)
-    update_everyday()
+    update_history_data(20230101, 20231107)
+    # update_everyday()
     print(f"{__file__}: Finished all work!")
     
