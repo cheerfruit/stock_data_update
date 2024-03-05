@@ -100,6 +100,7 @@ class WeChat:
 
 if __name__ == '__main__':
     wx = WeChat()
-    wx.send_data("test!", touser='hujinglei')
+    wx.send_data("这是程序发送的测试信息", touser='liaoyuan')
+    wx.send_data("这是程序发送的测试信息", touser='hujinglei')
     # wx.send_pic("c:/Users/Admin/Pictures/xy.jpg")
     # wx.send_data("这是程序发送的第2条消息！")

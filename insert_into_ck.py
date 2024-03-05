@@ -131,56 +131,57 @@ def drop_data_by_symbol(symbol):
     return
 
 if __name__ == '__main__':
-    # create_stock_min_table()
-    freq = '1m'
-    sdate = str(pd.to_datetime(get_database_last_date()) +pd.Timedelta('1d'))[:10]
-    print(sdate)
-    edate = time.strftime("%Y-%m-%d")
+    try:
+        # create_stock_min_table()
+        freq = '1m'
+        sdate = str(pd.to_datetime(get_database_last_date()) +pd.Timedelta('1d'))[:10]
+        print(sdate)
+        edate = time.strftime("%Y-%m-%d")
 
-    contracts = get_contracts()                       # 最新股票池code
-    latest_symbols = get_database_latest_symbols()    # 数据库里的code
-    contracts0 = list(set(latest_symbols)&(set(contracts)))  # 不发生变动的股票
-    contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
-    contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
-    contracts0.sort()
-    contracts1.sort()
-    contracts2.sort()
+        contracts = get_contracts()                       # 最新股票池code
+        latest_symbols = get_database_latest_symbols()    # 数据库里的code
+        contracts0 = list(set(latest_symbols)&(set(contracts)))  # 不发生变动的股票
+        contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
+        contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
+        contracts0.sort()
+        contracts1.sort()
+        contracts2.sort()
 
-    ex_factor_data = get_excum_factor(contracts)
-    # print(contracts0)
-    # print(contracts1)
-    # print(contracts2)
-    # print(len(contracts0+contracts1+contracts2))
-    for contract in (contracts0+contracts1+contracts2):  # 按一个票一个票循环，其实也可以多个票，可以测试下怎么样速度更加快
-        # print(contract)
-        if contract in contracts0:
-            data = get_data(contract, sdate, edate, freq)
-        elif contract in contracts2:
-            data = get_data(contract, '2005-01-01', edate, freq)
-        else:
-            # 删除对应symbol的数据
-            drop_data_by_symbol(contract)
-            continue
+        ex_factor_data = get_excum_factor(contracts)
+        for contract in (contracts0+contracts1+contracts2):  # 按一个票一个票循环，其实也可以多个票，可以测试下怎么样速度更加快
+            # print(contract)
+            if contract in contracts0:
+                data = get_data(contract, sdate, edate, freq)
+            elif contract in contracts2:
+                data = get_data(contract, '2005-01-01', edate, freq)
+            else:
+                # 删除对应symbol的数据
+                drop_data_by_symbol(contract)
+                continue
 
-        data = data.set_index('datetime')
-        # print(data)
-        if ex_factor_data is None:
-            ex_data_need = pd.DataFrame()
-        else:
-            ex_data_need = ex_factor_data[ex_factor_data.order_book_id == contract]
+            data = data.set_index('datetime')
+            # print(data)
+            if ex_factor_data is None:
+                ex_data_need = pd.DataFrame()
+            else:
+                ex_data_need = ex_factor_data[ex_factor_data.order_book_id == contract]
+            
+            if ex_data_need.empty:
+                data.loc[:,'ex_factor'] = 1
+            else:
+                ex_data_need.index = pd.to_datetime(ex_data_need.index) + pd.Timedelta('09:30:00')
+                data['ex_factor'] = ex_data_need['ex_factor']
+                data = data.sort_values('datetime')
+                data['ex_factor'] = data['ex_factor'].fillna(1)
+
+            data = data.reset_index()
+            data['date'] = pd.to_datetime(data['datetime']).dt.strftime('%Y%m%d').astype(int)
+            df = data[['datetime','date', 'symbol', 'exchange', 'interval','open_price', 'high_price','low_price','close_price','turnover','volume','ex_factor']]
+            insert_into_ck_database(df)
+            del df,data    # 必须删除, 否则容易因为内存溢出被系统killed
         
-        if ex_data_need.empty:
-            data.loc[:,'ex_factor'] = 1
-        else:
-            ex_data_need.index = pd.to_datetime(ex_data_need.index) + pd.Timedelta('09:30:00')
-            data['ex_factor'] = ex_data_need['ex_factor']
-            data = data.sort_values('datetime')
-            data['ex_factor'] = data['ex_factor'].fillna(1)
-
-        data = data.reset_index()
-        data['date'] = pd.to_datetime(data['datetime']).dt.strftime('%Y%m%d').astype(int)
-        df = data[['datetime','date', 'symbol', 'exchange', 'interval','open_price', 'high_price','low_price','close_price','turnover','volume','ex_factor']]
-        insert_into_ck_database(df)
-        del df,data    # 必须删除, 否则容易因为内存溢出被系统killed
-    
-    print(f"{__file__}: Finished all work!")
+        print(f"{__file__}: Finished all work!")
+    except:
+        from send_to_wechat import WeChat
+        wx = WeChat()
+        wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='hujinglei')

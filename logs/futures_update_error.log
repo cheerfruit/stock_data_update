@@ -1298,3 +1298,3782 @@ T: data is not updated yet!
 TF: data is not updated yet!
 TS: data is not updated yet!
 /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-08 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231207 20231208
+sdate: 2023-12-08, edate: 2023-12-08
+all symbol nums:  78
+['I', 'SA']
+ex contract:  I888
+Insert Bar: 404055 from 2019-01-02 09:00:00 - 2023-12-08 14:59:00
+ex contract:  SA888
+Insert Bar: 325215 from 2019-12-06 09:00:00 - 2023-12-08 14:59:00
+Insert Bar: 23369 from 2023-12-07 21:00:00 - 2023-12-08 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-08 16:01:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 750 from 2023-12-08 00:00:00 - 2023-12-08 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 59677609, 'bytes_limit': 5368709120.0, 'remaining_days': 12, 'license_type': 'TRIAL'}
+2023-12-08 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...    close                           remarks
+0 2023-12-11    fu888.SHFE  ...   2957.0  20231208 switch FU2401 to FU2403
+1 2023-12-11      j888.DCE  ...   2666.0    20231208 switch J2401 to J2405
+2 2023-12-11      p888.DCE  ...   7092.0    20231208 switch P2401 to P2405
+3 2023-12-11    ss888.SHFE  ...  13420.0  20231208 switch SS2401 to SS2402
+
+[4 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-11 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231208 20231211
+sdate: 2023-12-11, edate: 2023-12-11
+all symbol nums:  78
+['L', 'P', 'SS', 'UR']
+ex contract:  L888
+Insert Bar: 396000 from 2019-01-02 09:00:00 - 2023-12-11 14:59:00
+ex contract:  P888
+Insert Bar: 404400 from 2019-01-02 09:00:00 - 2023-12-11 14:59:00
+ex contract:  SS888
+Insert Bar: 453405 from 2019-09-25 09:00:00 - 2023-12-11 14:59:00
+ex contract:  UR888
+Insert Bar: 236925 from 2019-08-09 09:00:00 - 2023-12-11 14:59:00
+Insert Bar: 22679 from 2023-12-08 21:00:00 - 2023-12-11 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-11 16:01:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+####################################################################################################
+{'bytes_used': 52126659, 'bytes_limit': 5368709120.0, 'remaining_days': 281, 'license_type': 'TRIAL'}
+2023-12-11 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-12 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231211 20231212
+sdate: 2023-12-12, edate: 2023-12-12
+all symbol nums:  78
+['JD']
+ex contract:  JD888
+Insert Bar: 270225 from 2019-01-02 09:00:00 - 2023-12-12 14:59:00
+Insert Bar: 23834 from 2023-12-11 21:00:00 - 2023-12-12 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+####################################################################################################
+/home/ubuntu
+2023-12-13 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231212 20231213
+sdate: 2023-12-13, edate: 2023-12-13
+all symbol nums:  78
+['C', 'PP', 'SP']
+ex contract:  C888
+Insert Bar: 396690 from 2019-01-02 09:00:00 - 2023-12-13 14:59:00
+ex contract:  PP888
+Insert Bar: 396690 from 2019-01-02 09:00:00 - 2023-12-13 14:59:00
+ex contract:  SP888
+Insert Bar: 403410 from 2019-01-02 09:00:00 - 2023-12-13 14:59:00
+Insert Bar: 23024 from 2023-12-12 21:00:00 - 2023-12-13 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-13 16:01:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+####################################################################################################
+{'bytes_used': 46634319, 'bytes_limit': 5368709120.0, 'remaining_days': 279, 'license_type': 'TRIAL'}
+2023-12-13 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+/home/ubuntu
+2023-12-14 16:01:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+####################################################################################################
+{'bytes_used': 454878534, 'bytes_limit': 5368709120.0, 'remaining_days': 278, 'license_type': 'TRIAL'}
+2023-12-14 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-15 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231213 20231215
+sdate: 2023-12-14, edate: 2023-12-15
+all symbol nums:  78
+['A', 'B', 'BB', 'EB', 'EG', 'J', 'PB', 'SC', 'V', 'IC', 'IF', 'IH', 'IM']
+ex contract:  A888
+Insert Bar: 405780 from 2019-01-02 09:00:00 - 2023-12-15 14:59:00
+ex contract:  B888
+Insert Bar: 405780 from 2019-01-02 09:00:00 - 2023-12-15 14:59:00
+ex contract:  BB888
+Insert Bar: 270675 from 2019-01-02 09:00:00 - 2023-12-14 14:59:00
+ex contract:  EB888
+Insert Bar: 342600 from 2019-09-26 09:00:00 - 2023-12-15 14:59:00
+ex contract:  EG888
+Insert Bar: 397380 from 2019-01-02 09:00:00 - 2023-12-15 14:59:00
+ex contract:  IC888
+Insert Bar: 288960 from 2019-01-02 09:30:00 - 2023-12-15 14:59:00
+ex contract:  IF888
+Insert Bar: 288960 from 2019-01-02 09:30:00 - 2023-12-15 14:59:00
+ex contract:  IH888
+Insert Bar: 288960 from 2019-01-02 09:30:00 - 2023-12-15 14:59:00
+ex contract:  IM888
+Insert Bar: 82080 from 2022-07-22 09:30:00 - 2023-12-15 14:59:00
+ex contract:  J888
+Insert Bar: 405780 from 2019-01-02 09:00:00 - 2023-12-15 14:59:00
+ex contract:  PB888
+Insert Bar: 537300 from 2019-01-02 09:00:00 - 2023-12-15 14:59:00
+ex contract:  SC888
+Insert Bar: 637200 from 2019-01-02 09:00:00 - 2023-12-15 14:59:00
+ex contract:  V888
+Insert Bar: 397380 from 2019-01-02 09:00:00 - 2023-12-15 14:59:00
+Insert Bar: 41264 from 2023-12-13 21:00:00 - 2023-12-15 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-15 16:01:03: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+####################################################################################################
+{'bytes_used': 225896917, 'bytes_limit': 5368709120.0, 'remaining_days': 277, 'license_type': 'TRIAL'}
+2023-12-15 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-18 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231215 20231218
+sdate: 2023-12-18, edate: 2023-12-18
+all symbol nums:  78
+['PG', 'RR', 'ZN']
+ex contract:  PG888
+Insert Bar: 306705 from 2020-03-30 09:00:00 - 2023-12-18 14:59:00
+ex contract:  RR888
+Insert Bar: 352485 from 2019-08-16 09:00:00 - 2023-12-18 14:59:00
+ex contract:  ZN888
+Insert Bar: 537765 from 2019-01-02 09:00:00 - 2023-12-18 14:59:00
+Insert Bar: 22904 from 2023-12-15 21:00:00 - 2023-12-18 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-18 16:01:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+####################################################################################################
+{'bytes_used': 44820571, 'bytes_limit': 5368709120.0, 'remaining_days': 274, 'license_type': 'TRIAL'}
+2023-12-18 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-19 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231218 20231219
+sdate: 2023-12-19, edate: 2023-12-19
+all symbol nums:  78
+['CS']
+ex contract:  CS888
+Insert Bar: 398070 from 2019-01-02 09:00:00 - 2023-12-19 14:59:00
+Insert Bar: 23714 from 2023-12-18 21:00:00 - 2023-12-19 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-19 16:01:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 754 from 2023-12-19 00:00:00 - 2023-12-19 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 81448740, 'bytes_limit': 5368709120.0, 'remaining_days': 273, 'license_type': 'TRIAL'}
+2023-12-19 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+      ex_date order_book_id  ...    close                           remarks
+0  2023-12-20      a888.DCE  ...   4832.0    20231219 switch A2401 to A2403
+1  2023-12-20    al888.SHFE  ...  18990.0  20231219 switch AL2401 to AL2402
+2  2023-12-20    au888.SHFE  ...    475.9  20231219 switch AU2402 to AU2404
+3  2023-12-20      b888.DCE  ...   4366.0    20231219 switch B2401 to B2402
+4  2023-12-20     bb888.DCE  ...    400.0  20231219 switch BB2408 to BB2409
+5  2023-12-20    bu888.SHFE  ...   3676.0  20231219 switch BU2402 to BU2403
+6  2023-12-20     cs888.DCE  ...   2849.0  20231219 switch CS2401 to CS2403
+7  2023-12-20    cu888.SHFE  ...  68480.0  20231219 switch CU2401 to CU2402
+8  2023-12-20     eb888.DCE  ...   8205.0  20231219 switch EB2401 to EB2402
+9  2023-12-20     eg888.DCE  ...   4208.0  20231219 switch EG2401 to EG2405
+10 2023-12-20    OI888.CZCE  ...   8070.0  20231219 switch OI2401 to OI2403
+11 2023-12-20    pb888.SHFE  ...  15680.0  20231219 switch PB2401 to PB2402
+12 2023-12-20     pg888.DCE  ...   4799.0  20231219 switch PG2401 to PG2402
+13 2023-12-20     pp888.DCE  ...   7467.0  20231219 switch PP2401 to PP2405
+14 2023-12-20    RS888.CZCE  ...   6033.0  20231219 switch RS2409 to RS2411
+15 2023-12-20    sp888.SHFE  ...   5650.0  20231219 switch SP2401 to SP2403
+16 2023-12-20      v888.DCE  ...   5840.0    20231219 switch V2401 to V2405
+17 2023-12-20    ZC888.CZCE  ...    801.4  20231219 switch ZC2409 to ZC2410
+18 2023-12-20    zn888.SHFE  ...  20955.0  20231219 switch ZN2401 to ZN2402
+
+[19 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-20 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231219 20231220
+sdate: 2023-12-20, edate: 2023-12-20
+all symbol nums:  78
+['AL', 'SN']
+ex contract:  AL888
+Insert Bar: 538695 from 2019-01-02 09:00:00 - 2023-12-20 14:59:00
+ex contract:  SN888
+Insert Bar: 538695 from 2019-01-02 09:00:00 - 2023-12-20 14:59:00
+Insert Bar: 23129 from 2023-12-19 21:00:00 - 2023-12-20 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-20 16:01:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+####################################################################################################
+{'bytes_used': 44871037, 'bytes_limit': 5368709120.0, 'remaining_days': 272, 'license_type': 'TRIAL'}
+2023-12-20 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-21 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231220 20231221
+sdate: 2023-12-21, edate: 2023-12-21
+all symbol nums:  78
+[]
+Insert Bar: 24059 from 2023-12-20 21:00:00 - 2023-12-21 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-21 16:01:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 754 from 2023-12-21 00:00:00 - 2023-12-21 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 26966860, 'bytes_limit': 5368709120.0, 'remaining_days': 271, 'license_type': 'TRIAL'}
+2023-12-21 16:10:01: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...     close                           remarks
+0 2023-12-22     nr888.INE  ...   10400.0  20231221 switch NR2402 to NR2403
+1 2023-12-22    sn888.SHFE  ...  209070.0  20231221 switch SN2401 to SN2402
+
+[2 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-22 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231221 20231222
+sdate: 2023-12-22, edate: 2023-12-22
+all symbol nums:  78
+['CU']
+ex contract:  CU888
+Insert Bar: 539625 from 2019-01-02 09:00:00 - 2023-12-22 14:59:00
+Insert Bar: 23594 from 2023-12-21 21:00:00 - 2023-12-22 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-22 16:01:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 754 from 2023-12-22 00:00:00 - 2023-12-22 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 35838025, 'bytes_limit': 5368709120.0, 'remaining_days': 270, 'license_type': 'TRIAL'}
+2023-12-22 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...    close                           remarks
+0 2023-12-25     bc888.INE  ...  61650.0  20231222 switch BC2402 to BC2403
+1 2023-12-25    SM888.CZCE  ...   6564.0  20231222 switch SM2402 to SM2403
+
+[2 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-25 15:35:03: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231222 20231225
+sdate: 2023-12-25, edate: 2023-12-25
+all symbol nums:  78
+['NI']
+ex contract:  NI888
+Insert Bar: 540090 from 2019-01-02 09:00:00 - 2023-12-25 14:59:00
+Insert Bar: 23594 from 2023-12-22 21:00:00 - 2023-12-25 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-25 16:01:01: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 754 from 2023-12-25 00:00:00 - 2023-12-25 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 139917477, 'bytes_limit': 5368709120.0, 'remaining_days': 267, 'license_type': 'TRIAL'}
+2023-12-25 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...     close                           remarks
+0 2023-12-26    br888.SHFE  ...   12565.0  20231225 switch BR2402 to BR2403
+1 2023-12-26    ni888.SHFE  ...  130900.0  20231225 switch NI2401 to NI2402
+
+[2 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-26 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231225 20231226
+sdate: 2023-12-26, edate: 2023-12-26
+all symbol nums:  78
+['BC']
+ex contract:  BC888
+Insert Bar: 346035 from 2020-11-19 09:00:00 - 2023-12-26 14:59:00
+Insert Bar: 23594 from 2023-12-25 21:00:00 - 2023-12-26 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-26 16:01:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+####################################################################################################
+{'bytes_used': 94911293, 'bytes_limit': 5368709120.0, 'remaining_days': 266, 'license_type': 'TRIAL'}
+2023-12-26 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-27 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231226 20231227
+sdate: 2023-12-27, edate: 2023-12-27
+all symbol nums:  78
+['AO', 'NR', 'PF', 'SF', 'SM']
+ex contract:  AO888
+Insert Bar: 59730 from 2023-06-19 09:00:00 - 2023-12-27 14:59:00
+ex contract:  NR888
+Insert Bar: 356280 from 2019-08-12 09:00:00 - 2023-12-27 14:59:00
+ex contract:  PF888
+Insert Bar: 267960 from 2020-10-12 09:00:00 - 2023-12-27 14:59:00
+ex contract:  SF888
+Insert Bar: 272700 from 2019-01-02 09:00:00 - 2023-12-27 14:59:00
+ex contract:  SM888
+Insert Bar: 272700 from 2019-01-02 09:00:00 - 2023-12-27 14:59:00
+Insert Bar: 22454 from 2023-12-26 21:00:00 - 2023-12-27 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 53166344, 'bytes_limit': 5368709120.0, 'remaining_days': 265, 'license_type': 'TRIAL'}
+2023-12-27 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-28 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231227 20231228
+sdate: 2023-12-28, edate: 2023-12-28
+all symbol nums:  78
+['CY', 'OI']
+ex contract:  CY888
+Insert Bar: 413895 from 2019-01-02 09:00:00 - 2023-12-28 14:59:00
+ex contract:  OI888
+Insert Bar: 413895 from 2019-01-02 09:00:00 - 2023-12-28 14:59:00
+Insert Bar: 23369 from 2023-12-27 21:00:00 - 2023-12-28 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 59117571, 'bytes_limit': 5368709120.0, 'remaining_days': 264, 'license_type': 'TRIAL'}
+2023-12-28 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2023-12-29 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231228 20231229
+sdate: 2023-12-29, edate: 2023-12-29
+all symbol nums:  78
+[]
+Insert Bar: 24059 from 2023-12-28 21:00:00 - 2023-12-29 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 33510373, 'bytes_limit': 5368709120.0, 'remaining_days': 263, 'license_type': 'TRIAL'}
+2023-12-29 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-01 15:35:01: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231229 20240101
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 23451339, 'bytes_limit': 5368709120.0, 'remaining_days': 260, 'license_type': 'TRIAL'}
+2024-01-01 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-02 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231229 20240102
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 398477986, 'bytes_limit': 5368709120.0, 'remaining_days': 259, 'license_type': 'TRIAL'}
+2024-01-02 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-03 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231229 20240103
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 25736259, 'bytes_limit': 5368709120.0, 'remaining_days': 258, 'license_type': 'TRIAL'}
+2024-01-03 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-04 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231229 20240104
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 30886575, 'bytes_limit': 5368709120.0, 'remaining_days': 257, 'license_type': 'TRIAL'}
+2024-01-04 16:10:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-05 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20231229 20240105
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 570998310, 'bytes_limit': 5368709120.0, 'remaining_days': 256, 'license_type': 'TRIAL'}
+2024-01-05 16:10:01: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-08 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+Future Database is updated today!
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-08 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 754 from 2024-01-08 00:00:00 - 2024-01-08 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 676402677, 'bytes_limit': 5368709120.0, 'remaining_days': 253, 'license_type': 'TRIAL'}
+2024-01-08 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...    close                           remarks
+0 2024-01-09      c888.DCE  ...   2366.0    20240108 switch C2403 to C2405
+1 2024-01-09    CY888.CZCE  ...  20640.0  20240108 switch CY2401 to CY2405
+2 2024-01-09     fb888.DCE  ...   1202.5  20240108 switch FB2401 to FB2402
+3 2024-01-09     jd888.DCE  ...   3465.0  20240108 switch JD2402 to JD2403
+4 2024-01-09     lu888.INE  ...   4052.0  20240108 switch LU2403 to LU2404
+5 2024-01-09    PF888.CZCE  ...   7326.0  20240108 switch PF2402 to PF2403
+6 2024-01-09    RM888.CZCE  ...   2681.0  20240108 switch RM2403 to RM2405
+7 2024-01-09    SF888.CZCE  ...   6644.0  20240108 switch SF2402 to SF2403
+8 2024-01-09    si888.GFEX  ...  13900.0  20240108 switch SI2402 to SI2403
+9 2024-01-09    wr888.SHFE  ...   4250.0  20240108 switch WR2401 to WR2402
+
+[10 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-09 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240108 20240109
+       date   datetime
+0  20240108 2024-01-08
+1  20240109 2024-01-09
+2024-01-08
+sdate: 2024-01-09, edate: 2024-01-09
+all symbol nums:  78
+['AG', 'AL']
+ex contract:  AG888
+Insert Bar: 645750 from 2019-01-02 09:00:00 - 2024-01-09 14:59:00
+ex contract:  AL888
+Insert Bar: 544500 from 2019-01-02 09:00:00 - 2024-01-09 14:59:00
+Insert Bar: 23039 from 2024-01-08 21:00:00 - 2024-01-09 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-09 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 754 from 2024-01-09 00:00:00 - 2024-01-09 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 324512972, 'bytes_limit': 5368709120.0, 'remaining_days': 252, 'license_type': 'TRIAL'}
+2024-01-09 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...   close                           remarks
+0 2024-01-10    ag888.SHFE  ...  5903.0  20240109 switch AG2402 to AG2406
+1 2024-01-10     bb888.DCE  ...   400.0  20240109 switch BB2409 to BB2410
+2 2024-01-10    OI888.CZCE  ...  7884.0  20240109 switch OI2403 to OI2405
+3 2024-01-10    sp888.SHFE  ...  5686.0  20240109 switch SP2403 to SP2405
+4 2024-01-10    ZC888.CZCE  ...   801.4  20240109 switch ZC2410 to ZC2411
+
+[5 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-10 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240109 20240110
+       date   datetime
+0  20240109 2024-01-09
+1  20240110 2024-01-10
+2024-01-09
+sdate: 2024-01-10, edate: 2024-01-10
+all symbol nums:  78
+[]
+Insert Bar: 24059 from 2024-01-09 21:00:00 - 2024-01-10 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-10 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 754 from 2024-01-10 00:00:00 - 2024-01-10 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 49301875, 'bytes_limit': 5368709120.0, 'remaining_days': 251, 'license_type': 'TRIAL'}
+2024-01-10 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...    close                           remarks
+0 2024-01-11    al888.SHFE  ...  18995.0  20240110 switch AL2402 to AL2403
+1 2024-01-11    cu888.SHFE  ...  67810.0  20240110 switch CU2402 to CU2403
+
+[2 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-11 15:35:01: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240110 20240111
+       date   datetime
+0  20240110 2024-01-10
+1  20240111 2024-01-11
+2024-01-10
+sdate: 2024-01-11, edate: 2024-01-11
+all symbol nums:  78
+['PB', 'SI']
+ex contract:  PB888
+Insert Bar: 545430 from 2019-01-02 09:00:00 - 2024-01-11 14:59:00
+ex contract:  SI888
+Insert Bar: 57825 from 2022-12-22 09:00:00 - 2024-01-11 14:59:00
+Insert Bar: 23369 from 2024-01-10 21:00:00 - 2024-01-11 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-11 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 754 from 2024-01-11 00:00:00 - 2024-01-11 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 53398034, 'bytes_limit': 5368709120.0, 'remaining_days': 250, 'license_type': 'TRIAL'}
+2024-01-11 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...    close                           remarks
+0 2024-01-12    pb888.SHFE  ...  16475.0  20240111 switch PB2402 to PB2403
+1 2024-01-12    ss888.SHFE  ...  13995.0  20240111 switch SS2402 to SS2403
+
+[2 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-12 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240111 20240112
+       date   datetime
+0  20240111 2024-01-11
+1  20240112 2024-01-12
+2024-01-11
+sdate: 2024-01-12, edate: 2024-01-12
+all symbol nums:  78
+['CU', 'RR']
+ex contract:  CU888
+Insert Bar: 545895 from 2019-01-02 09:00:00 - 2024-01-12 14:59:00
+ex contract:  RR888
+Insert Bar: 358575 from 2019-08-16 09:00:00 - 2024-01-12 14:59:00
+Insert Bar: 23249 from 2024-01-11 21:00:00 - 2024-01-12 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-12 16:08:01: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 754 from 2024-01-12 00:00:00 - 2024-01-12 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 58609314, 'bytes_limit': 5368709120.0, 'remaining_days': 249, 'license_type': 'TRIAL'}
+2024-01-12 16:12:01: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-15 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240112 20240115
+       date   datetime
+0  20240112 2024-01-12
+1  20240115 2024-01-15
+2024-01-12
+sdate: 2024-01-15, edate: 2024-01-15
+all symbol nums:  78
+['ZN']
+ex contract:  ZN888
+Insert Bar: 546360 from 2019-01-02 09:00:00 - 2024-01-15 14:59:00
+Insert Bar: 23594 from 2024-01-12 21:00:00 - 2024-01-15 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-15 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 754 from 2024-01-15 00:00:00 - 2024-01-15 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 55660623, 'bytes_limit': 5368709120.0, 'remaining_days': 246, 'license_type': 'TRIAL'}
+2024-01-15 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...    close                           remarks
+0 2024-01-16    zn888.SHFE  ...  21225.0  20240115 switch ZN2402 to ZN2403
+
+[1 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-16 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240115 20240116
+       date   datetime
+0  20240115 2024-01-15
+1  20240116 2024-01-16
+2024-01-15
+sdate: 2024-01-16, edate: 2024-01-16
+all symbol nums:  78
+['BB', 'EB', 'JR', 'RM', 'SC', 'WH']
+ex contract:  BB888
+Insert Bar: 275400 from 2019-01-02 09:00:00 - 2024-01-15 14:59:00
+ex contract:  EB888
+Insert Bar: 349725 from 2019-09-26 09:00:00 - 2024-01-16 14:59:00
+ex contract:  JR888
+Insert Bar: 275400 from 2019-01-02 09:00:00 - 2024-01-15 14:59:00
+ex contract:  RM888
+Insert Bar: 417915 from 2019-01-02 09:00:00 - 2024-01-16 14:59:00
+ex contract:  SC888
+Insert Bar: 648525 from 2019-01-02 09:00:00 - 2024-01-16 14:59:00
+ex contract:  WH888
+Insert Bar: 275400 from 2019-01-02 09:00:00 - 2024-01-15 14:59:00
+Insert Bar: 22814 from 2024-01-15 21:00:00 - 2024-01-16 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-16 16:08:03: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-01-16 00:00:00 - 2024-01-16 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 73719692, 'bytes_limit': 5368709120.0, 'remaining_days': 245, 'license_type': 'TRIAL'}
+2024-01-16 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...   close                           remarks
+0 2024-01-17    JR888.CZCE  ...  2662.0  20240116 switch JR2411 to JR2501
+1 2024-01-17    LR888.CZCE  ...  2360.0  20240116 switch LR2411 to LR2501
+2 2024-01-17    PM888.CZCE  ...  3122.0  20240116 switch PM2411 to PM2501
+3 2024-01-17    RI888.CZCE  ...  2479.0  20240116 switch RI2411 to RI2501
+4 2024-01-17     rr888.DCE  ...  3545.0  20240116 switch RR2402 to RR2403
+
+[5 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-17 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240116 20240117
+       date   datetime
+0  20240116 2024-01-16
+1  20240117 2024-01-17
+2024-01-16
+sdate: 2024-01-17, edate: 2024-01-17
+all symbol nums:  78
+[]
+Insert Bar: 24059 from 2024-01-16 21:00:00 - 2024-01-17 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 125874582, 'bytes_limit': 5368709120.0, 'remaining_days': 244, 'license_type': 'TRIAL'}
+2024-01-17 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-18 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240117 20240118
+       date   datetime
+0  20240117 2024-01-17
+1  20240118 2024-01-18
+2024-01-17
+sdate: 2024-01-18, edate: 2024-01-18
+all symbol nums:  78
+['PG']
+ex contract:  PG888
+Insert Bar: 314175 from 2020-03-30 09:00:00 - 2024-01-18 14:59:00
+Insert Bar: 23714 from 2024-01-17 21:00:00 - 2024-01-18 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-18 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-01-18 00:00:00 - 2024-01-18 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 112114289, 'bytes_limit': 5368709120.0, 'remaining_days': 243, 'license_type': 'TRIAL'}
+2024-01-18 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...   close                           remarks
+0 2024-01-19     pg888.DCE  ...  4360.0  20240118 switch PG2402 to PG2403
+
+[1 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-19 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240118 20240119
+       date   datetime
+0  20240118 2024-01-18
+1  20240119 2024-01-19
+2024-01-18
+sdate: 2024-01-19, edate: 2024-01-19
+all symbol nums:  78
+['IC', 'IF', 'IH', 'IM']
+ex contract:  IC888
+Insert Bar: 294720 from 2019-01-02 09:30:00 - 2024-01-19 14:59:00
+ex contract:  IF888
+Insert Bar: 294720 from 2019-01-02 09:30:00 - 2024-01-19 14:59:00
+ex contract:  IH888
+Insert Bar: 294720 from 2019-01-02 09:30:00 - 2024-01-19 14:59:00
+ex contract:  IM888
+Insert Bar: 87840 from 2022-07-22 09:30:00 - 2024-01-19 14:59:00
+Insert Bar: 23324 from 2024-01-18 21:00:00 - 2024-01-19 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 129622265, 'bytes_limit': 5368709120.0, 'remaining_days': 242, 'license_type': 'TRIAL'}
+2024-01-19 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-22 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240119 20240122
+       date   datetime
+0  20240119 2024-01-19
+1  20240122 2024-01-22
+2024-01-19
+sdate: 2024-01-22, edate: 2024-01-22
+all symbol nums:  78
+[]
+Insert Bar: 24059 from 2024-01-19 21:00:00 - 2024-01-22 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-22 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-01-22 00:00:00 - 2024-01-22 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 286099493, 'bytes_limit': 5368709120.0, 'remaining_days': 239, 'license_type': 'TRIAL'}
+2024-01-22 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...     close                           remarks
+0 2024-01-23      b888.DCE  ...    3918.0    20240122 switch B2402 to B2403
+1 2024-01-23     eb888.DCE  ...    8768.0  20240122 switch EB2402 to EB2403
+2 2024-01-23    ni888.SHFE  ...  125940.0  20240122 switch NI2402 to NI2403
+
+[3 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-23 15:35:03: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240122 20240123
+       date   datetime
+0  20240122 2024-01-22
+1  20240123 2024-01-23
+2024-01-22
+sdate: 2024-01-23, edate: 2024-01-23
+all symbol nums:  78
+['FU', 'SN']
+ex contract:  FU888
+Insert Bar: 412950 from 2019-01-02 09:00:00 - 2024-01-23 14:59:00
+ex contract:  SN888
+Insert Bar: 549150 from 2019-01-02 09:00:00 - 2024-01-23 14:59:00
+Insert Bar: 23249 from 2024-01-22 21:00:00 - 2024-01-23 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 124770396, 'bytes_limit': 5368709120.0, 'remaining_days': 238, 'license_type': 'TRIAL'}
+2024-01-23 16:12:01: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-24 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240123 20240124
+       date   datetime
+0  20240123 2024-01-23
+1  20240124 2024-01-24
+2024-01-23
+sdate: 2024-01-24, edate: 2024-01-24
+all symbol nums:  78
+['NI']
+ex contract:  NI888
+Insert Bar: 549615 from 2019-01-02 09:00:00 - 2024-01-24 14:59:00
+Insert Bar: 23594 from 2024-01-23 21:00:00 - 2024-01-24 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 102208258, 'bytes_limit': 5368709120.0, 'remaining_days': 237, 'license_type': 'TRIAL'}
+2024-01-24 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-25 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240124 20240125
+       date   datetime
+0  20240124 2024-01-24
+1  20240125 2024-01-25
+2024-01-24
+sdate: 2024-01-25, edate: 2024-01-25
+all symbol nums:  78
+[]
+Insert Bar: 24284 from 2024-01-24 21:00:00 - 2024-01-25 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-25 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-01-25 00:00:00 - 2024-01-25 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 86198528, 'bytes_limit': 5368709120.0, 'remaining_days': 236, 'license_type': 'TRIAL'}
+2024-01-25 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...     close                           remarks
+0 2024-01-26    bu888.SHFE  ...    3759.0  20240125 switch BU2403 to BU2406
+1 2024-01-26    fu888.SHFE  ...    2963.0  20240125 switch FU2403 to FU2405
+2 2024-01-26     nr888.INE  ...   11260.0  20240125 switch NR2403 to NR2404
+3 2024-01-26    sn888.SHFE  ...  220150.0  20240125 switch SN2402 to SN2403
+
+[4 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-26 15:35:01: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240125 20240126
+       date   datetime
+0  20240125 2024-01-25
+1  20240126 2024-01-26
+2024-01-25
+sdate: 2024-01-26, edate: 2024-01-26
+all symbol nums:  78
+['B', 'NR']
+ex contract:  B888
+Insert Bar: 415665 from 2019-01-02 09:00:00 - 2024-01-26 14:59:00
+ex contract:  NR888
+Insert Bar: 363405 from 2019-08-12 09:00:00 - 2024-01-26 14:59:00
+Insert Bar: 23369 from 2024-01-25 21:00:00 - 2024-01-26 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+####################################################################################################
+{'bytes_used': 126343312, 'bytes_limit': 5368709120.0, 'remaining_days': 235, 'license_type': 'TRIAL'}
+2024-01-26 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-29 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240126 20240129
+       date   datetime
+0  20240126 2024-01-26
+1  20240129 2024-01-29
+2024-01-26
+sdate: 2024-01-29, edate: 2024-01-29
+all symbol nums:  78
+['BU']
+ex contract:  BU888
+Insert Bar: 414330 from 2019-01-02 09:00:00 - 2024-01-29 14:59:00
+Insert Bar: 23714 from 2024-01-26 21:00:00 - 2024-01-29 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+/home/ubuntu
+2024-01-29 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-01-29 00:00:00 - 2024-01-29 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 80980480, 'bytes_limit': 5368709120.0, 'remaining_days': 232, 'license_type': 'TRIAL'}
+2024-01-29 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...   close                           remarks
+0 2024-01-30    SM888.CZCE  ...  6470.0  20240129 switch SM2403 to SM2405
+
+[1 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-01-30 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240129 20240130
+       date   datetime
+0  20240129 2024-01-29
+1  20240130 2024-01-30
+2024-01-29
+sdate: 2024-01-30, edate: 2024-01-30
+all symbol nums:  78
+[]
+Insert Bar: 24059 from 2024-01-29 21:00:00 - 2024-01-30 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+2024-01-30 16:08:03: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-01-30 00:00:00 - 2024-01-30 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 236793169, 'bytes_limit': 5368709120.0, 'remaining_days': 231, 'license_type': 'TRIAL'}
+2024-01-30 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...    close                           remarks
+0 2024-01-31     bb888.DCE  ...    400.0  20240130 switch BB2410 to BB2411
+1 2024-01-31     bc888.INE  ...  61350.0  20240130 switch BC2403 to BC2404
+2 2024-01-31     lu888.INE  ...   4426.0  20240130 switch LU2404 to LU2405
+3 2024-01-31    si888.GFEX  ...  13310.0  20240130 switch SI2403 to SI2404
+4 2024-01-31    ZC888.CZCE  ...    801.4  20240130 switch ZC2411 to ZC2412
+
+[5 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-01-31 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240130 20240131
+       date   datetime
+0  20240130 2024-01-30
+1  20240131 2024-01-31
+2024-01-30
+sdate: 2024-01-31, edate: 2024-01-31
+all symbol nums:  78
+['SM']
+ex contract:  SM888
+Insert Bar: 278100 from 2019-01-02 09:00:00 - 2024-01-31 14:59:00
+Insert Bar: 23834 from 2024-01-30 21:00:00 - 2024-01-31 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+2024-01-31 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-01-31 00:00:00 - 2024-01-31 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 85414400, 'bytes_limit': 5368709120.0, 'remaining_days': 230, 'license_type': 'TRIAL'}
+2024-01-31 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...   close                           remarks
+0 2024-02-01     fb888.DCE  ...  1179.0  20240131 switch FB2402 to FB2403
+1 2024-02-01    SF888.CZCE  ...  6648.0  20240131 switch SF2403 to SF2405
+
+[2 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-01 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240131 20240201
+       date   datetime
+0  20240131 2024-01-31
+1  20240201 2024-02-01
+2024-01-31
+sdate: 2024-02-01, edate: 2024-02-01
+all symbol nums:  78
+['FB', 'LU', 'SF', 'IC', 'IF', 'IH', 'IM']
+ex contract:  FB888
+Insert Bar: 278325 from 2019-01-02 09:00:00 - 2024-02-01 14:59:00
+ex contract:  IC888
+Insert Bar: 296880 from 2019-01-02 09:30:00 - 2024-02-01 14:59:00
+ex contract:  IF888
+Insert Bar: 296880 from 2019-01-02 09:30:00 - 2024-02-01 14:59:00
+ex contract:  IH888
+Insert Bar: 296880 from 2019-01-02 09:30:00 - 2024-02-01 14:59:00
+ex contract:  IM888
+Insert Bar: 90000 from 2022-07-22 09:30:00 - 2024-02-01 14:59:00
+ex contract:  LU888
+Insert Bar: 301065 from 2020-06-22 09:00:00 - 2024-02-01 14:59:00
+ex contract:  SF888
+Insert Bar: 278325 from 2019-01-02 09:00:00 - 2024-02-01 14:59:00
+Insert Bar: 22304 from 2024-01-31 21:00:00 - 2024-02-01 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-01 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-02-01 00:00:00 - 2024-02-01 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 127025932, 'bytes_limit': 5368709120.0, 'remaining_days': 229, 'license_type': 'TRIAL'}
+2024-02-01 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-02 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240201 20240202
+       date   datetime
+0  20240201 2024-02-01
+1  20240202 2024-02-02
+2024-02-01
+sdate: 2024-02-02, edate: 2024-02-02
+all symbol nums:  78
+[]
+Insert Bar: 24059 from 2024-02-01 21:00:00 - 2024-02-02 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+{'bytes_used': 81901446, 'bytes_limit': 5368709120.0, 'remaining_days': 228, 'license_type': 'TRIAL'}
+2024-02-02 16:12:03: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-05 15:35:03: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240202 20240205
+       date   datetime
+0  20240202 2024-02-02
+1  20240205 2024-02-05
+2024-02-02
+sdate: 2024-02-05, edate: 2024-02-05
+all symbol nums:  78
+['CS']
+ex contract:  CS888
+Insert Bar: 409335 from 2019-01-02 09:00:00 - 2024-02-05 14:59:00
+Insert Bar: 23714 from 2024-02-02 21:00:00 - 2024-02-05 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+{'bytes_used': 111925127, 'bytes_limit': 5368709120.0, 'remaining_days': 225, 'license_type': 'TRIAL'}
+2024-02-05 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-06 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240205 20240206
+       date   datetime
+0  20240205 2024-02-05
+1  20240206 2024-02-06
+2024-02-05
+sdate: 2024-02-06, edate: 2024-02-06
+all symbol nums:  78
+['SS']
+ex contract:  SS888
+Insert Bar: 471765 from 2019-09-25 09:00:00 - 2024-02-06 14:59:00
+Insert Bar: 23594 from 2024-02-05 21:00:00 - 2024-02-06 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+{'bytes_used': 2044012012, 'bytes_limit': 5368709120.0, 'remaining_days': 224, 'license_type': 'TRIAL'}
+2024-02-06 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-07 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240206 20240207
+       date   datetime
+0  20240206 2024-02-06
+1  20240207 2024-02-07
+2024-02-06
+sdate: 2024-02-07, edate: 2024-02-07
+all symbol nums:  78
+['BC', 'PF', 'SI']
+ex contract:  BC888
+Insert Bar: 359745 from 2020-11-19 09:00:00 - 2024-02-07 14:59:00
+ex contract:  PF888
+Insert Bar: 277845 from 2020-10-12 09:00:00 - 2024-02-07 14:59:00
+ex contract:  SI888
+Insert Bar: 62100 from 2022-12-22 09:00:00 - 2024-02-07 14:59:00
+Insert Bar: 23024 from 2024-02-06 21:00:00 - 2024-02-07 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+{'bytes_used': 116477805, 'bytes_limit': 5368709120.0, 'remaining_days': 223, 'license_type': 'TRIAL'}
+2024-02-07 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-08 15:35:03: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240207 20240208
+       date   datetime
+0  20240207 2024-02-07
+1  20240208 2024-02-08
+2024-02-07
+sdate: 2024-02-08, edate: 2024-02-08
+all symbol nums:  78
+['AL', 'PK']
+ex contract:  AL888
+Insert Bar: 554730 from 2019-01-02 09:00:00 - 2024-02-08 14:59:00
+ex contract:  PK888
+Insert Bar: 165375 from 2021-02-01 09:00:00 - 2024-02-08 14:59:00
+Insert Bar: 23369 from 2024-02-07 21:00:00 - 2024-02-08 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+####################################################################################################
+2024-02-09 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240208 20240209
+       date   datetime
+0  20240208 2024-02-08
+2024-02-08
+ok
+####################################################################################################
+####################################################################################################
+####################################################################################################
+2024-02-12 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240208 20240212
+       date   datetime
+0  20240208 2024-02-08
+2024-02-08
+ok
+####################################################################################################
+####################################################################################################
+####################################################################################################
+2024-02-13 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240208 20240213
+       date   datetime
+0  20240208 2024-02-08
+2024-02-08
+ok
+####################################################################################################
+####################################################################################################
+####################################################################################################
+2024-02-14 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240208 20240214
+       date   datetime
+0  20240208 2024-02-08
+2024-02-08
+ok
+####################################################################################################
+####################################################################################################
+####################################################################################################
+2024-02-15 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240208 20240215
+       date   datetime
+0  20240208 2024-02-08
+2024-02-08
+ok
+####################################################################################################
+####################################################################################################
+####################################################################################################
+2024-02-16 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240208 20240216
+       date   datetime
+0  20240208 2024-02-08
+2024-02-08
+ok
+####################################################################################################
+####################################################################################################
+####################################################################################################
+2024-02-19 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240208 20240219
+       date   datetime
+0  20240208 2024-02-08
+1  20240219 2024-02-19
+2024-02-08
+sdate: 2024-02-19, edate: 2024-02-19
+all symbol nums:  78
+['JD', 'LH', 'SC']
+ex contract:  JD888
+Insert Bar: 279675 from 2019-01-02 09:00:00 - 2024-02-19 14:59:00
+ex contract:  LH888
+Insert Bar: 169200 from 2021-01-08 09:00:00 - 2024-02-19 14:59:00
+ex contract:  SC888
+Insert Bar: 658185 from 2019-01-02 09:00:00 - 2024-02-19 14:59:00
+Insert Bar: 16799 from 2024-02-19 09:00:00 - 2024-02-19 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-19 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-02-19 00:00:00 - 2024-02-19 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 86303521, 'bytes_limit': 5368709120.0, 'remaining_days': 211, 'license_type': 'TRIAL'}
+2024-02-19 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+      ex_date order_book_id  ...      close                           remarks
+0  2024-02-20      a888.DCE  ...   4707.000    20240219 switch A2403 to A2405
+1  2024-02-20    al888.SHFE  ...  18775.000  20240219 switch AL2403 to AL2404
+2  2024-02-20    ao888.SHFE  ...   3122.000  20240219 switch AO2403 to AO2404
+3  2024-02-20     cs888.DCE  ...   2813.000  20240219 switch CS2403 to CS2405
+4  2024-02-20     jd888.DCE  ...   3215.000  20240219 switch JD2403 to JD2405
+5  2024-02-20     lh888.DCE  ...  13600.000  20240219 switch LH2403 to LH2405
+6  2024-02-20    PF888.CZCE  ...   7472.000  20240219 switch PF2403 to PF2405
+7  2024-02-20    PK888.CZCE  ...   9188.000  20240219 switch PK2403 to PK2404
+8  2024-02-20     rr888.DCE  ...   3439.000  20240219 switch RR2403 to RR2404
+9  2024-02-20    ss888.SHFE  ...  13625.000  20240219 switch SS2403 to SS2405
+10 2024-02-20    zn888.SHFE  ...  20265.000  20240219 switch ZN2403 to ZN2404
+11 2024-02-20    T888.CFFEX  ...    103.415    20240219 switch T2403 to T2406
+12 2024-02-20   TF888.CFFEX  ...    102.660  20240219 switch TF2403 to TF2406
+13 2024-02-20   TS888.CFFEX  ...    101.290  20240219 switch TS2403 to TS2406
+
+[14 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-20 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240219 20240220
+       date   datetime
+0  20240219 2024-02-19
+1  20240220 2024-02-20
+2024-02-19
+sdate: 2024-02-20, edate: 2024-02-20
+all symbol nums:  78
+['ZN']
+ex contract:  ZN888
+Insert Bar: 555420 from 2019-01-02 09:00:00 - 2024-02-20 14:59:00
+Insert Bar: 23594 from 2024-02-19 21:00:00 - 2024-02-20 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-20 16:08:03: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-02-20 00:00:00 - 2024-02-20 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 86626286, 'bytes_limit': 5368709120.0, 'remaining_days': 210, 'license_type': 'TRIAL'}
+2024-02-20 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...    close                           remarks
+0 2024-02-21     bb888.DCE  ...    400.0  20240220 switch BB2411 to BB2412
+1 2024-02-21    cu888.SHFE  ...  68320.0  20240220 switch CU2403 to CU2404
+2 2024-02-21    ZC888.CZCE  ...    801.4  20240220 switch ZC2412 to ZC2501
+
+[3 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-21 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240220 20240221
+       date   datetime
+0  20240220 2024-02-20
+1  20240221 2024-02-21
+2024-02-20
+sdate: 2024-02-21, edate: 2024-02-21
+all symbol nums:  78
+['B', 'CU', 'PB', 'T', 'TF']
+ex contract:  B888
+Insert Bar: 419685 from 2019-01-02 09:00:00 - 2024-02-21 14:59:00
+ex contract:  CU888
+Insert Bar: 555885 from 2019-01-02 09:00:00 - 2024-02-21 14:59:00
+ex contract:  PB888
+Insert Bar: 555885 from 2019-01-02 09:00:00 - 2024-02-21 14:59:00
+ex contract:  T888
+Insert Bar: 323085 from 2019-01-02 09:15:00 - 2024-02-21 15:14:00
+ex contract:  TF888
+Insert Bar: 323085 from 2019-01-02 09:15:00 - 2024-02-21 15:14:00
+Insert Bar: 22274 from 2024-02-20 21:00:00 - 2024-02-21 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-21 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-02-21 00:00:00 - 2024-02-21 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 123128837, 'bytes_limit': 5368709120.0, 'remaining_days': 209, 'license_type': 'TRIAL'}
+2024-02-21 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+     ex_date order_book_id  ...    close                           remarks
+0 2024-02-22      b888.DCE  ...   3650.0    20240221 switch B2403 to B2405
+1 2024-02-22    br888.SHFE  ...  12910.0  20240221 switch BR2403 to BR2404
+2 2024-02-22    pb888.SHFE  ...  15840.0  20240221 switch PB2403 to PB2404
+
+[3 rows x 14 columns]
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-22 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240221 20240222
+       date   datetime
+0  20240221 2024-02-21
+1  20240222 2024-02-22
+2024-02-21
+sdate: 2024-02-22, edate: 2024-02-22
+all symbol nums:  78
+['AO']
+ex contract:  AO888
+Insert Bar: 75060 from 2023-06-19 09:00:00 - 2024-02-22 14:59:00
+Insert Bar: 23594 from 2024-02-21 21:00:00 - 2024-02-22 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-22 16:08:02: /home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py
+Insert Bar: 756 from 2024-02-22 00:00:00 - 2024-02-22 00:00:00
+/home/ubuntu/stock_data_update/update_futures_contract_daily_data_into_mysql.py: Finished all work!
+####################################################################################################
+{'bytes_used': 116324585, 'bytes_limit': 5368709120.0, 'remaining_days': 208, 'license_type': 'TRIAL'}
+2024-02-22 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-23 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240222 20240223
+       date   datetime
+0  20240222 2024-02-22
+1  20240223 2024-02-23
+2024-02-22
+sdate: 2024-02-23, edate: 2024-02-23
+all symbol nums:  78
+['A', 'BB', 'NI', 'SN', 'TS']
+ex contract:  A888
+Insert Bar: 420375 from 2019-01-02 09:00:00 - 2024-02-23 14:59:00
+ex contract:  BB888
+Insert Bar: 280350 from 2019-01-02 09:00:00 - 2024-02-22 14:59:00
+ex contract:  NI888
+Insert Bar: 556815 from 2019-01-02 09:00:00 - 2024-02-23 14:59:00
+ex contract:  SN888
+Insert Bar: 556815 from 2019-01-02 09:00:00 - 2024-02-23 14:59:00
+ex contract:  TS888
+Insert Bar: 323595 from 2019-01-02 09:15:00 - 2024-02-23 15:14:00
+Insert Bar: 22529 from 2024-02-22 21:00:00 - 2024-02-23 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+{'bytes_used': 124737610, 'bytes_limit': 5368709120.0, 'remaining_days': 207, 'license_type': 'TRIAL'}
+2024-02-23 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-26 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240223 20240226
+       date   datetime
+0  20240223 2024-02-23
+1  20240226 2024-02-26
+2024-02-23
+sdate: 2024-02-26, edate: 2024-02-26
+all symbol nums:  78
+['BR', 'EB']
+ex contract:  BR888
+Insert Bar: 47475 from 2023-07-28 09:00:00 - 2024-02-26 14:59:00
+ex contract:  EB888
+Insert Bar: 357540 from 2019-09-26 09:00:00 - 2024-02-26 14:59:00
+Insert Bar: 23369 from 2024-02-23 21:00:00 - 2024-02-26 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+{'bytes_used': 97046170, 'bytes_limit': 5368709120.0, 'remaining_days': 204, 'license_type': 'TRIAL'}
+2024-02-26 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-27 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240226 20240227
+       date   datetime
+0  20240226 2024-02-26
+1  20240227 2024-02-27
+2024-02-26
+sdate: 2024-02-27, edate: 2024-02-27
+all symbol nums:  78
+[]
+Insert Bar: 24059 from 2024-02-26 21:00:00 - 2024-02-27 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+{'bytes_used': 193114469, 'bytes_limit': 5368709120.0, 'remaining_days': 203, 'license_type': 'TRIAL'}
+2024-02-27 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-28 15:35:03: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240227 20240228
+       date   datetime
+0  20240227 2024-02-27
+1  20240228 2024-02-28
+2024-02-27
+sdate: 2024-02-28, edate: 2024-02-28
+all symbol nums:  78
+['AU', 'PG']
+ex contract:  AU888
+Insert Bar: 662070 from 2019-01-02 09:00:00 - 2024-02-28 14:59:00
+ex contract:  PG888
+Insert Bar: 321990 from 2020-03-30 09:00:00 - 2024-02-28 14:59:00
+Insert Bar: 23384 from 2024-02-27 21:00:00 - 2024-02-28 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+{'bytes_used': 108786509, 'bytes_limit': 5368709120.0, 'remaining_days': 202, 'license_type': 'TRIAL'}
+2024-02-28 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-02-29 15:35:03: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240228 20240229
+       date   datetime
+0  20240228 2024-02-28
+1  20240229 2024-02-29
+2024-02-28
+sdate: 2024-02-29, edate: 2024-02-29
+all symbol nums:  78
+ok
+####################################################################################################
+####################################################################################################
+{'bytes_used': 117688692, 'bytes_limit': 5368709120.0, 'remaining_days': 201, 'license_type': 'TRIAL'}
+2024-02-29 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+2024-03-01 15:35:02: /home/ubuntu/stock_data_update/update_future_data_into_mysql.py
+20240229 20240301
+       date   datetime
+0  20240229 2024-02-29
+1  20240301 2024-03-01
+2024-02-29
+sdate: 2024-03-01, edate: 2024-03-01
+all symbol nums:  78
+['FB', 'NR']
+ex contract:  FB888
+Insert Bar: 281700 from 2019-01-02 09:00:00 - 2024-03-01 14:59:00
+ex contract:  NR888
+Insert Bar: 369840 from 2019-08-12 09:00:00 - 2024-03-01 14:59:00
+Insert Bar: 23489 from 2024-02-29 21:00:00 - 2024-03-01 14:59:00
+/home/ubuntu/stock_data_update/update_future_data_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+{'bytes_used': 97716192, 'bytes_limit': 5368709120.0, 'remaining_days': 200, 'license_type': 'TRIAL'}
+2024-03-01 16:12:03: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!
+####################################################################################################
+####################################################################################################
+####################################################################################################
+{'bytes_used': 890372332, 'bytes_limit': 5368709120.0, 'remaining_days': 197, 'license_type': 'TRIAL'}
+2024-03-04 16:12:02: /home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py
+A: data is not updated yet!
+AG: data is not updated yet!
+AL: data is not updated yet!
+AO: data is not updated yet!
+AP: data is not updated yet!
+AU: data is not updated yet!
+B: data is not updated yet!
+BB: data is not updated yet!
+BC: data is not updated yet!
+BR: data is not updated yet!
+BU: data is not updated yet!
+C: data is not updated yet!
+CF: data is not updated yet!
+CJ: data is not updated yet!
+CS: data is not updated yet!
+CU: data is not updated yet!
+CY: data is not updated yet!
+EB: data is not updated yet!
+EC: data is not updated yet!
+EG: data is not updated yet!
+FB: data is not updated yet!
+FG: data is not updated yet!
+FU: data is not updated yet!
+HC: data is not updated yet!
+I: data is not updated yet!
+J: data is not updated yet!
+JD: data is not updated yet!
+JM: data is not updated yet!
+JR: data is not updated yet!
+L: data is not updated yet!
+LC: data is not updated yet!
+LH: data is not updated yet!
+LR: data is not updated yet!
+LU: data is not updated yet!
+M: data is not updated yet!
+MA: data is not updated yet!
+NI: data is not updated yet!
+NR: data is not updated yet!
+OI: data is not updated yet!
+P: data is not updated yet!
+PB: data is not updated yet!
+PF: data is not updated yet!
+PG: data is not updated yet!
+PK: data is not updated yet!
+PM: data is not updated yet!
+PP: data is not updated yet!
+PX: data is not updated yet!
+RB: data is not updated yet!
+RI: data is not updated yet!
+RM: data is not updated yet!
+RR: data is not updated yet!
+RS: data is not updated yet!
+RU: data is not updated yet!
+SA: data is not updated yet!
+SC: data is not updated yet!
+SF: data is not updated yet!
+SH: data is not updated yet!
+SI: data is not updated yet!
+SM: data is not updated yet!
+SN: data is not updated yet!
+SP: data is not updated yet!
+SR: data is not updated yet!
+SS: data is not updated yet!
+TA: data is not updated yet!
+UR: data is not updated yet!
+V: data is not updated yet!
+WH: data is not updated yet!
+WR: data is not updated yet!
+Y: data is not updated yet!
+ZC: data is not updated yet!
+ZN: data is not updated yet!
+IC: data is not updated yet!
+IF: data is not updated yet!
+IH: data is not updated yet!
+IM: data is not updated yet!
+T: data is not updated yet!
+TF: data is not updated yet!
+TS: data is not updated yet!
+/home/ubuntu/stock_data_update/update_futures_ex_factor_into_mysql.py: Finished all work!

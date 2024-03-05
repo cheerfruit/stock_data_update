@@ -164,40 +164,57 @@ def get_database_latest_symbols():
 
 
 if __name__ == '__main__':
-    print_date = time.strftime("%Y-%m-%d %H:%M:%S")
-    print(f"{print_date}: {__file__}")
+    try:
+        print_date = time.strftime("%Y-%m-%d %H:%M:%S")
+        print(f"{print_date}: {__file__}")
 
-    freq = '1m'
-    sdate = '2021-01-01'
-    edate = time.strftime("%Y-%m-%d")
-    edatex = str(int(edate[:4])+1)+edate[4:]
-    last_date = get_last_trading_day(edate)
-    # print(last_date)
-    contracts = get_contracts()                       # 最新股票池code
-    latest_symbols = get_database_latest_symbols()    # 数据库里的code
-    contracts0 = list(set(latest_symbols)&(set(contracts)))       # 不发生变动的股票
-    contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
-    contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
-    contracts0.sort()
-    contracts1.sort()
-    contracts2.sort()
-    print("all symbol nums: ",len(contracts0+contracts1+contracts2))
+        freq = '1m'
+        sdate = '2022-01-01'
+        edate = time.strftime("%Y-%m-%d")
+        if edate[4:]!='-02-29':
+            edatex = str(int(edate[:4])+1)+edate[4:]
+        else:
+            edatex = str(int(edate[:4])+1)+'-02-28'
+        last_date = get_last_trading_day(edate)
+        # print(last_date)
+        contracts = get_contracts()                       # 最新股票池code
+        latest_symbols = get_database_latest_symbols()    # 数据库里的code
+        contracts0 = list(set(latest_symbols)&(set(contracts)))       # 不发生变动的股票
+        contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
+        contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
+        contracts0.sort()
+        contracts1.sort()
+        contracts2.sort()
+        print("all symbol nums: ",len(contracts0+contracts1+contracts2))
 
-    ex_factor_data = get_excum_factor(contracts, last_date, edatex)
-    # print(ex_factor_data)
-    if ex_factor_data is None:
-        ex_symbols = []
-    else:
-        ex_symbols = ex_factor_data[ex_factor_data.book_closure_date==last_date]['order_book_id'].to_list()
+        ex_factor_data = get_excum_factor(contracts, last_date, edatex)
+        # print(ex_factor_data)
+        if ex_factor_data is None:
+            ex_symbols = []
+        else:
+            ex_symbols = ex_factor_data[ex_factor_data.book_closure_date==last_date]['order_book_id'].to_list()
 
-    data_nochg = pd.DataFrame()
-    for contract in (contracts0+contracts1+contracts2):  # 按一个票一个票循环，然后合并，其实也可以多个票，可以测试下怎么样速度更加快
-        if contract in contracts0:
-            if contract in ex_symbols:
-                print("ex contract: ", contract)
-                data = get_data(contract, sdate, last_date, freq)
+        data_nochg = pd.DataFrame()
+        for contract in (contracts0+contracts1+contracts2):  # 按一个票一个票循环，然后合并，其实也可以多个票，可以测试下怎么样速度更加快
+            if contract in contracts0:
+                if contract in ex_symbols:
+                    print("ex contract: ", contract)
+                    data = get_data(contract, sdate, last_date, freq)
 
-                # 先删除symbol的数据，再重新插入
+                    # 先删除symbol的数据，再重新插入
+                    exchange = convert_exchange_code(contract)
+                    interval = Interval.MINUTE
+                    database.delete_bar_data(
+                        symbol=contract.split('.')[0],
+                        exchange=exchange,
+                        interval=interval
+                        )
+                    move_df_to_mysql(data)
+                    del data
+                else:
+                    data = get_data(contract, last_date, last_date, freq)
+                    data_nochg = pd.concat([data_nochg, data])
+            elif contract in contracts1:    # 删除对应symbol数据
                 exchange = convert_exchange_code(contract)
                 interval = Interval.MINUTE
                 database.delete_bar_data(
@@ -205,28 +222,19 @@ if __name__ == '__main__':
                     exchange=exchange,
                     interval=interval
                     )
+            else:                           # 新加的票直接插入从2021年开始的数据
+                data = get_data(contract, sdate, last_date, freq)
                 move_df_to_mysql(data)
                 del data
-            else:
-                data = get_data(contract, last_date, last_date, freq)
-                data_nochg = pd.concat([data_nochg, data])
-        elif contract in contracts1:    # 删除对应symbol数据
-            exchange = convert_exchange_code(contract)
-            interval = Interval.MINUTE
-            database.delete_bar_data(
-                symbol=contract.split('.')[0],
-                exchange=exchange,
-                interval=interval
-                )
-        else:                           # 新加的票直接插入从2021年开始的数据
-            data = get_data(contract, sdate, last_date, freq)
-            move_df_to_mysql(data)
-            del data
-            
-    if data_nochg.empty:
-        pass
-    else:
-        move_df_to_mysql(data_nochg)
-    
-    print(f"{__file__}: Finished all work!")
+                
+        if data_nochg.empty:
+            pass
+        else:
+            move_df_to_mysql(data_nochg)
+        
+        print(f"{__file__}: Finished all work!")
+    except:
+        from send_to_wechat import WeChat
+        wx = WeChat()
+        wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='hujinglei')
 

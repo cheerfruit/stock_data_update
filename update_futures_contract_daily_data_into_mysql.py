@@ -39,14 +39,22 @@ with open('/home/ubuntu/.vntrader/vt_setting.json','w') as f1:
 from vnpy.trader.constant import Exchange, Interval
 from vnpy.trader.database import get_database
 from vnpy.trader.object import BarData
+import traceback
 
+try:
+    # 米筐初始化
+    rqdatac.init('license', 'hKzEyfcbN4O4B22wGXKfOZnOkVIyQ4fnW7VSUepZ5shkCx3Wpfkb63nMWozKudSUfMCiSx6cuWYasEyqaIVQ7a91WnYFIhxSw39GKxvHmhnlIjaSjBNncRY0Y3ZH3wWYiYbjK25Gxl9FuVkH6sA5VmnbMBmJoQHeT_seHEFYVPw=LVXNtX-oQgO2T9QDKkPx1hhlyjgrkYETwszLKzPA3ItRHWcp4crJu9dlykAOaJv4AtQuPy-THTFzBP4DfcFtIWm-W5vGQNyMMu3lD8cc1u_kxXFfihqajhijKdIi8nJvVrOexx1XVI6Vv-FdzrL0IVNY9e9GCcZ9lavQanQ4BNw=' )
 
-# 米筐初始化
-rqdatac.init('license', 'hKzEyfcbN4O4B22wGXKfOZnOkVIyQ4fnW7VSUepZ5shkCx3Wpfkb63nMWozKudSUfMCiSx6cuWYasEyqaIVQ7a91WnYFIhxSw39GKxvHmhnlIjaSjBNncRY0Y3ZH3wWYiYbjK25Gxl9FuVkH6sA5VmnbMBmJoQHeT_seHEFYVPw=LVXNtX-oQgO2T9QDKkPx1hhlyjgrkYETwszLKzPA3ItRHWcp4crJu9dlykAOaJv4AtQuPy-THTFzBP4DfcFtIWm-W5vGQNyMMu3lD8cc1u_kxXFfihqajhijKdIi8nJvVrOexx1XVI6Vv-FdzrL0IVNY9e9GCcZ9lavQanQ4BNw=' )
-
-# 获取数据库实例
-database = get_database()
-conn = pymysql.connect(host='localhost', port=3306, database='common_info',user='remote',password='zhP@55word')
+    # 获取数据库实例
+    database = get_database()
+    conn = pymysql.connect(host='localhost', port=3306, database='common_info',user='remote',password='zhP@55word')
+except Exception as e:
+    print(f'{traceback.format_exc()}')
+    print(e)
+    from send_to_wechat import WeChat
+    wx = WeChat()
+    wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='hujinglei')
+    wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='liaoyuan')
 
 def move_df_to_mysql(imported_data:pd.DataFrame):
     bars = []
@@ -132,18 +140,23 @@ def update_history_daily_kline(sdate, edate):
 
 def update_daily():
     trade_dt = time.strftime("%Y%m%d")
-    # trade_dt = '20231207'
     update_singleday_data(trade_dt)
 
 
 if __name__ == '__main__':
-    print_date = time.strftime("%Y-%m-%d %H:%M:%S")
-    print(f"{print_date}: {__file__}")
+    try:
+        print_date = time.strftime("%Y-%m-%d %H:%M:%S")
+        print(f"{print_date}: {__file__}")
 
-    # 更新历史数据
-    # update_history_daily_kline(20231113, 20231121)
+        # 更新历史数据
+        # update_history_daily_kline(20240223, 20240304)  #最后的更新日期+一天
 
-    # 每日更新
-    update_daily()
-    print(f"{__file__}: Finished all work!")
-    
+        # 每日更新
+        update_daily()
+        print(f"{__file__}: Finished all work!")
+    except Exception as e:
+        print(e)
+        from send_to_wechat import WeChat
+        wx = WeChat()
+        wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='hujinglei')
+        wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='liaoyuan')

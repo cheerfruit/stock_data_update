@@ -91,7 +91,7 @@ def convert_exchange_code(contract):
 
 def process_symbol_data(contract, sdate, ex_f):
     contractx = contract.split('.')[0]
-    print(contractx)
+    # print(contractx)
     sql = "select * from stock_minute where date>="+str(sdate)+ " and symbol='" + contractx+"';"
     data = pd.read_sql(sql,conn)
     data = data.sort_values(by='datetime')
@@ -157,7 +157,7 @@ def move_df_to_mysql(imported_data:pd.DataFrame):
 
     # insert into database
     database.save_bar_data(bars)
-    print(f"Insert Bar: {count} from {start} - {end}")
+    # print(f"Insert Bar: {count} from {start} - {end}")
 
 def create_dbbardata_table():
     sql = "create table if not exists vnpy_backup.dbbardata ( \
@@ -202,38 +202,61 @@ def get_database_latest_symbols():
 
 
 if __name__ == '__main__':
-    print_date = time.strftime("%Y-%m-%d %H:%M:%S")
-    print(f"{print_date}: {__file__}")
+    try:
+        print_date = time.strftime("%Y-%m-%d %H:%M:%S")
+        print(f"{print_date}: {__file__}")
 
-    # create_dbbardata_table()
-    edate = time.strftime("%Y-%m-%d")
-    edatex = str(int(edate[:4])+1)+edate[4:]
-    
-    contracts = get_contracts()                       # 最新股票池code
-    latest_symbols = get_database_latest_symbols()    # 数据库里的code
-    contracts0 = list(set(latest_symbols)&(set(contracts)))  # 不发生变动的股票
-    contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
-    contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
+        # create_dbbardata_table()
+        edate = time.strftime("%Y-%m-%d")
+        if edate[4:]!='-02-29':
+            edatex = str(int(edate[:4])+1)+edate[4:]
+        else:
+            edatex = str(int(edate[:4])+1)+'-02-28'
+        # print(edatex)
+        
+        contracts = get_contracts()                       # 最新股票池code
+        latest_symbols = get_database_latest_symbols()    # 数据库里的code
+        contracts0 = list(set(latest_symbols)&(set(contracts)))  # 不发生变动的股票
+        contracts1 = list(set(latest_symbols) - set(contracts))       # 剔除的股票
+        contracts2 = list(set(contracts) - set(latest_symbols))       # 新增的股票
 
-    contracts0.sort()
-    contracts1.sort()
-    contracts2.sort()
-    print("all symbol nums: ",len(contracts0+contracts1+contracts2))
-    
-    ex_factor_data = get_excum_factor(contracts)
-    print(ex_factor_data)
-    if ex_factor_data is None:
-        ex_symbols = []
-    else:
-        ex_factor_data['contract'] = ex_factor_data['order_book_id'].str.slice(0,6)
-        ex_symbols = ex_factor_data[ex_factor_data.book_closure_date==edate]['order_book_id']
-    # print(ex_symbols)
-    
-    for contract in (contracts0+contracts1+contracts2):
-        if contract in contracts0:
-            if contract in ex_symbols:
-                ex_f = ex_factor_data[ex_factor_data.order_book_id==contract]['ex_factor']
-                sdate = 20210101
+        contracts0.sort()
+        contracts1.sort()
+        contracts2.sort()
+        print("all symbol nums: ",len(contracts0+contracts1+contracts2))
+        
+        ex_factor_data = get_excum_factor(contracts)
+        print(ex_factor_data)
+        if ex_factor_data is None:
+            ex_symbols = []
+        else:
+            ex_factor_data['contract'] = ex_factor_data['order_book_id'].str.slice(0,6)
+            ex_symbols = ex_factor_data[ex_factor_data.book_closure_date==edate]['order_book_id']
+        # print(ex_symbols)
+        
+        for contract in (contracts0+contracts1+contracts2):
+            if contract in contracts0:
+                if contract in ex_symbols:
+                    ex_f = ex_factor_data[ex_factor_data.order_book_id==contract]['ex_factor']
+                    sdate = 20210101
+                    # 删除mysql的对应symbol的数据
+                    exchange = convert_exchange_code(contract)
+                    interval = Interval.MINUTE
+                    database.delete_bar_data(
+                        symbol=contract.split('.')[0],
+                        exchange=exchange,
+                        interval=interval
+                        )
+                    # 删除ck的对应的symbol数据
+                    drop_symbol(contract)
+                else:
+                    ex_f = 1
+                    sdate = int(time.strftime("%Y%m%d"))
+                # 删除后重新写入完整数据
+                process_symbol_data(contract, sdate, ex_f)
+            elif contract in contracts1:
+                # 删除ck的对应的symbol数据
+                drop_symbol(contract)
                 # 删除mysql的对应symbol的数据
                 exchange = convert_exchange_code(contract)
                 interval = Interval.MINUTE
@@ -242,30 +265,16 @@ if __name__ == '__main__':
                     exchange=exchange,
                     interval=interval
                     )
-                # 删除ck的对应的symbol数据
-                drop_symbol(contract)
             else:
-                ex_f = 1
-                sdate = int(time.strftime("%Y%m%d"))
-            # 删除后重新写入完整数据
-            process_symbol_data(contract, sdate, ex_f)
-        elif contract in contracts1:
-            # 删除ck的对应的symbol数据
-            drop_symbol(contract)
-            # 删除mysql的对应symbol的数据
-            exchange = convert_exchange_code(contract)
-            interval = Interval.MINUTE
-            database.delete_bar_data(
-                symbol=contract.split('.')[0],
-                exchange=exchange,
-                interval=interval
-                )
-        else:
-            print('Insert new stock: ')
-            if contract in ex_symbols:
-                ex_f = ex_factor_data[ex_factor_data.order_book_id==contract]['ex_factor']
-            else:
-                ex_f = 1
-            sdate = 20210101
-            process_symbol_data(contract, sdate, ex_f)
-    print(f"{__file__}: Finished all work!")
+                print('Insert new stock: ')
+                if contract in ex_symbols:
+                    ex_f = ex_factor_data[ex_factor_data.order_book_id==contract]['ex_factor']
+                else:
+                    ex_f = 1
+                sdate = 20210101
+                process_symbol_data(contract, sdate, ex_f)
+        print(f"{__file__}: Finished all work!")
+    except:
+        from send_to_wechat import WeChat
+        wx = WeChat()
+        wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='hujinglei')

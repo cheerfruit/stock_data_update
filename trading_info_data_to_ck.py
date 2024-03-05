@@ -30,19 +30,19 @@ def update_trade_dt():
     dd = int(time.strftime("%Y%m%d"))
     sql = 'select max(date) from common_info.trading_day'
     max_date = pd.read_sql(sql, conn)
-    # max_date = pd.DataFrame()
-    if max_date.empty:
+    if max_date.values[0][0] is None:
         start_date = '20050101'
         end_date = '29240101'
         get_trade_dt(start_date, end_date)
         print("History Trading day is updated!")
         return
-    elif dd>max_date.values[0]:
-        start_date = dd
-        end_date = '29240101'
-        get_trade_dt(start_date, end_date)
-        print("Trading day is updated!")
-        return
+    else:
+        if dd>max_date.values[0][0]:
+            start_date = dd
+            end_date = '29240101'
+            get_trade_dt(start_date, end_date)
+            print("Trading day is updated!")
+            return
     return 
 
 def insert_into_ck_database(df, tablename, cols):
@@ -248,13 +248,19 @@ def update_ex_factor_data():
 
 
 if __name__ == '__main__':
-    # create_ex_factor_table()
-    # create_ex_factor_table_mysql()
-    print_date = time.strftime("%Y-%m-%d %H:%M:%S")
-    print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
-    print(f"{print_date}: {__file__}")
+    try:
+        # create_ex_factor_table()
+        # create_ex_factor_table_mysql()
+        print_date = time.strftime("%Y-%m-%d %H:%M:%S")
+        print('#'*100)  # 这边用于data_update_error.log的记录，方便调试
+        print(f"{print_date}: {__file__}")
 
-    # get_trade_dt()
-    update_trade_dt()
-    update_ex_factor_data()
-    print(f"{__file__}: Finished all work!")
+        # get_trade_dt()
+        update_trade_dt()
+        update_ex_factor_data()
+        print(f"{__file__}: Finished all work!")
+    except:
+        from send_to_wechat import WeChat
+        wx = WeChat()
+        wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='hujinglei')
+        wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='liaoyuan')

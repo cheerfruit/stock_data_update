@@ -62,8 +62,9 @@ def get_last_trading_day(sdate, xdate):
     data = pd.read_sql(sql,conn_mysql)
     data = data.sort_values('datetime')
     data['datetime'] = pd.to_datetime(data['datetime'])
+    print(data)
     last_trading_day = data[data['date']<int(xdate)]['datetime'].max().strftime('%Y-%m-%d')
-    # print(last_trading_day)
+    print(last_trading_day)
     last_sdate = data[data['date']!=int(sdate)]['datetime'].min().strftime('%Y-%m-%d')
     return last_sdate, last_trading_day
 
@@ -224,27 +225,36 @@ def run():
 
 
 if __name__ == '__main__':
-    print_date = time.strftime("%Y-%m-%d %H:%M:%S")
-    print(f"{print_date}: {__file__}")
+    try:
+        print_date = time.strftime("%Y-%m-%d %H:%M:%S")
+        print(f"{print_date}: {__file__}")
 
-    # 处理日期
-    freq = '1m'
-    sdate = '2019-01-01'
-    edate = time.strftime("%Y-%m-%d")
-    edatex = str(int(edate[:4])+1)+edate[4:]
-    last_update_date = get_last_update_date()
-    if last_update_date == int(time.strftime("%Y%m%d")):
-        print("Future Database is updated today!")
-    else:
-        if int(time.strftime("%H%M"))>1502:
-            last_update_date, last_date = get_last_trading_day(last_update_date, time.strftime("%Y%m%d"))
-            last_date = edate
+        # 处理日期
+        freq = '1m'
+        sdate = '2019-01-01'
+        edate = time.strftime("%Y-%m-%d")
+        if edate[4:]!='-02-29':
+            edatex = str(int(edate[:4])+1)+edate[4:]
         else:
-            last_update_date, last_date = get_last_trading_day(last_update_date, time.strftime("%Y%m%d"))
-        print(f"sdate: {last_update_date}, edate: {last_date}")
-        
-        # 更新数据
-        run()
+            edatex = str(int(edate[:4])+1)+'-02-28'
+        last_update_date = get_last_update_date()
+        if last_update_date == int(time.strftime("%Y%m%d")):
+            print("Future Database is updated today!")
+        else:
+            if int(time.strftime("%H%M"))>1502:
+                last_update_date, last_date = get_last_trading_day(last_update_date, time.strftime("%Y%m%d"))
+                last_date = edate
+            else:
+                last_update_date, last_date = get_last_trading_day(last_update_date, time.strftime("%Y%m%d"))
+            print(f"sdate: {last_update_date}, edate: {last_date}")
+            
+            # 更新数据
+            run()
 
-    print(f"{__file__}: Finished all work!")
+        print(f"{__file__}: Finished all work!")
+    except:
+        from send_to_wechat import WeChat
+        wx = WeChat()
+        wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='hujinglei')
+        wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='liaoyuan')
 

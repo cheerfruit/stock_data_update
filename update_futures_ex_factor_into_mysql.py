@@ -229,10 +229,15 @@ def update_everyday():
 
 
 if __name__ == '__main__':
-    print_date = time.strftime("%Y-%m-%d %H:%M:%S")
-    print(f"{print_date}: {__file__}")
+    try:
+        print_date = time.strftime("%Y-%m-%d %H:%M:%S")
+        print(f"{print_date}: {__file__}")
 
-    # update_history_data(20231123, 20231207)
-    update_everyday()
-    print(f"{__file__}: Finished all work!")
-    
+        # update_history_data(20240222, 20240304)
+        update_everyday()
+        print(f"{__file__}: Finished all work!")
+    except:
+        from send_to_wechat import WeChat
+        wx = WeChat()
+        wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='hujinglei')
+        wx.send_data(f"118.89.200.89:{__file__}: An error occurred! ", touser='liaoyuan')
